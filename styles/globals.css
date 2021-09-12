@@ -1,16 +1,43 @@
-html,
-body {
-  padding: 0;
-  margin: 0;
-  font-family: -apple-system, BlinkMacSystemFont, Segoe UI, Roboto, Oxygen,
-    Ubuntu, Cantarell, Fira Sans, Droid Sans, Helvetica Neue, sans-serif;
-}
+/* Project Lumiere uses TailwindCSS https://tailwindcss.com/ for website styling */
 
-a {
-  color: inherit;
-  text-decoration: none;
-}
+@tailwind base;
+@tailwind components;
+@tailwind utilities;
 
-* {
-  box-sizing: border-box;
+@layer components {
+  .container {
+    @apply max-w-6xl mx-auto px-12 lg:px-14;
+  }
+
+  .gradient-canvas {
+    @apply w-full h-full skew-y-6 blur-md opacity-80;
+    --gradient-color-1: #ef008f;
+    --gradient-color-2: #6ec3f4;
+    --gradient-color-3: #7038ff;
+    --gradient-color-4: #ffba27;
+  }
+
+  .gradient-text {
+    @apply bg-clip-text text-transparent bg-gradient-to-r from-pink-500 to-orange-400;
+  }
+
+  .button-primary {
+    @apply rounded-full bg-blue-550 text-gray-100 hover:bg-blue-500 transition-colors;
+  }
+
+  .button-secondary {
+    @apply font-medium rounded-full bg-gray-500 border-2 border-gray-500 text-gray-200 hover:bg-gray-700 hover:border-gray-300 transition-colors;
+  }
+
+  .button-tertiary {
+    @apply font-medium rounded-xl border border-gray-500 text-gray-400 hover:text-gray-300 hover:border-gray-400 transition-colors;
+  }
+
+  .heading-primary {
+    @apply text-gray-100 text-6xl font-bold leading-tight;
+  }
+
+  .heading-secondary {
+    @apply text-gray-100 text-5xl font-bold leading-tight;
+  }
 }
