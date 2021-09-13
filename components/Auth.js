@@ -14,5 +14,5 @@ export default function Auth({ children }) {
     return children;
   }
 
-  return;
+  return <div>Loading animation</div>;
 }
