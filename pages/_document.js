@@ -13,7 +13,7 @@ class MyDocument extends Document {
             rel='stylesheet'
           />
         </Head>
-        <body className='bg-gray-700 text-gray-400 leading-relaxed'>
+        <body>
           <Main />
           <NextScript />
         </body>

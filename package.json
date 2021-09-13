@@ -10,13 +10,16 @@
   },
   "dependencies": {
     "@headlessui/react": "^1.4.1",
+    "@monaco-editor/react": "^4.2.2",
     "@next-auth/prisma-adapter": "^0.5.2-next.5",
     "@prisma/client": "^3.0.2",
     "next": "11.1.2",
     "next-auth": "^4.0.0-beta.2",
+    "next-themes": "0.0.15",
     "react": "17.0.2",
     "react-dom": "17.0.2",
     "react-icons": "^4.2.0",
+    "react-split": "^2.0.13",
     "xdm": "^2.0.3"
   },
   "devDependencies": {

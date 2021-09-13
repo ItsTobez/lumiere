@@ -1,5 +1,4 @@
 import { signIn } from 'next-auth/react';
-import Layout from '@components/layouts/Layout';
 
 export default function Authenticate() {
   return (
@@ -10,7 +9,3 @@ export default function Authenticate() {
     </>
   );
 }
-
-Authenticate.getLayout = function getLayout(page) {
-  return <Layout>{page}</Layout>;
-};
