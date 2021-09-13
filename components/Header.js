@@ -86,16 +86,16 @@ export default function Header() {
           />
           <FiSearch className='absolute right-0 mr-5 w-6 h-6' />
         </form>
-        {/* {session ? (
+        {session ? (
           <Avatar
             profileImageSrc={session.user.image}
             profileName={session.user.name}
           />
         ) : (
-          <Link href='/api/auth/signin'>
+          <Link href='/authenticate'>
             <a className='text-sm button-primary px-5 py-3'>Sign in</a>
           </Link>
-        )} */}
+        )}
       </div>
     </header>
   );

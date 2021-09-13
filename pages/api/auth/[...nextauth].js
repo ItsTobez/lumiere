@@ -5,10 +5,14 @@ import { PrismaAdapter } from '@next-auth/prisma-adapter';
 
 export default NextAuth({
   adapter: PrismaAdapter(prisma),
+  pages: {
+    signIn: '/authenticate',
+  },
   providers: [
     GithubProvider({
       clientId: process.env.GITHUB_CLIENT_ID,
       clientSecret: process.env.GITHUB_CLIENT_SECRET,
     }),
   ],
+  secret: process.env.SECRET,
 });

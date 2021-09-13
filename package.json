@@ -10,7 +10,7 @@
   },
   "dependencies": {
     "@headlessui/react": "^1.4.1",
-    "@next-auth/prisma-adapter": "^0.5.4",
+    "@next-auth/prisma-adapter": "^0.5.2-next.5",
     "@prisma/client": "^3.0.2",
     "next": "11.1.2",
     "next-auth": "^4.0.0-beta.2",

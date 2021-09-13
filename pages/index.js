@@ -45,11 +45,17 @@ export default function Home() {
               creators to gain an audience and build a name in the industry.
             </p>
             <div className='mt-20 flex'>
-              <button className='flex items-center mr-6 button-secondary pl-4 pr-2 py-2 text-xs'>
+              <button
+                type='button'
+                className='flex items-center mr-6 button-secondary pl-4 pr-2 py-2 text-xs'
+              >
                 <p className='mr-2'>Get started</p>
                 <FiChevronRight className='w-5 h-5' />
               </button>
-              <button className='button-tertiary px-4 py-2 text-xs'>
+              <button
+                type='button'
+                className='button-tertiary px-4 py-2 text-xs'
+              >
                 Support us
               </button>
             </div>

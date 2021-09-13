@@ -14,5 +14,5 @@ export default function Auth({ children }) {
     return children;
   }
 
-  return <div>Loading...</div>;
+  return <div className='bg-red-500 h-108'>Loading... (loading animation)</div>;
 }
