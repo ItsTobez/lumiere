@@ -3,7 +3,6 @@
 
 import '@styles/globals.css';
 import { SessionProvider } from 'next-auth/react';
-import Auth from '@components/Auth';
 
 export default function ProjectLumiere({
   Component,
@@ -13,11 +12,7 @@ export default function ProjectLumiere({
 
   return (
     <SessionProvider session={session}>
-      {Component.auth ? (
-        <Auth>{getLayout(<Component {...pageProps} />)}</Auth>
-      ) : (
-        getLayout(<Component {...pageProps} />)
-      )}
+      {getLayout(<Component {...pageProps} />)}
     </SessionProvider>
   );
 }

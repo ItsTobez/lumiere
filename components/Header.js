@@ -1,6 +1,6 @@
 import Link from 'next/link';
 import Image from 'next/image';
-import { useSession } from 'next-auth/react';
+import { signIn, useSession } from 'next-auth/react';
 import { Popover } from '@headlessui/react';
 import Avatar from '@components/Avatar';
 import { FiChevronDown, FiSearch } from 'react-icons/fi';
@@ -92,9 +92,13 @@ export default function Header() {
             profileName={session.user.name}
           />
         ) : (
-          <Link href='/authenticate'>
-            <a className='text-sm button-primary px-5 py-3'>Sign in</a>
-          </Link>
+          <button
+            type='button'
+            className='text-sm button-primary px-5 py-3'
+            onClick={() => signIn()}
+          >
+            Sign in
+          </button>
         )}
       </div>
     </header>
