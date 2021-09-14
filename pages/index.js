@@ -7,7 +7,6 @@ import Link from 'next/link';
 import { useEffect } from 'react';
 import hackPlus from '@public/images/logos/HackPlus.svg';
 import { Gradient } from '@lib/gradient';
-import Layout from '@components/layouts/Layout';
 import { FiChevronRight } from 'react-icons/fi';
 
 export default function Home() {
@@ -98,7 +97,3 @@ export default function Home() {
     </>
   );
 }
-
-Home.getLayout = function getLayout(page) {
-  return <Layout>{page}</Layout>;
-};

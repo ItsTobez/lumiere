@@ -47,11 +47,7 @@ export default function Header() {
                     </div>
                   </Popover.Button>
                   <Popover.Panel className='absolute -bottom-5 left-0 bg-gray-700 opacity-80 w-full z-10'>
-                    <div className='container'>
-                      <Link href='/settings'>
-                        <a>Go to settings</a>
-                      </Link>
-                    </div>
+                    <div className='container'>This is Discover</div>
                   </Popover.Panel>
                 </>
               )}
@@ -70,7 +66,7 @@ export default function Header() {
                     </div>
                   </Popover.Button>
                   <Popover.Panel className='absolute -bottom-5 left-0 bg-gray-700 opacity-80 w-full z-10'>
-                    <div className='container'>This is Discover</div>
+                    <div className='container'>This is Media</div>
                   </Popover.Panel>
                 </>
               )}

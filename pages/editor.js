@@ -1,18 +1,11 @@
 import Split from 'react-split';
-import { useEffect, useState } from 'react';
+import { useState } from 'react';
 import MonacoEditor from '@monaco-editor/react';
-import { getSession, signIn } from 'next-auth/react';
 
-export default function Editor({ session }) {
-  useEffect(() => {
-    console.log(session);
-  }, [session]);
-
+export default function Editor() {
   const [content, setContent] = useState(
     '# This is the heading to your MDX masterpiece!'
   );
-
-  if (!session) signIn();
 
   return (
     <Split
@@ -26,7 +19,7 @@ export default function Editor({ session }) {
       <div className='border border-gray-100 h-screen'>
         <MonacoEditor
           defaultLanguage='markdown'
-          defaultValue={content}
+          value={content}
           theme='vs-dark'
           options={{
             minimap: {
@@ -41,10 +34,6 @@ export default function Editor({ session }) {
   );
 }
 
-export async function getServerSideProps({ req }) {
-  return {
-    props: {
-      session: await getSession(req),
-    },
-  };
-}
+Editor.getLayout = function getLayout(page) {
+  return page;
+};
