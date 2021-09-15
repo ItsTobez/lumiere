@@ -63,7 +63,7 @@ export default function Home() {
 
         <section className='mt-48'>
           <div className='flex justify-between'>
-            <figure className='relative w-36 h-12'>
+            <figure className='relative w-32 h-12'>
               <Image
                 src={hackPlus}
                 alt='Hack Plus Logo'
@@ -71,22 +71,22 @@ export default function Home() {
                 objectFit='contain'
               />
             </figure>
-            <figure className='relative w-36 h-12'>
+            <figure className='relative w-32 h-12'>
               <div className='bg-gray-600 h-full grid place-items-center'>
                 Logo
               </div>
             </figure>
-            <figure className='relative w-36 h-12'>
+            <figure className='relative w-32 h-12'>
               <div className='bg-gray-600 h-full grid place-items-center'>
                 Logo
               </div>
             </figure>
-            <figure className='relative w-36 h-12'>
+            <figure className='relative w-32 h-12'>
               <div className='bg-gray-600 h-full grid place-items-center'>
                 Logo
               </div>
             </figure>
-            <figure className='relative w-36 h-12'>
+            <figure className='relative w-32 h-12'>
               <div className='bg-gray-600 h-full grid place-items-center'>
                 Logo
               </div>

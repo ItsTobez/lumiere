@@ -29,7 +29,7 @@ export default function Avatar({ profileImageSrc, profileName }) {
           >
             <button
               className='text-sm button-primary px-5 py-3'
-              onClick={() => signOut()}
+              onClick={() => signOut({ redirect: false })}
             >
               Sign out
             </button>
