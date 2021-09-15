@@ -48,6 +48,7 @@ module.exports = {
       },
       height: {
         108: '400px',
+        editor: 'calc(100vh - 72px)',
       },
       spacing: {
         18: '72px',
