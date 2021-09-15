@@ -40,6 +40,10 @@ export default function Editor() {
             profileName={session.user.name}
           />
         )}
+        <button className='button-tertiary text-xs px-4 py-2'>
+          Save draft
+        </button>
+        <button className='button-primary text-xs px-4 py-2'>Publish</button>
       </header>
       <Split
         sizes={[50, 50]}

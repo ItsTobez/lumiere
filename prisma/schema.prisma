@@ -12,10 +12,10 @@ generator client {
 
 model Account {
   id                 String  @id @default(cuid())
-  userId             String
+  userId             String  @map("user_id")
   type               String
   provider           String
-  providerAccountId  String
+  providerAccountId  String  @map("provider_account_id")
   refresh_token      String?
   access_token       String?
   expires_at         Int?
@@ -28,25 +28,32 @@ model Account {
 
   user User @relation(fields: [userId], references: [id], onDelete: Cascade)
 
+
   @@unique([provider, providerAccountId])
+  @@map("accounts")
 }
 
 model Session {
   id           String   @id @default(cuid())
-  sessionToken String   @unique
-  userId       String
+  sessionToken String   @unique @map("session_token")
+  userId       String   @map("user_id")
   expires      DateTime
   user         User     @relation(fields: [userId], references: [id], onDelete: Cascade)
+
+  @@map("sessions")
 }
 
 model User {
   id            String    @id @default(cuid())
   name          String?
   email         String?   @unique
-  emailVerified DateTime?
+  emailVerified DateTime? @map("email_verified")
   image         String?
   accounts      Account[]
   sessions      Session[]
+  posts         Post[]
+
+  @@map("users")
 }
 
 model VerificationToken {
@@ -55,4 +62,18 @@ model VerificationToken {
   expires    DateTime
 
   @@unique([identifier, token])
+  @@map("verification_tokens")
+}
+
+model Post {
+  id        String   @id @default(cuid())
+  title     String
+  content   String
+  published Boolean  @default(false)
+  createdAt DateTime @default(now()) @map("created_at")
+  updatedAt DateTime @updatedAt @map("updated_at")
+  author    User     @relation(fields: [authorId], references: [id])
+  authorId  String   @map("author_id")
+
+  @@map("posts")
 }
