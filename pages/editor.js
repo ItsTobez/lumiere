@@ -47,7 +47,7 @@ export default function Editor() {
         gutterSize={20}
         dragInterval={1}
         snapOffset={50}
-        className='split h-editor'
+        className='split h-editor overflow-y-hidden'
       >
         <section>
           <MonacoEditor
