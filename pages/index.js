@@ -73,22 +73,22 @@ export default function Home() {
             </figure>
             <figure className='relative w-32 h-12'>
               <div className='bg-gray-600 h-full grid place-items-center'>
-                Logo
+                Logo 1
               </div>
             </figure>
             <figure className='relative w-32 h-12'>
               <div className='bg-gray-600 h-full grid place-items-center'>
-                Logo
+                Logo 2
               </div>
             </figure>
             <figure className='relative w-32 h-12'>
               <div className='bg-gray-600 h-full grid place-items-center'>
-                Logo
+                Logo 3
               </div>
             </figure>
             <figure className='relative w-32 h-12'>
               <div className='bg-gray-600 h-full grid place-items-center'>
-                Logo
+                Logo 4
               </div>
             </figure>
           </div>
