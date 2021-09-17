@@ -12,6 +12,7 @@ module.exports = {
     colors: {
       transparent: 'transparent',
       current: 'currentColor',
+      black: '#000',
       gray: {
         100: '#fcfcfd',
         200: '#e6e8ec',
@@ -52,6 +53,22 @@ module.exports = {
       },
       spacing: {
         18: '72px',
+      },
+      animation: {
+        tilt: 'tilt 5s infinite linear',
+      },
+      keyframes: {
+        tilt: {
+          '0%, 50%, 100%': {
+            transform: 'rotate(0deg)',
+          },
+          '25%': {
+            transform: 'rotate(1deg)',
+          },
+          '75%': {
+            transform: 'rotate(-1deg)',
+          },
+        },
       },
     },
   },
