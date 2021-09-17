@@ -10,12 +10,14 @@ import Avatar from '@components/Avatar';
 
 export default function Editor() {
   const [content, setContent] = useState('');
-  const { data: session } = useSession({
+  const { data: session, status } = useSession({
     required: true,
     onUnauthenticated() {
       signIn();
     },
   });
+
+  if (status === 'loading') return null;
 
   return (
     <>
