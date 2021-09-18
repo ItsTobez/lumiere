@@ -47,6 +47,7 @@ model User {
   image         String?
   accounts      Account[]
   sessions      Session[]
+  username      String    @unique
   posts         Post[]
 }
 
@@ -59,14 +60,14 @@ model VerificationToken {
 }
 
 model Post {
-  id        String   @id @default(cuid())
-  title     String
-  content   String
-  published Boolean  @default(false)
-  createdAt DateTime @default(now()) @map("created_at")
-  updatedAt DateTime @updatedAt @map("updated_at")
-  author    User     @relation(fields: [authorId], references: [id])
-  authorId  String   @map("author_id")
+  id             String   @id @default(cuid())
+  title          String
+  content        String
+  published      Boolean  @default(false)
+  createdAt      DateTime @default(now()) @map("created_at")
+  updatedAt      DateTime @updatedAt @map("updated_at")
+  author         User     @relation(fields: [authorUsername], references: [username])
+  authorUsername String   @map("author_id")
 
   @@map("posts")
 }

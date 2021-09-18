@@ -3,7 +3,10 @@ import { useState, useMemo } from 'react';
 import { evaluateMDX } from '@lib/xdm';
 
 export default function MDXContent({ mdx }) {
-  const [MDXOutput, setMDXOutput] = useState('');
+  const [MDXOutput, setMDXOutput] = useState(() => {
+    const mdxComponent = ({ children }) => <>{children}</>;
+    return mdxComponent;
+  });
   const [error, setError] = useState(null);
 
   const ErrorFallback = ({ error }) => {
@@ -21,7 +24,7 @@ export default function MDXContent({ mdx }) {
 
   return (
     <ErrorBoundary FallbackComponent={ErrorFallback} resetKeys={mdx}>
-      {MDXOutput}
+      <MDXOutput />
       {error && error.message}
     </ErrorBoundary>
   );
