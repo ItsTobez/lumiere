@@ -20,7 +20,6 @@ export default function Home() {
       <Head>
         <title>Project Lumiere</title>
         <meta name='description' content='Project Lumiere website' />
-        <link rel='icon' href='/favicon.ico' />
       </Head>
 
       <div className='relative -mt-44 h-108'>
@@ -31,7 +30,7 @@ export default function Home() {
         />
       </div>
 
-      <main className='container -mt-32'>
+      <div className='container -mt-32'>
         <section className='mt-14 flex'>
           <div className='max-w-xl z-10'>
             <h1 className='heading-primary'>
@@ -72,28 +71,38 @@ export default function Home() {
               />
             </figure>
             <figure className='relative w-32 h-12'>
-              <div className='bg-gray-600 h-full grid place-items-center'>
-                Logo 1
-              </div>
+              <div className='bg-gray-600 h-full grid place-items-center'></div>
             </figure>
             <figure className='relative w-32 h-12'>
-              <div className='bg-gray-600 h-full grid place-items-center'>
-                Logo 2
-              </div>
+              <div className='bg-gray-600 h-full grid place-items-center'></div>
             </figure>
             <figure className='relative w-32 h-12'>
-              <div className='bg-gray-600 h-full grid place-items-center'>
-                Logo 3
-              </div>
+              <div className='bg-gray-600 h-full grid place-items-center'></div>
             </figure>
             <figure className='relative w-32 h-12'>
-              <div className='bg-gray-600 h-full grid place-items-center'>
-                Logo 4
-              </div>
+              <div className='bg-gray-600 h-full grid place-items-center'></div>
             </figure>
           </div>
         </section>
-      </main>
+
+        <main>
+          <section className='mt-48'>
+            <h2 className='heading-secondary'>
+              Create beautiful and informative content
+            </h2>
+          </section>
+
+          <section className='mt-48'>
+            <h2 className='heading-secondary'>Technical writing, done right</h2>
+          </section>
+
+          <section className='mt-48'>
+            <h2 className='heading-secondary'>
+              Developed, managed, and run by students
+            </h2>
+          </section>
+        </main>
+      </div>
     </>
   );
 }

@@ -56,6 +56,10 @@
     @apply text-6xl font-bold leading-tight;
   }
 
+  .heading-secondary {
+    @apply text-4xl font-semibold leading-tight;
+  }
+
   .split {
     display: flex;
   }

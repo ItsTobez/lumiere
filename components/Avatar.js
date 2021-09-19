@@ -2,7 +2,11 @@ import Image from 'next/image';
 import { Menu } from '@headlessui/react';
 import { signOut } from 'next-auth/react';
 
-export default function Avatar({ profileImageSrc, profileName }) {
+export default function Avatar({
+  profileImageSrc,
+  profileName,
+  renderPosition,
+}) {
   return (
     <Menu>
       <Menu.Button className='flex cursor-pointer'>
@@ -21,21 +25,41 @@ export default function Avatar({ profileImageSrc, profileName }) {
         </div>
       </Menu.Button>
 
-      <Menu.Items as='div' className='absolute w-full left-0 bottom-0 z-10'>
-        <div className='container relative'>
-          <Menu.Item
-            as='div'
-            className='absolute right-12 top-0 rounded-b-lg bg-gray-700 opacity-80 px-10 py-8'
-          >
-            <button
-              className='text-sm button-primary px-5 py-3'
-              onClick={() => signOut({ redirect: false })}
+      {renderPosition === 'container' && (
+        <Menu.Items as='div' className='absolute w-full left-0 bottom-0 z-10'>
+          <div className='container relative'>
+            <Menu.Item
+              as='div'
+              className='absolute right-12 top-0 rounded-b-lg bg-gray-600 px-10 py-8'
             >
-              Sign out
-            </button>
-          </Menu.Item>
-        </div>
-      </Menu.Items>
+              <button
+                className='text-sm button-primary px-5 py-3'
+                onClick={() => signOut({ redirect: false })}
+              >
+                Sign out
+              </button>
+            </Menu.Item>
+          </div>
+        </Menu.Items>
+      )}
+
+      {renderPosition === 'fullscreen' && (
+        <Menu.Items as='div' className='absolute w-full left-0 bottom-0 z-10'>
+          <div className='relative'>
+            <Menu.Item
+              as='div'
+              className='absolute right-6 top-0 rounded-b-lg bg-gray-600 px-10 py-8'
+            >
+              <button
+                className='text-sm button-primary px-5 py-3'
+                onClick={() => signOut({ redirect: false })}
+              >
+                Sign out
+              </button>
+            </Menu.Item>
+          </div>
+        </Menu.Items>
+      )}
     </Menu>
   );
 }

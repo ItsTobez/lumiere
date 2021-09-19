@@ -73,6 +73,7 @@ export default function Editor() {
             <Avatar
               profileImageSrc={session.user.image}
               profileName={session.user.name}
+              renderPosition='fullscreen'
             />
           )}
         </div>
