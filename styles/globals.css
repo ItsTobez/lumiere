@@ -59,4 +59,18 @@
   .split {
     display: flex;
   }
+
+  .gutter {
+    @apply bg-gray-500 bg-center bg-no-repeat;
+  }
+
+  .gutter.gutter-horizontal {
+    background-image: url('@public/images/gutter/vertical.png');
+    cursor: col-resize;
+  }
+
+  .gutter.gutter-vertical {
+    background-image: url('@public/images/gutter/horizontal.png');
+    cursor: row-resize;
+  }
 }

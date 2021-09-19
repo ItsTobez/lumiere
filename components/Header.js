@@ -78,7 +78,7 @@ export default function Header() {
             type='text'
             name='search'
             placeholder='Search for anything'
-            className='py-3 rounded-lg border-2 bg-transparent pr-16 pl-5 text-sm border-gray-500'
+            className='py-3 rounded-lg border-2 bg-transparent pr-16 pl-5 text-sm border-gray-500 focus:border-transparent focus:outline-none focus:ring-2 focus:ring-blue-600'
           />
           <FiSearch className='absolute right-0 mr-5 w-6 h-6' />
         </form>

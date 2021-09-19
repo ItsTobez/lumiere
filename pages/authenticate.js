@@ -39,6 +39,7 @@ export default function Authenticate({ providers }) {
                   callbackUrl: redirectUrl.current,
                 });
               }}
+              className='block'
             >
               <p>Sign in with {provider.name}</p>
             </button>
