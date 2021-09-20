@@ -84,7 +84,7 @@ export default function Editor() {
         minSize={400}
         gutterSize={10}
         dragInterval={1}
-        snapOffset={50}
+        snapOffset={30}
         className='split h-editor overflow-y-hidden'
         gutter={(_, direction) => {
           const gutter = document.createElement('div');
@@ -106,9 +106,9 @@ export default function Editor() {
             onChange={(value) => setContent(value)}
           />
         </section>
-        <section className='break-words'>
+        <article className='break-words overflow-y-auto bg-white px-8 py-12'>
           <MDXContent mdx={content} />
-        </section>
+        </article>
       </Split>
 
       <Transition appear show={isOpen} as={Fragment}>

@@ -12,6 +12,7 @@ module.exports = {
     colors: {
       transparent: 'transparent',
       current: 'currentColor',
+      white: '#fff',
       black: '#000',
       gray: {
         100: '#fcfcfd',
@@ -75,5 +76,5 @@ module.exports = {
   variants: {
     extend: {},
   },
-  plugins: [],
+  plugins: [require('@tailwindcss/typography')],
 };
