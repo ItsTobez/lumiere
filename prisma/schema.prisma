@@ -25,8 +25,7 @@ model Account {
   session_state      String?
   oauth_token_secret String?
   oauth_token        String?
-
-  user User @relation(fields: [userId], references: [id], onDelete: Cascade)
+  user               User    @relation(fields: [userId], references: [id], onDelete: Cascade)
 
   @@unique([provider, providerAccountId])
 }
@@ -66,7 +65,7 @@ model Post {
   published      Boolean  @default(false)
   createdAt      DateTime @default(now()) @map("created_at")
   updatedAt      DateTime @updatedAt @map("updated_at")
-  author         User     @relation(fields: [authorUsername], references: [username])
+  author         User     @relation(fields: [authorUsername], references: [username], onDelete: Cascade)
   authorUsername String   @map("author_id")
 
   @@map("posts")

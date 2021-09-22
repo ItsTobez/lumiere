@@ -9,7 +9,7 @@ export default function Username() {
     e.preventDefault();
 
     try {
-      const body = { username };
+      const body = { username: `@${username}` };
       await fetch('/api/user/username', {
         method: 'POST',
         headers: { 'Content-Type': 'application/json' },
@@ -25,6 +25,7 @@ export default function Username() {
     <>
       <h1>Set your username</h1>
       <form onSubmit={submitUsername}>
+        <span>@</span>
         <input
           type='text'
           autoFocus
