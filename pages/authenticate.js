@@ -15,14 +15,11 @@ export default function Authenticate({ providers }) {
     redirectUrl.current = url.searchParams.get('callbackUrl');
   }, []);
 
-  // if (status === 'authenticated') {
-  //   console.log('User is now authenticated');
-  //   console.log(redirectUrl.current);
-
-  //   session.user.username === null
-  //     ? router.push('/username')
-  //     : router.push(redirectUrl.current);
-  // }
+  if (status === 'authenticated') {
+    session.user.username === null
+      ? router.push('/username')
+      : router.push(redirectUrl.current);
+  }
 
   return (
     <main className='h-screen grid place-items-center bg-black'>
