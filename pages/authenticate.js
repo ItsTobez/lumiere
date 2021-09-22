@@ -19,6 +19,8 @@ export default function Authenticate({ providers }) {
     session.user.username === null
       ? router.push('/username')
       : router.push(redirectUrl.current);
+
+    return null;
   }
 
   return (
