@@ -16,11 +16,11 @@ export default function Authenticate({ providers }) {
   }, []);
 
   if (status === 'authenticated') {
-    session.user.username === null
-      ? router.push('/username')
-      : router.push(redirectUrl.current);
+    // session.user.username === null
+    //   ? router.push('/username')
+    //   : router.push(redirectUrl.current);
 
-    return null;
+    return 'cool';
   }
 
   return (
