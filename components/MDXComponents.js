@@ -1,5 +1,4 @@
 import Link from 'next/link';
-import Image from 'next/image';
 
 const NextLink = (props) => {
   const href = props.href;
@@ -16,9 +15,18 @@ const NextLink = (props) => {
   return <a target='_blank' rel='noopener noreferrer' {...props} />;
 };
 
+const EpicComponent = (props) => {
+  return <div className='bg-pink-500'>{props.children}</div>;
+};
+
+const CoolComponent = () => {
+  return <section className='bg-blue-600'>This is a cool component</section>;
+};
+
 const MDXComponents = {
-  img: Image,
   a: NextLink,
+  EpicComponent,
+  CoolComponent,
 };
 
 export default MDXComponents;

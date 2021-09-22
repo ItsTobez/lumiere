@@ -1,16 +1,25 @@
-import { getProviders, signIn } from 'next-auth/react';
+import { getProviders, signIn, useSession } from 'next-auth/react';
 import { useEffect, useRef } from 'react';
 import Link from 'next/link';
 import Image from 'next/image';
 import projectLumiere from '@public/images/logos/ProjectLumiere.svg';
+import { useRouter } from 'next/router';
 
 export default function Authenticate({ providers }) {
   const redirectUrl = useRef();
+  const router = useRouter();
+  const { data: session, status } = useSession();
 
   useEffect(() => {
     const url = new URL(location.href);
     redirectUrl.current = url.searchParams.get('callbackUrl');
   }, []);
+
+  if (status === 'authenticated') {
+    session.user.username === null
+      ? router.push('/username')
+      : router.push(redirectUrl.current);
+  }
 
   return (
     <main className='h-screen grid place-items-center bg-black'>
@@ -35,9 +44,7 @@ export default function Authenticate({ providers }) {
             <button
               key={provider.name}
               onClick={() => {
-                signIn(provider.id, {
-                  callbackUrl: redirectUrl.current,
-                });
+                signIn(provider.id);
               }}
               className='block'
             >
@@ -50,7 +57,7 @@ export default function Authenticate({ providers }) {
   );
 }
 
-export async function getServerSideProps() {
+export async function getStaticProps() {
   const providers = await getProviders();
   return {
     props: { providers },
