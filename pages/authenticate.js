@@ -20,6 +20,14 @@ export default function Authenticate({ providers }) {
     //   ? router.push('/username')
     //   : router.push(redirectUrl.current);
 
+    if (session.user.username === null) {
+      return 'epic';
+    }
+
+    if (session) {
+      return session.user.name;
+    }
+
     return 'cool';
   }
 
