@@ -10,7 +10,6 @@ export default function Username() {
 
     try {
       const body = { username: `@${username}` };
-      console.log('Username API update is running');
       await fetch('/api/user/username', {
         method: 'POST',
         headers: { 'Content-Type': 'application/json' },

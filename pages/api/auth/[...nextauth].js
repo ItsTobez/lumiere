@@ -23,7 +23,6 @@ export default NextAuth({
     async session({ session, user }) {
       session.user.username = user.username;
       session.user.id = user.id;
-      console.log(session);
       return session;
     },
   },
