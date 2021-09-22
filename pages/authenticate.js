@@ -16,22 +16,11 @@ export default function Authenticate({ providers }) {
   }, []);
 
   if (status === 'authenticated') {
-    // session.user.username === null
-    //   ? router.push('/username')
-    //   : router.push(redirectUrl.current);
+    !session.user.username
+      ? router.push('/username')
+      : router.push(redirectUrl.current);
 
-    if (session.user.username === null) {
-      return 'epic';
-    }
-
-    if (session) {
-      console.log(session.user);
-      console.log(session);
-      console.log(session.user.id);
-      return session.user.name;
-    }
-
-    return 'cool';
+    return null;
   }
 
   return (
