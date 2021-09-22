@@ -25,6 +25,9 @@ export default function Authenticate({ providers }) {
     }
 
     if (session) {
+      console.log(session.user);
+      console.log(session);
+      console.log(session.user.id);
       return session.user.name;
     }
 
