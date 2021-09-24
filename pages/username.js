@@ -1,9 +1,15 @@
 import { useRouter } from 'next/router';
-import { useState } from 'react';
+import { useState, useEffect, useRef } from 'react';
 
 export default function Username() {
   const [username, setUsername] = useState('');
   const router = useRouter();
+  const redirectUrl = useRef();
+
+  useEffect(() => {
+    const url = new URL(location.href);
+    redirectUrl.current = url.searchParams.get('callbackUrl');
+  }, []);
 
   const submitUsername = async (e) => {
     e.preventDefault();
@@ -15,7 +21,7 @@ export default function Username() {
         headers: { 'Content-Type': 'application/json' },
         body: JSON.stringify(body),
       });
-      await router.push('/');
+      await router.push(redirectUrl.current);
     } catch (error) {
       console.error(error);
     }
@@ -31,6 +37,7 @@ export default function Username() {
           autoFocus
           onChange={(e) => setUsername(e.target.value)}
           value={username}
+          disabled={!username}
         />
         <input type='submit' value='Submit username' />
       </form>

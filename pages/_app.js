@@ -2,8 +2,8 @@
 // See https://nextjs.org/docs/advanced-features/custom-app
 
 import Layout from '@components/layouts/Layout';
-import '@styles/globals.css';
 import { SessionProvider } from 'next-auth/react';
+import '@styles/globals.css';
 
 export default function ProjectLumiere({
   Component,

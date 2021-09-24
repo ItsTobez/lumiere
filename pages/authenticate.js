@@ -17,7 +17,7 @@ export default function Authenticate({ providers }) {
 
   if (status === 'authenticated') {
     !session.user.username
-      ? router.push('/username')
+      ? router.push(`/username?callbackUrl=${redirectUrl.current}`)
       : router.push(redirectUrl.current);
 
     return null;
