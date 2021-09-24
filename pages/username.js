@@ -37,9 +37,8 @@ export default function Username() {
           autoFocus
           onChange={(e) => setUsername(e.target.value)}
           value={username}
-          disabled={!username}
         />
-        <input type='submit' value='Submit username' />
+        <input type='submit' value='Submit username' disabled={!username} />
       </form>
     </>
   );
