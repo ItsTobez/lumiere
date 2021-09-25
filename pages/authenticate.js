@@ -1,26 +1,20 @@
 import { getProviders, signIn, useSession } from 'next-auth/react';
-import { useEffect, useRef } from 'react';
 import Link from 'next/link';
 import Image from 'next/image';
 import projectLumiere from '@public/images/logos/ProjectLumiere.svg';
 import { useRouter } from 'next/router';
 
 export default function Authenticate({ providers }) {
-  const redirectUrl = useRef();
   const router = useRouter();
   const { data: session, status } = useSession();
 
-  useEffect(() => {
-    const url = new URL(location.href);
-    redirectUrl.current = url.searchParams.get('callbackUrl');
-  }, []);
-
   if (status === 'authenticated') {
     !session.user.username
-      ? router.push(`/username?callbackUrl=${redirectUrl.current}`)
-      : router.push(redirectUrl.current);
-
-    return null;
+      ? router.push({
+          pathname: '/username',
+          query: { callbackUrl: router.query.callbackUrl },
+        })
+      : router.push(router.query.callbackUrl);
   }
 
   return (
@@ -55,6 +49,12 @@ export default function Authenticate({ providers }) {
           ))}
         </section>
       </div>
+      {router.query.error && (
+        <div>
+          That email is already taken. Did you sign up with the other social
+          provider?
+        </div>
+      )}
     </main>
   );
 }

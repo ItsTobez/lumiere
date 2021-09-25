@@ -8,11 +8,13 @@ import Split from 'react-split';
 import { signIn, useSession } from 'next-auth/react';
 import Avatar from '@components/Avatar';
 import { Dialog, Transition } from '@headlessui/react';
+import { useRouter } from 'next/router';
 
 export default function Editor() {
   const [title, setTitle] = useState('');
   const [content, setContent] = useState('');
   const [isOpen, setIsOpen] = useState(false);
+  const router = useRouter();
   const { data: session, status } = useSession({
     required: true,
     onUnauthenticated() {
@@ -28,7 +30,7 @@ export default function Editor() {
         headers: { 'Content-Type': 'application/json' },
         body: JSON.stringify(body),
       });
-      await Router.push('/me/drafts');
+      await router.push('/me/drafts');
     } catch (error) {
       console.error(error);
     }
