@@ -17,6 +17,10 @@ export default function Authenticate({ providers }) {
       : router.push(router.query.callbackUrl);
   }
 
+  if (status === 'loading') {
+    return null;
+  }
+
   return (
     <main className='h-screen grid place-items-center bg-black'>
       <div className='absolute top-5 left-6'>
@@ -65,7 +69,3 @@ export async function getStaticProps() {
     props: { providers },
   };
 }
-
-Authenticate.getLayout = function getLayout(page) {
-  return page;
-};

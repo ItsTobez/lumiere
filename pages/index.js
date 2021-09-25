@@ -8,6 +8,7 @@ import { useEffect } from 'react';
 import hackPlus from '@public/images/logos/HackPlus.svg';
 import { Gradient } from '@lib/gradient';
 import { FiChevronRight } from 'react-icons/fi';
+import Layout from '@components/layouts/Layout';
 
 export default function Home() {
   useEffect(() => {
@@ -36,9 +37,9 @@ export default function Home() {
             <h1 className='heading-primary'>
               Jumpstart your{' '}
               <span className='gradient-text'>Computer Science</span> career
-              now.
+              today.
             </h1>
-            <p className='mt-8 pr-8 text-lg'>
+            <p className='mt-10 pr-8 text-lg'>
               Project Lumiere is a media publication platform that accelerates
               students in creating CompSci content. We make it easy for our
               creators to gain an audience and build a name in the industry.
@@ -71,16 +72,16 @@ export default function Home() {
               />
             </figure>
             <figure className='relative w-32 h-12'>
-              <div className='bg-gray-600 h-full grid place-items-center'></div>
+              <div className='bg-gray-700 h-full grid place-items-center'></div>
             </figure>
             <figure className='relative w-32 h-12'>
-              <div className='bg-gray-600 h-full grid place-items-center'></div>
+              <div className='bg-gray-700 h-full grid place-items-center'></div>
             </figure>
             <figure className='relative w-32 h-12'>
-              <div className='bg-gray-600 h-full grid place-items-center'></div>
+              <div className='bg-gray-700 h-full grid place-items-center'></div>
             </figure>
             <figure className='relative w-32 h-12'>
-              <div className='bg-gray-600 h-full grid place-items-center'></div>
+              <div className='bg-gray-700 h-full grid place-items-center'></div>
             </figure>
           </div>
         </section>
@@ -106,3 +107,7 @@ export default function Home() {
     </>
   );
 }
+
+Home.getLayout = function getLayout(page) {
+  return <Layout>{page}</Layout>;
+};

@@ -37,7 +37,3 @@ export default function Username() {
     </>
   );
 }
-
-Username.getLayout = function getLayout(page) {
-  return page;
-};

@@ -36,11 +36,11 @@ export default function Editor() {
     }
   };
 
-  if (status === 'loading') return null;
+  if (status === 'loading') return <h1>LOADING</h1>;
 
   return (
     <>
-      <header className='relative h-18 flex items-center border-b border-gray-500 bg-gray-700 px-6'>
+      <header className='relative h-18 flex items-center border-b border-gray-600 bg-gray-800 px-6'>
         <div className='flex items-center'>
           <Link href='/'>
             <a>
@@ -59,7 +59,7 @@ export default function Editor() {
             name='search'
             placeholder='Untitled'
             value={title}
-            className='rounded-lg bg-transparent text-xl ml-3 py-2 px-4 w-96 hover:bg-gray-600 transition-colors text-gray-300 focus:outline-none focus:ring-2 focus:ring-blue-600'
+            className='rounded-lg bg-transparent text-xl ml-3 py-2 px-4 w-96 hover:bg-gray-700 transition-colors text-gray-300 focus:outline-none focus:ring-2 focus:ring-blue-600 placeholder-gray-500'
             onClick={(e) => e.target.select()}
             onChange={(e) => setTitle(e.target.value)}
           />
@@ -67,7 +67,7 @@ export default function Editor() {
         <div className='flex ml-auto'>
           <button
             className='button-tertiary text-xs px-4 mr-6'
-            onClick={() => setIsOpen(true)}
+            onClick={title ? saveDraft : () => setIsOpen(true)}
           >
             Save draft
           </button>
@@ -164,16 +164,10 @@ export default function Editor() {
                   <div className='mt-4 flex justify-end'>
                     <button
                       type='button'
-                      className='button-tertiary text-sm px-4 py-2.4 mr-3'
+                      className='button-tertiary text-sm px-4 py-2.5 mr-3'
                       onClick={() => setIsOpen(false)}
                     >
                       Close
-                    </button>
-                    <button
-                      type='button'
-                      className='button-primary text-sm px-5 py-2.5'
-                    >
-                      Save
                     </button>
                   </div>
                 </section>
@@ -185,7 +179,3 @@ export default function Editor() {
     </>
   );
 }
-
-Editor.getLayout = function getLayout(page) {
-  return page;
-};

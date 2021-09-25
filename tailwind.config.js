@@ -19,9 +19,10 @@ module.exports = {
         200: '#e6e8ec',
         300: '#bcc2cc',
         400: '#777e90',
-        500: '#353945',
-        600: '#1e1e21',
-        700: '#141416',
+        500: '#5f6574',
+        600: '#2c2e36',
+        700: '#1e1e21',
+        800: '#141416',
       },
       red: colors.red,
       orange: colors.orange,
@@ -49,10 +50,11 @@ module.exports = {
         sans: ['Inter', ...fontFamily.sans],
       },
       height: {
-        108: '400px',
+        108: '396px',
         editor: 'calc(100vh - 72px)',
       },
       spacing: {
+        0.25: '1px',
         18: '72px',
       },
       animation: {

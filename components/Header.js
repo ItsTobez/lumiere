@@ -10,9 +10,9 @@ export default function Header() {
   const { data: session } = useSession();
 
   return (
-    <header className='sticky top-0 z-50 backdrop-filter backdrop-saturate-200 backdrop-blur-sm h-18 flex items-center border-b border-gray-500 bg-gray-700 bg-opacity-90'>
+    <header className='sticky top-0 z-50 backdrop-filter backdrop-saturate-200 backdrop-blur-sm h-18 flex items-center border-b border-gray-600 bg-gray-800 bg-opacity-90'>
       <div className='container flex items-center'>
-        <div className='border-r border-gray-500 pr-8'>
+        <div className='border-r border-gray-600 pr-8'>
           <Link href='/'>
             <a>
               <figure className='flex items-center'>
@@ -65,7 +65,7 @@ export default function Header() {
                       />
                     </div>
                   </Popover.Button>
-                  <Popover.Panel className='absolute -bottom-5 left-0 bg-gray-700 opacity-80 w-full z-10'>
+                  <Popover.Panel className='absolute -bottom-5 left-0 bg-gray-700 opacity-90 w-full z-10'>
                     <div className='container'>This is Media</div>
                   </Popover.Panel>
                 </>
@@ -78,16 +78,12 @@ export default function Header() {
             type='text'
             name='search'
             placeholder='Search for anything'
-            className='py-3 rounded-lg border-2 bg-transparent pr-16 pl-5 text-sm border-gray-500 focus:border-transparent focus:outline-none focus:ring-2 focus:ring-blue-600'
+            className='py-3 rounded-lg border-2 bg-transparent pr-16 pl-4 text-sm border-gray-600 focus:border-transparent focus:outline-none focus:ring-2 focus:ring-blue-600 placeholder-gray-500'
           />
-          <FiSearch className='absolute right-0 mr-5 w-6 h-6' />
+          <FiSearch className='absolute right-0 mr-4 w-6 h-6 text-gray-500' />
         </form>
         {session ? (
-          <Avatar
-            profileImageSrc={session.user.image}
-            profileName={session.user.name}
-            renderPosition='container'
-          />
+          <Avatar renderPosition='container' />
         ) : (
           <button
             type='button'

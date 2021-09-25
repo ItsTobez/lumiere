@@ -1,21 +1,20 @@
 import Image from 'next/image';
+import Link from 'next/link';
 import { Menu } from '@headlessui/react';
-import { signOut } from 'next-auth/react';
+import { useSession, signOut } from 'next-auth/react';
 
-export default function Avatar({
-  profileImageSrc,
-  profileName,
-  renderPosition,
-}) {
+export default function Avatar({ renderPosition }) {
+  const { data: session } = useSession();
+
   return (
     <Menu>
       <Menu.Button className='flex cursor-pointer'>
         <div className='p-0.5 bg-gradient-to-tr from-amber-500 to-fuchsia-700 rounded-full'>
-          <div className='p-0.5 bg-gray-700 rounded-full'>
+          <div className='p-0.5 bg-gray-800 rounded-full'>
             <figure className='relative w-10 h-10'>
               <Image
-                src={profileImageSrc}
-                alt={`Picture of ${profileName}`}
+                src={session.user.image}
+                alt={`Picture of ${session.user.name}`}
                 layout='fill'
                 objectFit='contain'
                 className='rounded-full'
@@ -30,8 +29,14 @@ export default function Avatar({
           <div className='container relative'>
             <Menu.Item
               as='div'
-              className='absolute right-12 top-0 rounded-b-lg bg-gray-600 px-10 py-8'
+              className='absolute right-12 top-0.25 rounded-b-lg bg-gray-700 opacity-90 px-10 py-8'
             >
+              <p>{session.user.username}</p>
+              <p>{session.user.email}</p>
+              <p>{session.user.id}</p>
+              <Link href='/me/drafts'>
+                <a className='block'>Drafts</a>
+              </Link>
               <button
                 className='text-sm button-primary px-5 py-3'
                 onClick={() => signOut({ redirect: false })}
@@ -48,8 +53,14 @@ export default function Avatar({
           <div className='relative'>
             <Menu.Item
               as='div'
-              className='absolute right-6 top-0 rounded-b-lg bg-gray-600 px-10 py-8'
+              className='absolute right-4 top-0.25 rounded-b-lg bg-gray-700 opacity-90 px-10 py-8'
             >
+              <p>{session.user.username}</p>
+              <p>{session.user.email}</p>
+              <p>{session.user.id}</p>
+              <Link href='/me/drafts'>
+                <a className='block'>Drafts</a>
+              </Link>
               <button
                 className='text-sm button-primary px-5 py-3'
                 onClick={() => signOut({ redirect: false })}

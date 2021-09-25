@@ -24,7 +24,7 @@ export default function MDXContent({ mdx }) {
 
   return (
     <ErrorBoundary FallbackComponent={ErrorFallback} resetKeys={mdx}>
-      <div className='prose lg:prose-lg mx-auto'>
+      <div className='prose prose-blue mx-auto'>
         <MDXOutput />
       </div>
       {error && error.message}
