@@ -47,7 +47,11 @@ export default function Header() {
                     </div>
                   </Popover.Button>
                   <Popover.Panel className='absolute -bottom-5 left-0 bg-gray-700 opacity-80 w-full z-10'>
-                    <div className='container'>This is Discover</div>
+                    <div className='container'>
+                      <Link href='/press'>
+                        <a className='block'>Lumiere Press</a>
+                      </Link>
+                    </div>
                   </Popover.Panel>
                 </>
               )}

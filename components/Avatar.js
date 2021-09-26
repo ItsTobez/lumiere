@@ -34,12 +34,22 @@ export default function Avatar({ renderPosition }) {
               <p>{session.user.username}</p>
               <p>{session.user.email}</p>
               <p>{session.user.id}</p>
+              <Link href='/editor'>
+                <a className='block'>New Publication</a>
+              </Link>
               <Link href='/me/drafts'>
                 <a className='block'>Drafts</a>
               </Link>
+              <Link href='/me/publications'>
+                <a className='block'>Publications</a>
+              </Link>
               <button
                 className='text-sm button-primary px-5 py-3'
-                onClick={() => signOut({ redirect: false })}
+                onClick={() =>
+                  signOut({
+                    callbackUrl: '/',
+                  })
+                }
               >
                 Sign out
               </button>
@@ -58,12 +68,22 @@ export default function Avatar({ renderPosition }) {
               <p>{session.user.username}</p>
               <p>{session.user.email}</p>
               <p>{session.user.id}</p>
+              <Link href='/editor'>
+                <a className='block'>New Publication</a>
+              </Link>
               <Link href='/me/drafts'>
                 <a className='block'>Drafts</a>
               </Link>
+              <Link href='/me/publications'>
+                <a className='block'>Publications</a>
+              </Link>
               <button
                 className='text-sm button-primary px-5 py-3'
-                onClick={() => signOut({ redirect: false })}
+                onClick={() =>
+                  signOut({
+                    callbackUrl: '/',
+                  })
+                }
               >
                 Sign out
               </button>

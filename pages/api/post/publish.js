@@ -3,7 +3,7 @@ import prisma from '@lib/prisma';
 
 export default async function handle(req, res) {
   const session = await getSession({ req });
-  const { content, slug } = req.body;
+  const { slug } = req.body;
   const authorUsername = session.user.username;
 
   const result = await prisma.post.update({
@@ -11,7 +11,7 @@ export default async function handle(req, res) {
       authorUsername_slug: { authorUsername, slug },
     },
     data: {
-      content: content,
+      published: true,
     },
   });
   res.json(result);

@@ -3,6 +3,7 @@ import { useState } from 'react';
 
 export default function Username() {
   const [username, setUsername] = useState('');
+  const [error, setError] = useState(null);
   const router = useRouter();
 
   const submitUsername = async (e) => {
@@ -10,12 +11,16 @@ export default function Username() {
 
     try {
       const body = { username: `@${username}` };
-      await fetch('/api/user/username', {
+      const response = await fetch('/api/user/username', {
         method: 'POST',
         headers: { 'Content-Type': 'application/json' },
         body: JSON.stringify(body),
       });
-      await router.push(router.query.callbackUrl);
+      if (response.status === 200) {
+        await router.push(router.query.callbackUrl);
+      } else {
+        setError('Username already taken');
+      }
     } catch (error) {
       console.error(error);
     }
@@ -34,6 +39,7 @@ export default function Username() {
         />
         <input type='submit' value='Submit username' disabled={!username} />
       </form>
+      <p>{error}</p>
     </>
   );
 }

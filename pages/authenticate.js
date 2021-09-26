@@ -15,6 +15,8 @@ export default function Authenticate({ providers }) {
           query: { callbackUrl: router.query.callbackUrl },
         })
       : router.push(router.query.callbackUrl);
+
+    return null;
   }
 
   if (status === 'loading') {

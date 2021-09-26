@@ -59,14 +59,16 @@ model VerificationToken {
 }
 
 model Post {
-  id             String   @id @default(cuid())
+  id             String   @unique @default(cuid())
+  authorUsername String   @map("author_username")
+  slug           String
   title          String
   content        String
   published      Boolean  @default(false)
   createdAt      DateTime @default(now()) @map("created_at")
   updatedAt      DateTime @updatedAt @map("updated_at")
   author         User     @relation(fields: [authorUsername], references: [username], onDelete: Cascade)
-  authorUsername String   @map("author_id")
 
+  @@id([authorUsername, slug])
   @@map("posts")
 }

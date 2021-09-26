@@ -13,6 +13,7 @@ import { useRouter } from 'next/router';
 export default function Editor() {
   const [title, setTitle] = useState('');
   const [content, setContent] = useState('');
+  const [slug, setSlug] = useState('');
   const [isOpen, setIsOpen] = useState(false);
   const router = useRouter();
   const { data: session, status } = useSession({
@@ -24,7 +25,7 @@ export default function Editor() {
 
   const saveDraft = async () => {
     try {
-      const body = { title, content };
+      const body = { title, content, slug };
       await fetch('/api/post/create', {
         method: 'POST',
         headers: { 'Content-Type': 'application/json' },
@@ -36,7 +37,7 @@ export default function Editor() {
     }
   };
 
-  if (status === 'loading') return <h1>LOADING</h1>;
+  if (status === 'loading') return null;
 
   return (
     <>
@@ -56,12 +57,14 @@ export default function Editor() {
           </Link>
           <input
             type='text'
-            name='search'
             placeholder='Untitled'
             value={title}
             className='rounded-lg bg-transparent text-xl ml-3 py-2 px-4 w-96 hover:bg-gray-700 transition-colors text-gray-300 focus:outline-none focus:ring-2 focus:ring-blue-600 placeholder-gray-500'
             onClick={(e) => e.target.select()}
-            onChange={(e) => setTitle(e.target.value)}
+            onChange={(e) => {
+              setTitle(e.target.value);
+              setSlug(e.target.value.replaceAll(' ', '-').toLowerCase());
+            }}
           />
         </div>
         <div className='flex ml-auto'>
