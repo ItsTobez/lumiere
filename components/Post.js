@@ -17,6 +17,20 @@ export default function Post({ post }) {
     }
   };
 
+  const deletePost = async (slug) => {
+    try {
+      const body = { slug };
+      await fetch('/api/post/delete', {
+        method: 'DELETE',
+        headers: { 'Content-Type': 'application/json' },
+        body: JSON.stringify(body),
+      });
+      await router.push('/me/drafts');
+    } catch (error) {
+      console.error(error);
+    }
+  };
+
   return (
     <>
       <article
@@ -33,6 +47,12 @@ export default function Post({ post }) {
         onClick={() => publishPost(post.slug)}
       >
         Publish
+      </button>
+      <button
+        className='border border-gray-600'
+        onClick={() => deletePost(post.slug)}
+      >
+        Delete
       </button>
     </>
   );
