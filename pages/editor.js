@@ -132,7 +132,7 @@ export default function Editor() {
               leaveFrom='opacity-100'
               leaveTo='opacity-0'
             >
-              <Dialog.Overlay className='fixed inset-0 bg-black opacity-70' />
+              <Dialog.Overlay className='fixed inset-0 bg-gray-900 opacity-70' />
             </Transition.Child>
 
             <span
@@ -152,7 +152,7 @@ export default function Editor() {
             >
               <div className='relative inline-block w-full max-w-xl text-left align-middle transition-all duration-75 transform rounded-lg'>
                 <div className='absolute -inset-0.5 bg-gradient-to-r from-pink-600 to-purple-600 blur opacity-75 animate-tilt animate-pulse'></div>
-                <section className='relative bg-black rounded-lg px-10 py-6'>
+                <section className='relative bg-gray-900 rounded-lg px-10 py-6'>
                   <Dialog.Title
                     as='h3'
                     className='text-xl font-medium leading-6'

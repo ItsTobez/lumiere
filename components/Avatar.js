@@ -33,8 +33,10 @@ export default function Avatar({ renderPosition }) {
           <Menu.Item
             as='div'
             className={`absolute ${
-              renderPosition === 'container' ? 'right-12' : 'right-4'
-            } top-0.25 rounded-b-lg bg-gray-800 border-b border-l border-r border-gray-700 bg-opacity-95`}
+              renderPosition === 'container'
+                ? 'right-12 bg-opacity-95'
+                : 'right-4'
+            } top-0.25 rounded-b-lg bg-gray-800 border-b border-l border-r border-gray-700`}
           >
             <div className='flex justify-between items-center border-b border-gray-700 px-7 py-5'>
               <Link href='/me/settings'>
