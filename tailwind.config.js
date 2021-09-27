@@ -19,7 +19,7 @@ module.exports = {
         200: '#e6e8ec',
         300: '#bcc2cc',
         400: '#777e90',
-        500: '#5f6574',
+        500: '#585c66',
         600: '#2c2e36',
         700: '#1e1e21',
         800: '#141416',
@@ -48,6 +48,9 @@ module.exports = {
     extend: {
       fontFamily: {
         sans: ['Inter', ...fontFamily.sans],
+      },
+      fontSize: {
+        xs: '0.8rem',
       },
       height: {
         108: '396px',
