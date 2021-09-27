@@ -40,7 +40,7 @@ export default function EditDraft(props) {
 
   return (
     <>
-      <header className='relative h-18 flex items-center border-b border-gray-600 bg-gray-800 px-6'>
+      <header className='relative h-18 flex items-center border-b border-gray-700 bg-gray-900 px-6'>
         <div className='flex items-center'>
           <Link href='/'>
             <a>
@@ -54,7 +54,7 @@ export default function EditDraft(props) {
               </figure>
             </a>
           </Link>
-          <h1 className='rounded-lg bg-transparent text-xl ml-3 py-2 px-4 w-96 hover:bg-gray-700 transition-colors text-gray-300 focus:outline-none focus:ring-2 focus:ring-blue-600 placeholder-gray-500 cursor-not-allowed'>
+          <h1 className='rounded-lg bg-transparent text-xl ml-3 py-2 px-4 w-96 hover:bg-gray-800 transition-colors duration-75 text-gray-300 focus:outline-none focus:ring-2 focus:ring-blue-600 placeholder-gray-500 cursor-not-allowed'>
             {title}
           </h1>
         </div>

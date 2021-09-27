@@ -10,7 +10,7 @@
   }
 
   body {
-    @apply text-gray-400 bg-gray-800 min-h-screen;
+    @apply text-gray-400 bg-gray-900 min-h-screen;
   }
 
   h1,
@@ -45,15 +45,15 @@
   }
 
   .button-primary {
-    @apply rounded-full bg-blue-550 text-gray-100 hover:bg-blue-500 transition-colors;
+    @apply rounded-full bg-blue-550 text-gray-100 hover:bg-blue-500 transition-colors duration-75;
   }
 
   .button-secondary {
-    @apply font-medium rounded-full bg-gray-600 border-2 border-gray-600 text-gray-200 hover:bg-gray-800 hover:border-gray-300 transition-colors;
+    @apply font-medium rounded-full bg-gray-700 border-2 border-gray-700 text-gray-200 hover:bg-gray-900 hover:border-gray-300 transition-colors duration-75;
   }
 
   .button-tertiary {
-    @apply font-medium rounded-xl border border-gray-600 text-gray-400 hover:text-gray-300 hover:border-gray-400 transition-colors;
+    @apply font-medium rounded-xl border border-gray-700 text-gray-400 hover:text-gray-300 hover:border-gray-400 transition-colors duration-75;
   }
 
   .heading-primary {
@@ -65,7 +65,7 @@
   }
 
   .heading-tertiary {
-    @apply text-sm text-gray-300 leading-tight select-none mb-3;
+    @apply text-sm font-medium text-gray-300 leading-tight select-none mb-3;
   }
 
   .split {
@@ -73,7 +73,7 @@
   }
 
   .gutter {
-    @apply bg-gray-600 bg-center bg-no-repeat;
+    @apply bg-gray-700 bg-center bg-no-repeat;
   }
 
   .gutter.gutter-horizontal {

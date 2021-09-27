@@ -41,7 +41,7 @@ export default function Editor() {
 
   return (
     <>
-      <header className='relative h-18 flex items-center border-b border-gray-600 bg-gray-800 px-6'>
+      <header className='relative h-18 flex items-center border-b border-gray-700 bg-gray-900 px-6'>
         <div className='flex items-center'>
           <Link href='/'>
             <a>
@@ -59,7 +59,7 @@ export default function Editor() {
             type='text'
             placeholder='Untitled'
             value={title}
-            className='rounded-lg bg-transparent text-xl ml-3 py-2 px-4 w-96 hover:bg-gray-700 transition-colors text-gray-300 focus:outline-none focus:ring-2 focus:ring-blue-600 placeholder-gray-500'
+            className='rounded-lg bg-transparent text-xl ml-3 py-2 px-4 w-96 hover:bg-gray-800 transition-colors duration-75 text-gray-300 focus:outline-none focus:ring-2 focus:ring-blue-600 placeholder-gray-500'
             onClick={(e) => e.target.select()}
             onChange={(e) => {
               setTitle(e.target.value);
@@ -150,7 +150,7 @@ export default function Editor() {
               leaveFrom='opacity-100 scale-100'
               leaveTo='opacity-0 scale-95'
             >
-              <div className='relative inline-block w-full max-w-xl text-left align-middle transition-all transform rounded-lg'>
+              <div className='relative inline-block w-full max-w-xl text-left align-middle transition-all duration-75 transform rounded-lg'>
                 <div className='absolute -inset-0.5 bg-gradient-to-r from-pink-600 to-purple-600 blur opacity-75 animate-tilt animate-pulse'></div>
                 <section className='relative bg-black rounded-lg px-10 py-6'>
                   <Dialog.Title

@@ -5,10 +5,10 @@ import { FaGithub, FaLinkedin } from 'react-icons/fa';
 
 export default function Footer() {
   return (
-    <footer className='mt-96 bg-gray-700 border-t border-gray-600 pt-14 pb-10'>
+    <footer className='mt-96 bg-gray-800 border-t border-gray-700 pt-14 pb-10'>
       <div className='container'>
         <nav className='flex justify-between text-sm leading-loose text-gray-500'>
-          <ul className='transition-colors'>
+          <ul className='transition-colors duration-75'>
             <h3 className='heading-tertiary'>Media</h3>
             <li>
               <Link href='/press'>
@@ -101,25 +101,33 @@ export default function Footer() {
           </figcaption>
         </figure>
 
-        <div className='mt-5 flex justify-between items-center text-gray-500'>
+        <div className='flex justify-between items-center text-gray-500'>
           <p className='text-xs'>
             &copy; 2021 Project Lumiere 501(c)(3). All rights reserved.
           </p>
+          <iframe
+            src='https://projectlumiere.instatus.com/embed-status/dark-md'
+            width='230'
+            height='50'
+            frameBorder='0'
+            scrolling='no'
+            style={{ borderStyle: 'none', borderWidth: 0 }}
+          ></iframe>
           <div className='flex'>
             <a
               href='https://www.linkedin.com/company/project-lumiere'
               target='_blank'
               rel='noreferrer noopener'
             >
-              <FaLinkedin className='w-5 h-5 text-gray-400 hover:text-gray-300 transition-colors' />
+              <FaLinkedin className='w-5 h-5 text-gray-400 hover:text-gray-300 transition-colors duration-75' />
             </a>
-            <div className='border-r border-gray-600 mx-3' />
+            <div className='border-r border-gray-700 mx-3' />
             <a
               href='https://github.com/AnthonyKuang/ProjectLumiere'
               target='_blank'
               rel='noreferrer noopener'
             >
-              <FaGithub className='w-5 h-5 text-gray-400 hover:text-gray-300 transition-colors' />
+              <FaGithub className='w-5 h-5 text-gray-400 hover:text-gray-300 transition-colors duration-75' />
             </a>
           </div>
         </div>

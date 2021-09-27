@@ -10,9 +10,9 @@ export default function Header() {
   const { data: session } = useSession();
 
   return (
-    <header className='sticky top-0 z-50 backdrop-filter backdrop-saturate-200 backdrop-blur-sm h-18 flex items-center border-b border-gray-600 bg-gray-800 bg-opacity-90'>
+    <header className='sticky top-0 z-50 backdrop-filter backdrop-saturate-200 backdrop-blur-sm h-18 flex items-center border-b border-gray-700 bg-gray-900 bg-opacity-90'>
       <div className='container flex items-center'>
-        <div className='border-r border-gray-600 pr-8'>
+        <div className='border-r border-gray-700 pr-8'>
           <Link href='/'>
             <a>
               <figure className='flex items-center'>
@@ -37,16 +37,16 @@ export default function Header() {
               {({ open }) => (
                 <>
                   <Popover.Button>
-                    <div className='flex hover:text-gray-300 transition-colors'>
+                    <div className='flex hover:text-gray-300 transition-colors duration-75'>
                       <p className='font-medium'>Discover</p>
                       <FiChevronDown
                         className={`${
                           open ? 'transform rotate-180' : ''
-                        } ml-1 w-5 h-5 transition-transform`}
+                        } ml-1 w-5 h-5 transition-transform duration-75`}
                       />
                     </div>
                   </Popover.Button>
-                  <Popover.Panel className='absolute -bottom-5 left-0 bg-gray-700 opacity-80 w-full z-10'>
+                  <Popover.Panel className='absolute -bottom-5.5 left-0 bg-gray-900 border-b border-gray-700 bg-opacity-90 w-full z-10'>
                     <div className='container'>
                       <Link href='/press'>
                         <a className='block'>Lumiere Press</a>
@@ -60,16 +60,16 @@ export default function Header() {
               {({ open }) => (
                 <>
                   <Popover.Button>
-                    <div className='flex hover:text-gray-300 transition-colors'>
+                    <div className='flex hover:text-gray-300 transition-colors duration-75'>
                       <p className='font-medium'>Media</p>
                       <FiChevronDown
                         className={`${
                           open ? 'transform rotate-180' : ''
-                        } ml-1 w-5 h-5 transition-transform`}
+                        } ml-1 w-5 h-5 transition-transform duration-75`}
                       />
                     </div>
                   </Popover.Button>
-                  <Popover.Panel className='absolute -bottom-5 left-0 bg-gray-700 opacity-90 w-full z-10'>
+                  <Popover.Panel className='absolute -bottom-5.5 left-0 bg-gray-900 border-b border-gray-700 bg-opacity-90 w-full z-10'>
                     <div className='container'>This is Media</div>
                   </Popover.Panel>
                 </>
@@ -82,9 +82,9 @@ export default function Header() {
             type='text'
             name='search'
             placeholder='Search for anything'
-            className='py-3 rounded-lg border-2 bg-transparent pr-16 pl-4 text-sm border-gray-600 focus:border-transparent focus:outline-none focus:ring-2 focus:ring-blue-600 placeholder-gray-500'
+            className='py-3 rounded-lg border-2 bg-transparent pr-16 pl-4 text-sm border-gray-700 focus:border-transparent focus:outline-none focus:ring-2 focus:ring-blue-600 placeholder-gray-500'
           />
-          <FiSearch className='absolute right-0 mr-4 w-6 h-6 text-gray-500' />
+          <FiSearch className='absolute right-0 mr-4 w-6 h-6 text-gray-600' />
         </form>
         {session ? (
           <Avatar renderPosition='container' />

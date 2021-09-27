@@ -45,9 +45,9 @@ export default function Home() {
               creators to gain an audience and build a name in the industry.
             </p>
             <div className='mt-20 flex'>
-              <Link href='/editor'>
+              <Link href='/press'>
                 <a className='flex items-center mr-6 button-secondary pl-4 pr-2 py-2 text-xs'>
-                  <p className='mr-2'>Get started</p>
+                  <p className='mr-2'>See Publications</p>
                   <FiChevronRight className='w-5 h-5' />
                 </a>
               </Link>
@@ -72,16 +72,16 @@ export default function Home() {
               />
             </figure>
             <figure className='relative w-32 h-12'>
-              <div className='bg-gray-700 h-full grid place-items-center'></div>
+              <div className='bg-gray-800 h-full grid place-items-center'></div>
             </figure>
             <figure className='relative w-32 h-12'>
-              <div className='bg-gray-700 h-full grid place-items-center'></div>
+              <div className='bg-gray-800 h-full grid place-items-center'></div>
             </figure>
             <figure className='relative w-32 h-12'>
-              <div className='bg-gray-700 h-full grid place-items-center'></div>
+              <div className='bg-gray-800 h-full grid place-items-center'></div>
             </figure>
             <figure className='relative w-32 h-12'>
-              <div className='bg-gray-700 h-full grid place-items-center'></div>
+              <div className='bg-gray-800 h-full grid place-items-center'></div>
             </figure>
           </div>
         </section>

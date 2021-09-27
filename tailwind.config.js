@@ -20,9 +20,10 @@ module.exports = {
         300: '#bcc2cc',
         400: '#777e90',
         500: '#585c66',
-        600: '#2c2e36',
-        700: '#1e1e21',
-        800: '#141416',
+        600: '#3a3d45',
+        700: '#2c2e36',
+        800: '#1e1e21',
+        900: '#141416',
       },
       red: colors.red,
       orange: colors.orange,
@@ -58,6 +59,7 @@ module.exports = {
       },
       spacing: {
         0.25: '1px',
+        5.5: '22px',
         18: '72px',
       },
       animation: {

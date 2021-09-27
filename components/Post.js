@@ -34,7 +34,7 @@ export default function Post({ post }) {
   return (
     <>
       <article
-        className='border border-gray-600 cursor-pointer'
+        className='border border-gray-700 cursor-pointer'
         onClick={() => router.push(`/me/drafts/${post.slug}`)}
       >
         <h2>{post.title}</h2>
@@ -43,13 +43,13 @@ export default function Post({ post }) {
         <p>Updated at: {post.updatedAt}</p>
       </article>
       <button
-        className='border border-gray-600'
+        className='border border-gray-700'
         onClick={() => publishPost(post.slug)}
       >
         Publish
       </button>
       <button
-        className='border border-gray-600'
+        className='border border-gray-700'
         onClick={() => deletePost(post.slug)}
       >
         Delete
