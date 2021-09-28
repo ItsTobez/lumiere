@@ -3,7 +3,7 @@ import Link from 'next/link';
 import Image from 'next/image';
 import projectLumiere from '@public/images/logos/ProjectLumiere.svg';
 import MonacoEditor from '@monaco-editor/react';
-import MDXContent from '@components/MDXContent';
+import MDXContent from '@components/mdxEditor/MDXContent';
 import Split from 'react-split';
 import { signIn, useSession } from 'next-auth/react';
 import Avatar from '@components/ui/Avatar';

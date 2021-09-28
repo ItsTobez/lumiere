@@ -1,5 +1,5 @@
 import Layout from '@components/layouts/Layout';
-import Post from '@components/Post';
+import Post from '@components/ui/Post';
 import prisma from '@lib/prisma';
 import { getSession, useSession, signIn } from 'next-auth/react';
 
