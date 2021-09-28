@@ -86,8 +86,8 @@ export default function Home() {
           </div>
         </section>
 
-        <main>
-          <section className='mt-48'>
+        <main className='mb-36'>
+          {/* <section className='mt-48'>
             <h2 className='heading-secondary'>
               Create beautiful and informative content
             </h2>
@@ -101,7 +101,7 @@ export default function Home() {
             <h2 className='heading-secondary'>
               Developed, managed, and run by students
             </h2>
-          </section>
+          </section> */}
         </main>
       </div>
     </>

@@ -5,7 +5,7 @@ import { FaGithub, FaLinkedin } from 'react-icons/fa';
 
 export default function Footer() {
   return (
-    <footer className='mt-96 bg-gray-800 border-t border-gray-700 pt-14 pb-10'>
+    <footer className='bg-gray-800 border-t border-gray-700 pt-14 pb-4'>
       <div className='container'>
         <nav className='flex justify-between text-sm leading-loose text-gray-500'>
           <ul className='transition-colors duration-75'>
@@ -108,7 +108,7 @@ export default function Footer() {
           <iframe
             src='https://projectlumiere.instatus.com/embed-status/dark-md'
             width='230'
-            height='50'
+            height='61'
             frameBorder='0'
             scrolling='no'
             style={{ borderStyle: 'none', borderWidth: 0 }}

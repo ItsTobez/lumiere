@@ -2,7 +2,7 @@ import Link from 'next/link';
 import Image from 'next/image';
 import { signIn, useSession } from 'next-auth/react';
 import { Popover } from '@headlessui/react';
-import Avatar from '@components/Avatar';
+import Avatar from '@components/ui/Avatar';
 import { FiChevronDown, FiSearch } from 'react-icons/fi';
 import projectLumiere from '@public/images/logos/ProjectLumiere.svg';
 

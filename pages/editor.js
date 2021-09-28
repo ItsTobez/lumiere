@@ -6,7 +6,7 @@ import MonacoEditor from '@monaco-editor/react';
 import MDXContent from '@components/MDXContent';
 import Split from 'react-split';
 import { signIn, useSession } from 'next-auth/react';
-import Avatar from '@components/Avatar';
+import Avatar from '@components/ui/Avatar';
 import { Dialog, Transition } from '@headlessui/react';
 import { useRouter } from 'next/router';
 
@@ -86,7 +86,7 @@ export default function Editor() {
 
       <Split
         sizes={[50, 50]}
-        minSize={400}
+        minSize={200}
         gutterSize={10}
         dragInterval={1}
         snapOffset={30}
