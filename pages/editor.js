@@ -4,6 +4,7 @@ import { useRouter } from 'next/router';
 import toast, { Toaster } from 'react-hot-toast';
 import MDXEditor from '@components/editor/MDXEditor';
 import Header from '@components/layouts/Header';
+import { useBeforeunload } from 'react-beforeunload';
 
 export default function Editor() {
   const [title, setTitle] = useState('');
@@ -36,6 +37,12 @@ export default function Editor() {
     titleInput.current.focus();
     toast('You must set a title to your publication before saving.');
   };
+
+  useBeforeunload((event) => {
+    if (title !== '' || content !== '') {
+      event.preventDefault();
+    }
+  });
 
   if (status === 'loading') return null;
 

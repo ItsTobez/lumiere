@@ -2,6 +2,7 @@
 // See https://nextjs.org/docs/advanced-features/custom-app
 
 import { SessionProvider } from 'next-auth/react';
+import NextNProgress from 'nextjs-progressbar';
 import '@styles/globals.css';
 
 export default function ProjectLumiere({
@@ -12,6 +13,11 @@ export default function ProjectLumiere({
 
   return (
     <SessionProvider session={session}>
+      <NextNProgress
+        color='#3e73ea'
+        height={2}
+        options={{ showSpinner: false }}
+      />
       {getLayout(<Component {...pageProps} />)}
     </SessionProvider>
   );
