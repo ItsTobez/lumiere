@@ -1,6 +1,6 @@
 import Link from 'next/link';
 
-const NextLink = (props) => {
+const a = (props) => {
   const href = props.href;
   const isInternalLink = href && (href.startsWith('/') || href.startsWith('#'));
 
@@ -15,18 +15,18 @@ const NextLink = (props) => {
   return <a target='_blank' rel='noopener noreferrer' {...props} />;
 };
 
-const EpicComponent = (props) => {
-  return <div className='bg-pink-500'>{props.children}</div>;
-};
-
-const CoolComponent = () => {
-  return <section className='bg-blue-600'>This is a cool component</section>;
+const img = (props) => {
+  return (
+    <figure>
+      <img src={props.src} alt={props.alt} />
+      <figcaption>{props.alt}</figcaption>
+    </figure>
+  );
 };
 
 const MDXComponents = {
-  a: NextLink,
-  EpicComponent,
-  CoolComponent,
+  a,
+  img,
 };
 
 export default MDXComponents;

@@ -13,11 +13,7 @@ export default function ProjectLumiere({
 
   return (
     <SessionProvider session={session}>
-      <NextNProgress
-        color='#3e73ea'
-        height={2}
-        options={{ showSpinner: false }}
-      />
+      <NextNProgress color='#3e73ea' options={{ showSpinner: false }} />
       {getLayout(<Component {...pageProps} />)}
     </SessionProvider>
   );

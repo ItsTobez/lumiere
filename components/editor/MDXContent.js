@@ -23,9 +23,13 @@ export default function MDXContent({ mdx }) {
   }, [mdx]);
 
   return (
-    <ErrorBoundary FallbackComponent={ErrorFallback} resetKeys={mdx}>
-      <MDXOutput />
-      {error && error.message}
-    </ErrorBoundary>
+    <article className='break-words overflow-y-auto bg-[#fafafa] max-w-none prose'>
+      <div className='max-w-4xl mx-auto px-6 py-6'>
+        <ErrorBoundary FallbackComponent={ErrorFallback} resetKeys={mdx}>
+          <MDXOutput />
+          {error && error.message}
+        </ErrorBoundary>
+      </div>
+    </article>
   );
 }

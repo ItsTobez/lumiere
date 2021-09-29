@@ -31,9 +31,7 @@ export default function MDXEditor({ content, setContent }) {
           onChange={(value) => setContent(value)}
         />
       </section>
-      <article className='break-words overflow-y-auto bg-[#fafafa] px-8 py-12 flex flex-col-reverse justify-end  max-w-none prose'>
-        <MDXContent mdx={content} />
-      </article>
+      <MDXContent mdx={content} />
     </Split>
   );
 }
