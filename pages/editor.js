@@ -1,20 +1,20 @@
-import { useState, Fragment } from 'react';
+import { useState, useRef } from 'react';
 import Link from 'next/link';
 import Image from 'next/image';
 import projectLumiere from '@public/images/logos/ProjectLumiere.svg';
 import MonacoEditor from '@monaco-editor/react';
-import MDXContent from '@components/mdxEditor/MDXContent';
+import MDXContent from '@components/editor/MDXContent';
 import Split from 'react-split';
 import { signIn, useSession } from 'next-auth/react';
 import Avatar from '@components/ui/Avatar';
-import { Dialog, Transition } from '@headlessui/react';
 import { useRouter } from 'next/router';
+import toast, { Toaster } from 'react-hot-toast';
 
 export default function Editor() {
   const [title, setTitle] = useState('');
   const [content, setContent] = useState('');
   const [slug, setSlug] = useState('');
-  const [isOpen, setIsOpen] = useState(false);
+  const titleInput = useRef(null);
   const router = useRouter();
   const { data: session, status } = useSession({
     required: true,
@@ -35,6 +35,11 @@ export default function Editor() {
     } catch (error) {
       console.error(error);
     }
+  };
+
+  const showTitleError = () => {
+    titleInput.current.focus();
+    toast('You must set a title to your publication before saving.');
   };
 
   if (status === 'loading') return null;
@@ -59,7 +64,10 @@ export default function Editor() {
             type='text'
             placeholder='Untitled'
             value={title}
-            className='rounded-lg bg-transparent text-xl ml-3 py-2 px-4 w-96 hover:bg-gray-800 transition-colors duration-75 text-gray-300 focus:outline-none focus:ring-2 focus:ring-blue-600 placeholder-gray-500'
+            ref={titleInput}
+            className={`rounded-lg bg-transparent text-xl ml-3 py-2 px-4 w-96 hover:bg-gray-800 transition-colors duration-75 text-gray-300 focus:outline-none focus:ring-2 ${
+              title ? 'focus:ring-blue-600' : 'focus:ring-red-600'
+            } placeholder-gray-500`}
             onClick={(e) => e.target.select()}
             onChange={(e) => {
               setTitle(e.target.value);
@@ -70,7 +78,7 @@ export default function Editor() {
         <div className='flex ml-auto'>
           <button
             className='button-tertiary text-xs px-4 mr-6'
-            onClick={title ? saveDraft : () => setIsOpen(true)}
+            onClick={title ? saveDraft : showTitleError}
           >
             Save draft
           </button>
@@ -116,69 +124,7 @@ export default function Editor() {
         </article>
       </Split>
 
-      <Transition appear show={isOpen} as={Fragment}>
-        <Dialog
-          as='div'
-          className='fixed inset-0 z-10'
-          onClose={() => setIsOpen(false)}
-        >
-          <div className='min-h-screen px-4 text-center'>
-            <Transition.Child
-              as={Fragment}
-              enter='ease-out duration-300'
-              enterFrom='opacity-0'
-              enterTo='opacity-100'
-              leave='ease-in duration-200'
-              leaveFrom='opacity-100'
-              leaveTo='opacity-0'
-            >
-              <Dialog.Overlay className='fixed inset-0 bg-gray-900 opacity-70' />
-            </Transition.Child>
-
-            <span
-              className='inline-block h-screen align-middle'
-              aria-hidden='true'
-            >
-              &#8203;
-            </span>
-            <Transition.Child
-              as={Fragment}
-              enter='ease-out duration-300'
-              enterFrom='opacity-0 scale-95'
-              enterTo='opacity-100 scale-100'
-              leave='ease-in duration-200'
-              leaveFrom='opacity-100 scale-100'
-              leaveTo='opacity-0 scale-95'
-            >
-              <div className='relative inline-block w-full max-w-xl text-left align-middle transition-all duration-75 transform rounded-lg'>
-                <div className='absolute -inset-0.5 bg-gradient-to-r from-pink-600 to-purple-600 blur opacity-75 animate-tilt animate-pulse'></div>
-                <section className='relative bg-gray-900 rounded-lg px-10 py-6'>
-                  <Dialog.Title
-                    as='h3'
-                    className='text-xl font-medium leading-6'
-                  >
-                    Set a title
-                  </Dialog.Title>
-
-                  <Dialog.Description as='p' className='mt-6'>
-                    You must set a title to your publication before saving.
-                  </Dialog.Description>
-
-                  <div className='mt-4 flex justify-end'>
-                    <button
-                      type='button'
-                      className='button-tertiary text-sm px-4 py-2.5 mr-3'
-                      onClick={() => setIsOpen(false)}
-                    >
-                      Close
-                    </button>
-                  </div>
-                </section>
-              </div>
-            </Transition.Child>
-          </div>
-        </Dialog>
-      </Transition>
+      <Toaster position='bottom-left' />
     </>
   );
 }

@@ -5,7 +5,7 @@ import Image from 'next/image';
 import Split from 'react-split';
 import projectLumiere from '@public/images/logos/ProjectLumiere.svg';
 import MonacoEditor from '@monaco-editor/react';
-import MDXContent from '@components/mdxEditor/MDXContent';
+import MDXContent from '@components/editor/MDXContent';
 import Avatar from '@components/ui/Avatar';
 import { useRouter } from 'next/router';
 import { useState } from 'react';
