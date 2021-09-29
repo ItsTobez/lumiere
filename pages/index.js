@@ -41,8 +41,8 @@ export default function Home() {
             </h1>
             <p className='mt-10 pr-8 text-lg'>
               Project Lumiere is a media publication platform that accelerates
-              students in creating CompSci content. We make it easy for our
-              creators to gain an audience and build a name in the industry.
+              students creating CompSci content. We make it easy for our
+              creators to learn in public and simultaneously gain an audience.
             </p>
             <div className='mt-20 flex'>
               <Link href='/press'>
