@@ -10,6 +10,7 @@
   },
   "dependencies": {
     "@headlessui/react": "^1.4.1",
+    "@jsdevtools/rehype-toc": "^3.0.2",
     "@monaco-editor/react": "^4.2.2",
     "@next-auth/prisma-adapter": "^0.5.2-next.5",
     "@prisma/client": "^3.0.2",
@@ -23,6 +24,8 @@
     "react-hot-toast": "^2.1.1",
     "react-icons": "^4.2.0",
     "react-split": "^2.0.13",
+    "rehype-slug": "^5.0.0",
+    "rehype-wrap": "^1.0.10",
     "remark-gfm": "^1.0.0",
     "remark-unwrap-images": "^3.0.0",
     "xdm": "^1.12.2"

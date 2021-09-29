@@ -78,6 +78,33 @@ module.exports = {
           },
         },
       },
+      typography: {
+        DEFAULT: {
+          css: {
+            h1: {
+              color: '#000',
+              fontSize: '3rem',
+              fontWeight: 700,
+              letterSpacing: '-0.066875rem',
+              lineHeight: 1.5,
+              margin: 0,
+            },
+            h2: {
+              color: '#000',
+              fontSize: '2.25rem',
+              fontWeight: 600,
+              letterSpacing: '-0.049375rem',
+              lineHeight: 1.5,
+            },
+            p: {
+              color: '#000',
+              fontSize: '1rem',
+              fontWeight: 400,
+              lineHeight: 1.6,
+            },
+          },
+        },
+      },
     },
   },
   variants: {

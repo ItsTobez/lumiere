@@ -33,7 +33,7 @@ export default function Post({ post }) {
 
   return (
     <>
-      <article
+      <div
         className='border border-gray-700 cursor-pointer'
         onClick={() => router.push(`/me/drafts/${post.slug}`)}
       >
@@ -41,7 +41,7 @@ export default function Post({ post }) {
         <p>{post.content}</p>
         <p>Created at: {post.createdAt}</p>
         <p>Updated at: {post.updatedAt}</p>
-      </article>
+      </div>
       <button
         className='border border-gray-700'
         onClick={() => publishPost(post.slug)}

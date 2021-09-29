@@ -6,10 +6,10 @@ import Avatar from '@components/ui/Avatar';
 import { FiChevronDown, FiSearch } from 'react-icons/fi';
 import projectLumiere from '@public/images/logos/ProjectLumiere.svg';
 
-export default function Header({ pageType }) {
+export default function Header(props) {
   const { data: session } = useSession();
 
-  if (pageType === 'editor') {
+  if (props.pageType === 'editor') {
     return (
       <header className='relative h-18 flex items-center border-b border-gray-700 bg-gray-900 px-6'>
         <div className='flex items-center'>
@@ -25,32 +25,44 @@ export default function Header({ pageType }) {
               </figure>
             </a>
           </Link>
-          <input
-            type='text'
-            placeholder='Untitled'
-            value={title}
-            className='rounded-lg bg-transparent text-xl ml-3 py-2 px-4 w-96 hover:bg-gray-800 transition-colors duration-75 text-gray-300 focus:outline-none focus:ring-2 focus:ring-blue-600 placeholder-gray-500'
-            onClick={(e) => e.target.select()}
-            onChange={(e) => {
-              setTitle(e.target.value);
-              setSlug(e.target.value.replaceAll(' ', '-').toLowerCase());
-            }}
-          />
+          {props.setTitle ? (
+            <input
+              type='text'
+              placeholder='Untitled'
+              value={props.title}
+              ref={props.titleInput}
+              className={`rounded-lg bg-transparent text-xl ml-3 py-2 px-4 w-96 hover:bg-gray-800 transition-colors duration-75 text-gray-300 focus:outline-none focus:ring-2 ${
+                props.title ? 'focus:ring-blue-600' : 'focus:ring-red-600'
+              } placeholder-gray-500`}
+              onClick={(e) => e.target.select()}
+              onChange={(e) => {
+                props.setTitle(e.target.value);
+                props.setSlug(
+                  e.target.value.replaceAll(' ', '-').toLowerCase()
+                );
+              }}
+            />
+          ) : (
+            <input
+              type='text'
+              value={props.title}
+              className='rounded-lg bg-transparent text-xl ml-3 py-2 px-4 w-96 hover:bg-gray-800 transition-colors duration-75 text-gray-300 cursor-not-allowed'
+              disabled
+            />
+          )}
         </div>
         <div className='flex ml-auto'>
           <button
             className='button-tertiary text-xs px-4 mr-6'
-            onClick={title ? saveDraft : () => setIsOpen(true)}
+            onClick={props.title ? props.saveDraft : props.showUntitledError}
           >
             Save draft
           </button>
-          {session && (
-            <Avatar
-              profileImageSrc={session.user.image}
-              profileName={session.user.name}
-              renderPosition='fullscreen'
-            />
-          )}
+          <Avatar
+            profileImageSrc={session.user.image}
+            profileName={session.user.name}
+            renderPosition='fullscreen'
+          />
         </div>
       </header>
     );
