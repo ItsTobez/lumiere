@@ -23,7 +23,7 @@ export default function Home() {
         <meta name='description' content='Project Lumiere website' />
       </Head>
 
-      <div className='relative -mt-44 h-108'>
+      <div className='relative -mt-44 h-[396px] lg:h-[360px]'>
         <canvas
           className='gradient-canvas absolute top-0'
           data-js-darken-top
@@ -31,7 +31,7 @@ export default function Home() {
         />
       </div>
 
-      <div className='container -mt-32'>
+      <div className='container -mt-32 lg:-mt-28'>
         <section className='mt-14 flex'>
           <div className='max-w-xl z-10'>
             <h1 className='heading-primary'>
@@ -39,21 +39,21 @@ export default function Home() {
               <span className='gradient-text'>Computer Science</span> career
               today.
             </h1>
-            <p className='mt-10 pr-8 text-lg'>
+            <p className='mt-10 pr-8 text-lg lg:text-base lg:pr-14'>
               Project Lumiere is a media publication platform that accelerates
               students creating CompSci content. We make it easy for our
               creators to learn in public and simultaneously gain an audience.
             </p>
             <div className='mt-20 flex'>
               <Link href='/press'>
-                <a className='flex items-center mr-6 button-secondary pl-4 pr-2 py-2 text-xs'>
+                <a className='flex items-center mr-6 button-secondary pl-4 pr-2 py-2 text-xs lg:text-2xs'>
                   <p className='mr-2'>See Publications</p>
                   <FiChevronRight className='w-5 h-5' />
                 </a>
               </Link>
               <button
                 type='button'
-                className='button-tertiary px-4 py-2 text-xs'
+                className='button-tertiary px-4 py-2 text-xs lg:text-2xs'
               >
                 Support us
               </button>
@@ -63,7 +63,7 @@ export default function Home() {
 
         <section className='mt-48'>
           <div className='flex justify-between'>
-            <figure className='relative w-32 h-12'>
+            <figure className='relative w-32 h-12 lg:w-28 lg:h-8'>
               <Image
                 src={hackPlus}
                 alt='Hack Plus Logo'
@@ -71,16 +71,16 @@ export default function Home() {
                 objectFit='contain'
               />
             </figure>
-            <figure className='relative w-32 h-12'>
+            <figure className='relative w-32 h-12 lg:w-28 lg:h-8'>
               <div className='bg-gray-800 h-full grid place-items-center'></div>
             </figure>
-            <figure className='relative w-32 h-12'>
+            <figure className='relative w-32 h-12 lg:w-28 lg:h-8'>
               <div className='bg-gray-800 h-full grid place-items-center'></div>
             </figure>
-            <figure className='relative w-32 h-12'>
+            <figure className='relative w-32 h-12 lg:w-28 lg:h-8'>
               <div className='bg-gray-800 h-full grid place-items-center'></div>
             </figure>
-            <figure className='relative w-32 h-12'>
+            <figure className='relative w-32 h-12 lg:w-28 lg:h-8'>
               <div className='bg-gray-800 h-full grid place-items-center'></div>
             </figure>
           </div>

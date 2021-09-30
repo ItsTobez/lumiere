@@ -68,13 +68,13 @@ export default function Header(props) {
     );
   } else {
     return (
-      <header className='sticky top-0 z-50 backdrop-filter backdrop-saturate-200 backdrop-blur-sm h-18 flex items-center border-b border-gray-700 bg-gray-900 bg-opacity-90'>
+      <header className='sticky top-0 z-50 backdrop-filter backdrop-saturate-200 backdrop-blur-sm h-18 lg:h-16 flex items-center border-b border-gray-700 bg-gray-900 bg-opacity-90'>
         <div className='container flex items-center'>
-          <div className='border-r border-gray-700 pr-8'>
+          <div className='border-r border-gray-700 pr-8 lg:pr-7'>
             <Link href='/'>
               <a>
                 <figure className='flex items-center'>
-                  <div className='relative w-10 h-10 mr-2 mb-1'>
+                  <div className='relative w-10 lg:w-8 h-10 lg:h-8 mr-1.5 mb-1'>
                     <Image
                       src={projectLumiere}
                       alt='Project Lumiere logo'
@@ -82,7 +82,7 @@ export default function Header(props) {
                       objectFit='contain'
                     />
                   </div>
-                  <figcaption className='text-gray-200 text-2xl font-semibold'>
+                  <figcaption className='text-gray-200 text-2xl lg:text-xl font-semibold'>
                     Lumiere
                   </figcaption>
                 </figure>
@@ -91,16 +91,16 @@ export default function Header(props) {
           </div>
           <nav>
             <Popover.Group className='flex font-medium text-sm'>
-              <Popover className='ml-8'>
+              <Popover className='ml-8 lg:ml-7'>
                 {({ open }) => (
                   <>
                     <Popover.Button>
-                      <div className='flex hover:text-gray-300 transition-colors duration-75'>
-                        <p className='font-medium'>Discover</p>
+                      <div className='flex hover:text-gray-300 transition-colors duration-75 items-center'>
+                        <p className='font-medium lg:text-xs'>Discover</p>
                         <FiChevronDown
                           className={`${
                             open ? 'transform rotate-180' : ''
-                          } ml-1 w-5 h-5 transition-transform duration-75`}
+                          } ml-1 w-5 lg:w-4 h-5 lg:h-4 transition-transform duration-75`}
                         />
                       </div>
                     </Popover.Button>
@@ -114,16 +114,16 @@ export default function Header(props) {
                   </>
                 )}
               </Popover>
-              <Popover className='ml-8'>
+              <Popover className='ml-8 lg:ml-7'>
                 {({ open }) => (
                   <>
                     <Popover.Button>
-                      <div className='flex hover:text-gray-300 transition-colors duration-75'>
-                        <p className='font-medium'>Media</p>
+                      <div className='flex hover:text-gray-300 transition-colors duration-75 items-center'>
+                        <p className='font-medium lg:text-xs'>Media</p>
                         <FiChevronDown
                           className={`${
                             open ? 'transform rotate-180' : ''
-                          } ml-1 w-5 h-5 transition-transform duration-75`}
+                          } ml-1 w-5 lg:w-4 h-5 lg:h-4 transition-transform duration-75`}
                         />
                       </div>
                     </Popover.Button>
@@ -135,12 +135,12 @@ export default function Header(props) {
               </Popover>
             </Popover.Group>
           </nav>
-          <form className='flex relative items-center ml-auto mr-7'>
+          <form className='flex relative items-center ml-auto mr-7 lg:mr-6'>
             <input
               type='text'
               name='search'
               placeholder='Search for anything'
-              className='py-3 rounded-lg border-2 bg-transparent pr-16 pl-4 text-sm border-gray-700 focus:border-transparent focus:outline-none focus:ring-2 focus:ring-blue-600 placeholder-gray-500'
+              className='py-3 lg:py-2.5 rounded-lg border-2 bg-transparent pr-16 lg:pr-10 pl-4 text-sm border-gray-700 focus:border-transparent focus:outline-none focus:ring-2 focus:ring-blue-600 placeholder-gray-500'
             />
             <FiSearch className='absolute right-0 mr-4 w-6 h-6 text-gray-600' />
           </form>
@@ -149,7 +149,7 @@ export default function Header(props) {
           ) : (
             <button
               type='button'
-              className='text-sm button-primary px-5 py-3'
+              className='text-sm lg:text-xs button-primary px-5 lg:px-4 py-3 lg:py-2.5'
               onClick={() => signIn()}
             >
               Sign in

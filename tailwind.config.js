@@ -17,6 +17,13 @@ module.exports = {
   purge: ['./pages/**/*.{js,ts,jsx,tsx}', './components/**/*.{js,ts,jsx,tsx}'],
   darkMode: false,
   theme: {
+    screens: {
+      '2xl': { max: '1535px' },
+      xl: { max: '1279px' },
+      lg: { max: '985px' },
+      md: { max: '767px' },
+      sm: { max: '639px' },
+    },
     colors: {
       transparent: 'transparent',
       current: 'currentColor',
@@ -427,9 +434,9 @@ module.exports = {
       },
       fontSize: {
         xs: '0.8rem',
+        '2xs': '0.75rem',
       },
       height: {
-        108: '396px',
         editor: 'calc(100vh - 72px)',
       },
       spacing: {
