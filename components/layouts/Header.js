@@ -6,12 +6,16 @@ import Avatar from '@components/ui/Avatar';
 import { FiChevronDown, FiSearch } from 'react-icons/fi';
 import projectLumiere from '@public/images/logos/ProjectLumiere.svg';
 import { Dialog } from '@headlessui/react';
-import { useState } from 'react';
+import { useEffect, useState } from 'react';
 import { IoReorderThreeOutline } from 'react-icons/io5';
 
 export default function Header(props) {
   const { data: session } = useSession();
   const [isOpen, setIsOpen] = useState(false);
+
+  useEffect(() => {
+    console.log(isOpen);
+  }, [isOpen]);
 
   if (props.pageType === 'editor') {
     return (
@@ -161,10 +165,30 @@ export default function Header(props) {
               Sign in
             </button>
           )}
-          <button className='hidden md:grid ml-auto place-items-center rounded-2xl bg-gray-500 hover:bg-gray-400 w-12 h-8 opacity-80 hover:opacity-100 transition duration-75'>
+
+          <button
+            className='hidden md:grid ml-auto place-items-center rounded-2xl bg-gray-500 hover:bg-gray-400 w-12 h-8 opacity-80 hover:opacity-100 transition duration-75'
+            onClick={() => setIsOpen(true)}
+          >
             <IoReorderThreeOutline className='w-6 h-7 text-gray-100' />
           </button>
         </div>
+
+        <Dialog
+          open={isOpen}
+          onClose={() => setIsOpen(false)}
+          className='fixed z-10 inset-0 overflow-y-scroll'
+        >
+          <div className='flex items-center justify-center min-h-screen'>
+            <Dialog.Overlay className='fixed inset-0 bg-gray-900 opacity-95' />
+
+            <div className='relative rounded w-screen h-screen mx-auto pt-16'>
+              <button onClick={() => setIsOpen(false)}>X</button>
+              <Dialog.Title>Complete your order</Dialog.Title>
+              SURE BROasdasdasdasdasdasdasdasdasdasdasdasdasdsssss
+            </div>
+          </div>
+        </Dialog>
       </header>
     );
   }

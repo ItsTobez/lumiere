@@ -3,7 +3,7 @@ import Link from 'next/link';
 import projectLumiere from '@public/images/logos/ProjectLumiere.svg';
 import { FaGithub, FaLinkedin } from 'react-icons/fa';
 import { FiPlus, FiMinus } from 'react-icons/fi';
-import { Disclosure, Transition } from '@headlessui/react';
+import { Disclosure } from '@headlessui/react';
 
 export default function Footer() {
   return (
@@ -315,7 +315,7 @@ export default function Footer() {
 
         <section className='hidden md:block'>
           <figure className='flex items-center mt-12 cursor-default select-none justify-center'>
-            <div className='relative w-7 h-7 mr-1 mb-1'>
+            <div className='relative w-6 h-6 mr-1 mb-1'>
               <Image
                 src={projectLumiere}
                 alt='Project Lumiere logo'
@@ -323,7 +323,7 @@ export default function Footer() {
                 objectFit='contain'
               />
             </div>
-            <figcaption className='text-gray-200 text-xl font-semibold'>
+            <figcaption className='text-gray-200 text-lg font-semibold'>
               Lumiere
             </figcaption>
           </figure>
