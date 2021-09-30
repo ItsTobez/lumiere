@@ -41,7 +41,7 @@
   }
 
   .gradient-text {
-    @apply bg-clip-text text-transparent bg-gradient-to-r from-pink-500 to-orange-400;
+    @apply bg-clip-text text-transparent bg-gradient-to-r from-pink-500 to-orange-400 block;
   }
 
   .button-primary {
@@ -65,7 +65,7 @@
   }
 
   .heading-tertiary {
-    @apply text-sm font-medium text-gray-300 leading-tight select-none mb-3;
+    @apply text-sm lg:text-xs font-medium text-gray-300 leading-tight select-none mb-3 md:font-normal md:mb-0;
   }
 
   .split {

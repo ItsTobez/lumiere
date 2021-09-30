@@ -7,11 +7,11 @@ export default function Avatar({ renderPosition }) {
   const { data: session } = useSession();
 
   return (
-    <Menu>
+    <Menu as='div' className='md:hidden'>
       <Menu.Button className='flex cursor-pointer'>
         <div className='p-0.5 bg-gradient-to-tr from-amber-500 to-fuchsia-700 rounded-full hover:opacity-80 transition-opacity duration-75'>
           <div className='p-0.5 bg-gray-900 rounded-full'>
-            <figure className='relative w-10 h-10'>
+            <figure className='relative w-10 lg:w-9 h-10 lg:h-9'>
               <Image
                 src={session.user.image}
                 alt={`Picture of ${session.user.name}`}
@@ -34,7 +34,7 @@ export default function Avatar({ renderPosition }) {
             as='div'
             className={`absolute ${
               renderPosition === 'container'
-                ? 'right-12 bg-opacity-95'
+                ? 'right-12 bg-opacity-95 xl:right-8'
                 : 'right-4'
             } top-0.25 rounded-b-lg bg-gray-800 border-b border-l border-r border-gray-700`}
           >

@@ -5,9 +5,13 @@ import { Popover } from '@headlessui/react';
 import Avatar from '@components/ui/Avatar';
 import { FiChevronDown, FiSearch } from 'react-icons/fi';
 import projectLumiere from '@public/images/logos/ProjectLumiere.svg';
+import { Dialog } from '@headlessui/react';
+import { useState } from 'react';
+import { IoReorderThreeOutline } from 'react-icons/io5';
 
 export default function Header(props) {
   const { data: session } = useSession();
+  const [isOpen, setIsOpen] = useState(false);
 
   if (props.pageType === 'editor') {
     return (
@@ -15,7 +19,7 @@ export default function Header(props) {
         <div className='flex items-center'>
           <Link href='/'>
             <a>
-              <figure className='relative w-10 h-11 mb-1'>
+              <figure className='relative w-10 h-10 mb-1'>
                 <Image
                   src={projectLumiere}
                   alt='Project Lumiere logo'
@@ -70,7 +74,7 @@ export default function Header(props) {
     return (
       <header className='sticky top-0 z-50 backdrop-filter backdrop-saturate-200 backdrop-blur-sm h-18 lg:h-16 flex items-center border-b border-gray-700 bg-gray-900 bg-opacity-90'>
         <div className='container flex items-center'>
-          <div className='border-r border-gray-700 pr-8 lg:pr-7'>
+          <div className='border-r border-gray-700 pr-8 lg:pr-7 md:border-0 md:pr-0'>
             <Link href='/'>
               <a>
                 <figure className='flex items-center'>
@@ -89,7 +93,7 @@ export default function Header(props) {
               </a>
             </Link>
           </div>
-          <nav>
+          <nav className='md:hidden'>
             <Popover.Group className='flex font-medium text-sm'>
               <Popover className='ml-8 lg:ml-7'>
                 {({ open }) => (
@@ -135,14 +139,14 @@ export default function Header(props) {
               </Popover>
             </Popover.Group>
           </nav>
-          <form className='flex relative items-center ml-auto mr-7 lg:mr-6'>
+          <form className='flex relative items-center ml-auto mr-7 lg:mr-6 md:hidden'>
             <input
               type='text'
               name='search'
               placeholder='Search for anything'
               className={`py-3 lg:py-2.5 rounded-lg border-2 bg-transparent ${
-                session ? 'pr-16' : 'pr-7'
-              } lg:pr-12 pl-4 text-sm border-gray-700 focus:border-transparent focus:outline-none focus:ring-2 focus:ring-blue-600 hover:border-gray-600 placeholder-gray-500`}
+                session ? 'pr-18 lg:pr-14' : 'pr-9 lg:pr-8'
+              } pl-4 text-sm border-gray-700 focus:border-transparent focus:outline-none focus:ring-2 focus:ring-blue-600 hover:border-gray-600 placeholder-gray-500`}
             />
             <FiSearch className='absolute right-0 mr-4 w-6 h-6 text-gray-600' />
           </form>
@@ -151,12 +155,15 @@ export default function Header(props) {
           ) : (
             <button
               type='button'
-              className='text-sm lg:text-xs button-primary px-5 lg:px-4 py-3 lg:py-2.5'
+              className='text-sm lg:text-xs button-primary px-5 lg:px-4 py-3 lg:py-2.5 md:hidden'
               onClick={() => signIn()}
             >
               Sign in
             </button>
           )}
+          <button className='hidden md:grid ml-auto place-items-center rounded-2xl bg-gray-500 hover:bg-gray-400 w-12 h-8 opacity-80 hover:opacity-100 transition duration-75'>
+            <IoReorderThreeOutline className='w-6 h-7 text-gray-100' />
+          </button>
         </div>
       </header>
     );

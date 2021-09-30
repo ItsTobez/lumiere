@@ -21,7 +21,7 @@ module.exports = {
       '2xl': { max: '1535px' },
       xl: { max: '1279px' },
       lg: { max: '985px' },
-      md: { max: '767px' },
+      md: { max: '861px' },
       sm: { max: '639px' },
     },
     colors: {
