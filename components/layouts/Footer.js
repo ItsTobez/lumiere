@@ -266,33 +266,78 @@ export default function Footer() {
           </Disclosure>
         </nav>
 
-        <figure className='flex items-center mt-14 cursor-default select-none'>
-          <div className='relative w-7 h-7 mr-2 mb-1'>
-            <Image
-              src={projectLumiere}
-              alt='Project Lumiere logo'
-              layout='fill'
-              objectFit='contain'
-            />
-          </div>
-          <figcaption className='text-gray-200 text-xl font-semibold'>
-            Lumiere
-          </figcaption>
-        </figure>
+        <section className='md:hidden'>
+          <figure className='flex items-center mt-14 cursor-default select-none'>
+            <div className='relative w-7 h-7 mr-2 mb-1'>
+              <Image
+                src={projectLumiere}
+                alt='Project Lumiere logo'
+                layout='fill'
+                objectFit='contain'
+              />
+            </div>
+            <figcaption className='text-gray-200 text-xl font-semibold'>
+              Lumiere
+            </figcaption>
+          </figure>
 
-        <div className='flex justify-between items-center text-gray-500 lg:-mt-1'>
-          <p className='text-xs lg:text-2xs'>
-            &copy; 2021 Project Lumiere 501(c)(3). All rights reserved.
-          </p>
+          <div className='flex justify-between items-center text-gray-500 lg:-mt-1'>
+            <p className='text-xs lg:text-2xs'>
+              &copy; 2021 Project Lumiere 501(c)(3). All rights reserved.
+            </p>
+            <iframe
+              src='https://projectlumiere.instatus.com/embed-status/dark-md'
+              width='230'
+              height='61'
+              frameBorder='0'
+              scrolling='no'
+              className='transform scale-90 lg:scale-75'
+            ></iframe>
+            <div className='flex'>
+              <a
+                href='https://www.linkedin.com/company/project-lumiere'
+                target='_blank'
+                rel='noreferrer noopener'
+              >
+                <FaLinkedin className='w-5 h-5 text-gray-400 hover:text-gray-300 transition-colors duration-75' />
+              </a>
+              <div className='border-r border-gray-700 mx-3' />
+              <a
+                href='https://github.com/AnthonyKuang/ProjectLumiere'
+                target='_blank'
+                rel='noreferrer noopener'
+              >
+                <FaGithub className='w-5 h-5 text-gray-400 hover:text-gray-300 transition-colors duration-75' />
+              </a>
+            </div>
+          </div>
+        </section>
+
+        <section className='hidden md:block'>
+          <figure className='flex items-center mt-12 cursor-default select-none justify-center'>
+            <div className='relative w-7 h-7 mr-1 mb-1'>
+              <Image
+                src={projectLumiere}
+                alt='Project Lumiere logo'
+                layout='fill'
+                objectFit='contain'
+              />
+            </div>
+            <figcaption className='text-gray-200 text-xl font-semibold'>
+              Lumiere
+            </figcaption>
+          </figure>
+
           <iframe
             src='https://projectlumiere.instatus.com/embed-status/dark-md'
             width='230'
             height='61'
             frameBorder='0'
             scrolling='no'
-            className='transform scale-90 lg:scale-75'
+            className='transform scale-75 mx-auto mt-2'
           ></iframe>
-          <div className='flex'>
+
+          <div className='flex justify-center mt-8'>
             <a
               href='https://www.linkedin.com/company/project-lumiere'
               target='_blank'
@@ -309,7 +354,11 @@ export default function Footer() {
               <FaGithub className='w-5 h-5 text-gray-400 hover:text-gray-300 transition-colors duration-75' />
             </a>
           </div>
-        </div>
+
+          <p className='text-2xs text-gray-500 text-center my-4'>
+            &copy; 2021 Project Lumiere 501(c)(3). All rights reserved.
+          </p>
+        </section>
       </div>
     </footer>
   );

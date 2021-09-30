@@ -29,7 +29,7 @@
 
 @layer components {
   .container {
-    @apply max-w-6xl mx-auto px-12;
+    @apply max-w-6xl mx-auto px-12 md:px-7;
   }
 
   .gradient-canvas {
