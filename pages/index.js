@@ -39,7 +39,7 @@ export default function Home() {
               <span className='gradient-text'>Computer Science</span> career
               today.
             </h1>
-            <p className='mt-10 pr-8 text-lg lg:text-base lg:pr-14 sm:text-sm sm:pr-0 sm:leading-relaxed'>
+            <p className='mt-10 pr-8 text-lg lg:text-base lg:pr-14 sm:text-sm sm:pr-0 sm:leading-relaxed xs:text-xs'>
               Project Lumiere is a media publication platform that accelerates
               students creating CompSci content. We make it easy for our
               creators to learn in public and simultaneously gain an audience.
@@ -53,7 +53,7 @@ export default function Home() {
               </Link>
               <button
                 type='button'
-                className='button-tertiary px-4 py-2 text-xs lg:text-2xs sm:py-1.5'
+                className='button-tertiary px-4 py-2 text-xs lg:text-2xs sm:py-1.5 beta'
               >
                 Support us
               </button>
@@ -71,16 +71,16 @@ export default function Home() {
                 objectFit='contain'
               />
             </figure>
-            <figure className='relative w-32 h-12 lg:w-28 lg:h-9 md:w-24 md:h-7'>
+            <figure className='relative w-32 h-12 lg:w-28 lg:h-9 md:w-24 md:h-7 beta'>
               <div className='bg-gray-800 h-full grid place-items-center'></div>
             </figure>
-            <figure className='relative w-32 h-12 lg:w-28 lg:h-9 md:w-24 md:h-7'>
+            <figure className='relative w-32 h-12 lg:w-28 lg:h-9 md:w-24 md:h-7 beta'>
               <div className='bg-gray-800 h-full grid place-items-center'></div>
             </figure>
-            <figure className='relative w-32 h-12 lg:w-28 lg:h-9 md:w-24 md:h-7'>
+            <figure className='relative w-32 h-12 lg:w-28 lg:h-9 md:w-24 md:h-7 beta'>
               <div className='bg-gray-800 h-full grid place-items-center'></div>
             </figure>
-            <figure className='relative w-32 h-12 lg:w-28 lg:h-9 md:w-24 md:h-7'>
+            <figure className='relative w-32 h-12 lg:w-28 lg:h-9 md:w-24 md:h-7 beta'>
               <div className='bg-gray-800 h-full grid place-items-center'></div>
             </figure>
           </div>

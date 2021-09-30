@@ -86,12 +86,12 @@ export default function Avatar({ renderPosition }) {
             </div>
             <div className='px-7 py-5'>
               <Link href='/me/statistics'>
-                <a className='block mb-3 hover:text-gray-300 transition-colors duration-75'>
+                <a className='block mb-3 hover:text-gray-300 transition-colors duration-75 beta'>
                   Statistics
                 </a>
               </Link>
               <Link href='/me/settings'>
-                <a className='block hover:text-gray-300 transition-colors duration-75'>
+                <a className='block hover:text-gray-300 transition-colors duration-75 beta'>
                   Settings
                 </a>
               </Link>

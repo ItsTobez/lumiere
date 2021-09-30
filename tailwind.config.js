@@ -23,6 +23,8 @@ module.exports = {
       lg: { max: '985px' },
       md: { max: '861px' },
       sm: { max: '519px' },
+      xs: { max: '459px' },
+      '2xs': { max: '401px' },
     },
     colors: {
       transparent: 'transparent',

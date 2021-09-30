@@ -57,7 +57,7 @@
   }
 
   .heading-primary {
-    @apply text-6xl font-bold leading-tight lg:text-5xl lg:leading-tight sm:text-[44px] sm:leading-tight;
+    @apply text-6xl font-bold leading-tight lg:text-5xl lg:leading-tight sm:text-[44px] xs:text-[38px] 2xs:text-[33px] sm:leading-tight;
   }
 
   .heading-secondary {
@@ -84,5 +84,16 @@
   .gutter.gutter-vertical {
     background-image: url('@public/images/gutter/horizontal.png');
     cursor: row-resize;
+  }
+
+  .beta {
+    @apply relative cursor-not-allowed before:opacity-0 before:absolute before:bg-gray-700 before:bottom-0 before:left-1/2 before:px-3 before:py-1.5 before:rounded-lg before:transition-opacity before:duration-75 before:w-32 before:text-xs before:text-gray-500 before:font-medium before:text-left before:z-50 before:hidden;
+  }
+  .beta:before {
+    content: 'This feature is in development';
+    transform: translate(-50%, 105%) scale(1);
+  }
+  .beta:hover:before {
+    @apply opacity-100 block;
   }
 }

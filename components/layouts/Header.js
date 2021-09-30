@@ -6,16 +6,12 @@ import Avatar from '@components/ui/Avatar';
 import { FiChevronDown, FiSearch } from 'react-icons/fi';
 import projectLumiere from '@public/images/logos/ProjectLumiere.svg';
 import { Dialog } from '@headlessui/react';
-import { useEffect, useState } from 'react';
+import { useState } from 'react';
 import { IoReorderThreeOutline } from 'react-icons/io5';
 
 export default function Header(props) {
   const { data: session } = useSession();
   const [isOpen, setIsOpen] = useState(false);
-
-  useEffect(() => {
-    console.log(isOpen);
-  }, [isOpen]);
 
   if (props.pageType === 'editor') {
     return (
@@ -136,14 +132,14 @@ export default function Header(props) {
                       </div>
                     </Popover.Button>
                     <Popover.Panel className='absolute -bottom-5.5 left-0 bg-gray-900 border-b border-gray-700 bg-opacity-90 w-full z-10'>
-                      <div className='container'>This is Media</div>
+                      <div className='container beta'>This is Media</div>
                     </Popover.Panel>
                   </>
                 )}
               </Popover>
             </Popover.Group>
           </nav>
-          <form className='flex relative items-center ml-auto mr-7 lg:mr-6 md:hidden'>
+          <form className='flex relative items-center ml-auto mr-7 lg:mr-6 md:hidden beta'>
             <input
               type='text'
               name='search'
@@ -177,15 +173,14 @@ export default function Header(props) {
         <Dialog
           open={isOpen}
           onClose={() => setIsOpen(false)}
-          className='fixed z-10 inset-0 overflow-y-scroll'
+          className='fixed z-10 inset-0 overflow-y-scroll beta'
         >
           <div className='flex items-center justify-center min-h-screen'>
             <Dialog.Overlay className='fixed inset-0 bg-gray-900 opacity-95' />
 
             <div className='relative rounded w-screen h-screen mx-auto pt-16'>
               <button onClick={() => setIsOpen(false)}>X</button>
-              <Dialog.Title>Complete your order</Dialog.Title>
-              SURE BROasdasdasdasdasdasdasdasdasdasdasdasdasdsssss
+              <Dialog.Title>Mobile Navbar</Dialog.Title>
             </div>
           </div>
         </Dialog>
