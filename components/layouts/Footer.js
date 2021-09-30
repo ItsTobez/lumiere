@@ -7,8 +7,8 @@ export default function Footer() {
   return (
     <footer className='bg-gray-800 border-t border-gray-700 pt-14 pb-4'>
       <div className='container'>
-        <nav className='flex justify-between text-sm leading-loose text-gray-500'>
-          <ul className='transition-colors duration-75'>
+        <nav className='flex justify-between text-sm leading-loose text-gray-500 transition-colors duration-75'>
+          <ul>
             <h3 className='heading-tertiary'>Media</h3>
             <li>
               <Link href='/press'>

@@ -140,7 +140,9 @@ export default function Header(props) {
               type='text'
               name='search'
               placeholder='Search for anything'
-              className='py-3 lg:py-2.5 rounded-lg border-2 bg-transparent pr-16 lg:pr-10 pl-4 text-sm border-gray-700 focus:border-transparent focus:outline-none focus:ring-2 focus:ring-blue-600 placeholder-gray-500'
+              className={`py-3 lg:py-2.5 rounded-lg border-2 bg-transparent ${
+                session ? 'pr-16' : 'pr-7'
+              } lg:pr-12 pl-4 text-sm border-gray-700 focus:border-transparent focus:outline-none focus:ring-2 focus:ring-blue-600 hover:border-gray-600 placeholder-gray-500`}
             />
             <FiSearch className='absolute right-0 mr-4 w-6 h-6 text-gray-600' />
           </form>
