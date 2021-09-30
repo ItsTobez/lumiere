@@ -23,7 +23,7 @@ export default function Home() {
         <meta name='description' content='Project Lumiere website' />
       </Head>
 
-      <div className='relative -mt-44 h-[396px] lg:h-[360px]'>
+      <div className='relative -mt-44 h-[396px] lg:h-[360px] sm:h-[320px]'>
         <canvas
           className='gradient-canvas absolute top-0'
           data-js-darken-top
@@ -31,29 +31,29 @@ export default function Home() {
         />
       </div>
 
-      <div className='container -mt-32 lg:-mt-28'>
-        <section className='mt-14 flex'>
+      <div className='container -mt-32 lg:-mt-28 sm:-mt-9'>
+        <section className='mt-14 sm:mt-0 flex'>
           <div className='max-w-xl z-10'>
             <h1 className='heading-primary'>
               Jumpstart your{' '}
               <span className='gradient-text'>Computer Science</span> career
               today.
             </h1>
-            <p className='mt-10 pr-8 text-lg lg:text-base lg:pr-14'>
+            <p className='mt-10 pr-8 text-lg lg:text-base lg:pr-14 sm:text-sm sm:pr-0 sm:leading-relaxed'>
               Project Lumiere is a media publication platform that accelerates
               students creating CompSci content. We make it easy for our
               creators to learn in public and simultaneously gain an audience.
             </p>
-            <div className='mt-20 flex'>
+            <div className='mt-20 sm:mt-10 flex'>
               <Link href='/press'>
-                <a className='flex items-center mr-6 button-secondary pl-4 pr-2 py-2 text-xs lg:text-2xs'>
+                <a className='flex items-center mr-6 button-secondary pl-4 pr-2 py-2 text-xs lg:text-2xs sm:pl-3 sm:pr-1.5 sm:py-1.5'>
                   <p className='mr-2'>See Publications</p>
-                  <FiChevronRight className='w-5 h-5' />
+                  <FiChevronRight className='w-5 h-5 lg:w-4 lg:h-4' />
                 </a>
               </Link>
               <button
                 type='button'
-                className='button-tertiary px-4 py-2 text-xs lg:text-2xs'
+                className='button-tertiary px-4 py-2 text-xs lg:text-2xs sm:py-1.5'
               >
                 Support us
               </button>
@@ -62,8 +62,8 @@ export default function Home() {
         </section>
 
         <section className='mt-48'>
-          <div className='flex justify-between'>
-            <figure className='relative w-32 h-12 lg:w-28 lg:h-8'>
+          <div className='flex justify-between flex-wrap'>
+            <figure className='relative w-32 h-12 lg:w-28 lg:h-9 md:w-24 md:h-7'>
               <Image
                 src={hackPlus}
                 alt='Hack Plus Logo'
@@ -71,16 +71,16 @@ export default function Home() {
                 objectFit='contain'
               />
             </figure>
-            <figure className='relative w-32 h-12 lg:w-28 lg:h-8'>
+            <figure className='relative w-32 h-12 lg:w-28 lg:h-9 md:w-24 md:h-7'>
               <div className='bg-gray-800 h-full grid place-items-center'></div>
             </figure>
-            <figure className='relative w-32 h-12 lg:w-28 lg:h-8'>
+            <figure className='relative w-32 h-12 lg:w-28 lg:h-9 md:w-24 md:h-7'>
               <div className='bg-gray-800 h-full grid place-items-center'></div>
             </figure>
-            <figure className='relative w-32 h-12 lg:w-28 lg:h-8'>
+            <figure className='relative w-32 h-12 lg:w-28 lg:h-9 md:w-24 md:h-7'>
               <div className='bg-gray-800 h-full grid place-items-center'></div>
             </figure>
-            <figure className='relative w-32 h-12 lg:w-28 lg:h-8'>
+            <figure className='relative w-32 h-12 lg:w-28 lg:h-9 md:w-24 md:h-7'>
               <div className='bg-gray-800 h-full grid place-items-center'></div>
             </figure>
           </div>

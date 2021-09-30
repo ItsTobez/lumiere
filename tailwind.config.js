@@ -22,7 +22,7 @@ module.exports = {
       xl: { max: '1279px' },
       lg: { max: '985px' },
       md: { max: '861px' },
-      sm: { max: '639px' },
+      sm: { max: '519px' },
     },
     colors: {
       transparent: 'transparent',
