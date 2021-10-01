@@ -41,8 +41,8 @@ export default function Username() {
       </form>
       <p>{error}</p>
       <p>
-        Okay I really need to work on this LMFAO. Want to PR?
-        https://github.com/AnthonyKuang/ProjectLumiere
+        Okay I really need to work on this LMFAO. PR
+        https://github.com/AnthonyKuang/ProjectLumiere/blob/main/pages/username.js
       </p>
     </>
   );
