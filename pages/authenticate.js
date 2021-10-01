@@ -61,6 +61,9 @@ export default function Authenticate({ providers }) {
           provider?
         </div>
       )}
+      <div className='absolute bottom-5'>
+        Want to PR? https://github.com/AnthonyKuang/ProjectLumiere
+      </div>
     </main>
   );
 }

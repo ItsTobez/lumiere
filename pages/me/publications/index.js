@@ -1,5 +1,5 @@
 import Layout from '@components/layouts/Layout';
-import Post from '@components/ui/Post';
+import Publication from '@components/ui/Publication';
 import prisma from '@lib/prisma';
 import { getSession, useSession, signIn } from 'next-auth/react';
 
@@ -17,7 +17,11 @@ export default function Publications({ publications }) {
     <main className='container'>
       <h1>Publications</h1>
       {publications.map((publication) => (
-        <Post post={publication} key={publication.id} />
+        <Publication
+          post={publication}
+          key={publication.id}
+          visibility='private'
+        />
       ))}
     </main>
   );
@@ -43,6 +47,7 @@ export const getServerSideProps = async ({ req, res }) => {
       content: true,
       createdAt: true,
       updatedAt: true,
+      authorUsername: true,
     },
   });
 

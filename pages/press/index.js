@@ -1,24 +1,17 @@
 import Layout from '@components/layouts/Layout';
 import prisma from '@lib/prisma';
-import Image from 'next/image';
+import Publication from '@components/ui/Publication';
 
-export default function Publications({ publications }) {
+export default function Press({ publications }) {
   return (
     <main className='container'>
       <h1>Publications</h1>
       {publications.map((publication) => (
-        <div key={publication.id}>
-          <h2>{publication.title}</h2>
-          <p>{publication.slug}</p>
-          <p>{publication.authorUsername}</p>
-          <figure className='relative w-10 h-10'>
-            <Image
-              src={publication.author.image}
-              alt={`Image of ${publication.author.name}`}
-              layout='fill'
-            />
-          </figure>
-        </div>
+        <Publication
+          key={publication.id}
+          post={publication}
+          visibility='public'
+        />
       ))}
     </main>
   );
@@ -36,8 +29,12 @@ export const getServerSideProps = async () => {
       content: true,
       createdAt: true,
       updatedAt: true,
-      authorUsername: true,
-      author: true,
+      author: {
+        select: {
+          username: true,
+          image: true,
+        },
+      },
     },
   });
 
@@ -51,6 +48,6 @@ export const getServerSideProps = async () => {
   };
 };
 
-Publications.getLayout = function getLayout(page) {
+Press.getLayout = function getLayout(page) {
   return <Layout>{page}</Layout>;
 };

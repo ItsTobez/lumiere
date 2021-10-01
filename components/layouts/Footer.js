@@ -86,6 +86,11 @@ export default function Footer() {
                 <a className='hover:text-gray-400'>Terms of Service</a>
               </Link>
             </li>
+            <li>
+              <Link href='/legal/cla'>
+                <a className='hover:text-gray-400'>Contributors</a>
+              </Link>
+            </li>
           </ul>
         </nav>
 
@@ -257,6 +262,13 @@ export default function Footer() {
                     <Link href='/legal/terms'>
                       <a className='hover:text-gray-400 mb-4 block'>
                         Terms of Service
+                      </a>
+                    </Link>
+                  </li>
+                  <li>
+                    <Link href='/legal/cla'>
+                      <a className='hover:text-gray-400 mb-4 block'>
+                        Contributors
                       </a>
                     </Link>
                   </li>

@@ -1,5 +1,5 @@
 import Layout from '@components/layouts/Layout';
-import Post from '@components/ui/Post';
+import Draft from '@components/ui/Draft';
 import prisma from '@lib/prisma';
 import { getSession, useSession, signIn } from 'next-auth/react';
 
@@ -17,7 +17,7 @@ export default function Drafts({ drafts }) {
     <main className='container'>
       <h1>Drafts</h1>
       {drafts.map((draft) => (
-        <Post post={draft} key={draft.id} />
+        <Draft post={draft} key={draft.id} />
       ))}
     </main>
   );

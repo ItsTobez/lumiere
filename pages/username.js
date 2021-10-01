@@ -40,6 +40,10 @@ export default function Username() {
         <input type='submit' value='Submit username' disabled={!username} />
       </form>
       <p>{error}</p>
+      <p>
+        Okay I really need to work on this LMFAO. Want to PR?
+        https://github.com/AnthonyKuang/ProjectLumiere
+      </p>
     </>
   );
 }

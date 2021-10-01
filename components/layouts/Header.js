@@ -100,7 +100,7 @@ export default function Header(props) {
                   <>
                     <Popover.Button>
                       <div className='flex hover:text-gray-300 transition-colors duration-75 items-center'>
-                        <p className='font-medium lg:text-xs'>Discover</p>
+                        <p className='font-medium lg:text-xs'>Media</p>
                         <FiChevronDown
                           className={`${
                             open ? 'transform rotate-180' : ''
@@ -123,7 +123,7 @@ export default function Header(props) {
                   <>
                     <Popover.Button>
                       <div className='flex hover:text-gray-300 transition-colors duration-75 items-center'>
-                        <p className='font-medium lg:text-xs'>Media</p>
+                        <p className='font-medium lg:text-xs'>Company</p>
                         <FiChevronDown
                           className={`${
                             open ? 'transform rotate-180' : ''
@@ -132,7 +132,7 @@ export default function Header(props) {
                       </div>
                     </Popover.Button>
                     <Popover.Panel className='absolute -bottom-5.5 left-0 bg-gray-900 border-b border-gray-700 bg-opacity-90 w-full z-10'>
-                      <div className='container beta'>This is Media</div>
+                      <div className='container beta'>This is Company</div>
                     </Popover.Panel>
                   </>
                 )}

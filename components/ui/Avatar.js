@@ -38,7 +38,7 @@ export default function Avatar({ renderPosition }) {
                 : 'right-4'
             } top-0.25 rounded-b-lg bg-gray-800 border-b border-l border-r border-gray-700`}
           >
-            <div className='flex justify-between items-center border-b border-gray-700 px-7 py-5'>
+            <div className='flex justify-between items-center border-b border-gray-700 px-7 py-5 beta'>
               <Link href='/me/settings'>
                 <a className='block p-0.5 bg-gradient-to-tr from-amber-500 to-fuchsia-700 rounded-full hover:opacity-80 transition-opacity duration-75'>
                   <div className='p-0.5 bg-gray-900 rounded-full'>
