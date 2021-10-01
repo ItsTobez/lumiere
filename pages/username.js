@@ -18,6 +18,7 @@ export default function Username() {
       });
       if (response.status === 200) {
         await router.push(router.query.callbackUrl);
+        await router.push(router.query.callbackUrl);
       } else {
         setError('Username already taken');
       }

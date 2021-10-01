@@ -47,7 +47,12 @@ export const getServerSideProps = async ({ req, res }) => {
       content: true,
       createdAt: true,
       updatedAt: true,
-      authorUsername: true,
+      author: {
+        select: {
+          username: true,
+          image: true,
+        },
+      },
     },
   });
 
