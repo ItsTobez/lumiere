@@ -15,7 +15,7 @@ export default function Publications({ publications }) {
 
   return (
     <main className='container'>
-      <h1>Publications</h1>
+      <h1>Your Publications</h1>
       {publications.map((publication) => (
         <Publication
           post={publication}

@@ -5,7 +5,7 @@ import Publication from '@components/ui/Publication';
 export default function Press({ publications }) {
   return (
     <main className='container'>
-      <h1>Publications</h1>
+      <h1>Public Publications</h1>
       {publications.map((publication) => (
         <Publication
           key={publication.id}
