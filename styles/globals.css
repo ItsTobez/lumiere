@@ -107,14 +107,7 @@
 }
 
 .toc {
-  @apply mt-48;
-}
-
-.toc:before {
-  content: 'Table of Contents';
-  position: relative;
-  bottom: 4px;
-  @apply text-blue-550 bg-blue-100 px-4 py-2 rounded-lg text-xl;
+  @apply mt-64;
 }
 
 .hint.tip {
