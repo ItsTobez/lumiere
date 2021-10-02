@@ -2,11 +2,17 @@ import MonacoEditor from '@monaco-editor/react';
 import MDXContent from '@components/editor/MDXContent';
 import Split from 'react-split';
 
-export default function MDXEditor({ content, setContent }) {
+export default function MDXEditor({
+  content,
+  setContent,
+  title,
+  authorName,
+  authorImage,
+}) {
   return (
     <Split
       sizes={[50, 50]}
-      minSize={200}
+      minSize={0}
       gutterSize={10}
       dragInterval={1}
       snapOffset={30}
@@ -26,12 +32,18 @@ export default function MDXEditor({ content, setContent }) {
             minimap: {
               enabled: false,
             },
+            tabSize: 2,
             wordWrap: 'on',
           }}
           onChange={(value) => setContent(value)}
         />
       </section>
-      <MDXContent mdx={content} />
+      <MDXContent
+        mdx={content}
+        title={title}
+        authorName={authorName}
+        authorImage={authorImage}
+      />
     </Split>
   );
 }

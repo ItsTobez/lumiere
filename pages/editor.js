@@ -12,7 +12,7 @@ export default function Editor() {
   const [slug, setSlug] = useState('');
   const titleInput = useRef(null);
   const router = useRouter();
-  const { status } = useSession({
+  const { data: session, status } = useSession({
     required: true,
     onUnauthenticated() {
       signIn();
@@ -57,7 +57,13 @@ export default function Editor() {
         setTitle={setTitle}
         setSlug={setSlug}
       />
-      <MDXEditor content={content} setContent={setContent} />
+      <MDXEditor
+        content={content}
+        setContent={setContent}
+        title={title}
+        authorName={session.user.username}
+        authorImage={session.user.image}
+      />
       <Toaster position='bottom-left' />
     </>
   );

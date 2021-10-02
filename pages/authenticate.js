@@ -61,10 +61,6 @@ export default function Authenticate({ providers }) {
           provider?
         </div>
       )}
-      <div className='absolute bottom-5'>
-        Want to PR this page?
-        https://github.com/AnthonyKuang/ProjectLumiere/blob/main/pages/authenticate.js
-      </div>
     </main>
   );
 }

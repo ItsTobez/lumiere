@@ -1,15 +1,8 @@
 import prisma from '@lib/prisma';
-import Image from 'next/image';
 import { useState, useEffect } from 'react';
-import { evaluate } from 'xdm';
-import * as runtime from 'react/jsx-runtime.js';
-import remarkGfm from 'remark-gfm';
-import remarkUnwrapImages from 'remark-unwrap-images';
-import rehypeWrap from 'rehype-wrap';
-import rehypeTOC from '@jsdevtools/rehype-toc';
-import rehypeSlug from 'rehype-slug';
-import MDXComponents from '@components/editor/MDXComponents';
 import Header from '@components/layouts/Header';
+import Article from '@components/ui/Article';
+import { compileMDX } from '@lib/xdm';
 
 export default function Publication({
   title,
@@ -24,55 +17,22 @@ export default function Publication({
     return mdxComponent;
   });
 
-  const compileMDX = async (mdx) => {
-    const { default: Content } = await evaluate(mdx, {
-      ...runtime,
-      useDynamicImport: true,
-      remarkPlugins: [remarkGfm, remarkUnwrapImages],
-      rehypePlugins: [
-        [rehypeWrap, { wrapper: 'main' }],
-        rehypeSlug,
-        [rehypeTOC, { position: 'afterend' }],
-      ],
-    });
-
-    setMDXOutput(() => {
-      const mdxComponent = () => <Content components={MDXComponents} />;
-      return mdxComponent;
-    });
-
-    setMDXLoading(false);
-  };
-
   useEffect(() => {
-    compileMDX(content);
+    compileMDX(content, setMDXOutput, setMDXLoading);
   }, [content]);
 
   return (
     <>
       <Header />
-      <article className='break-words overflow-y-auto bg-[#fafafa] max-w-none prose h-screen'>
-        <div className='max-w-4xl mx-auto px-6 py-6'>
-          <div className='heading-secondary text-black'>Information</div>
-
-          <p>Title: {title}</p>
-          <p>Written by: {author.username}</p>
-          <Image
-            src={author.image}
-            alt={`Image of ${author.username}`}
-            width={60}
-            height={60}
-          />
-          <p>Created at: {createdAt}</p>
-          <p>Last updated at: {updatedAt}</p>
-
-          <div className='heading-secondary text-black'>Compiled MDX</div>
-
-          <div className='border rounded-md px-6'>
-            {mdxLoading ? <p>LOADING</p> : <MDXOutput />}
-          </div>
-        </div>
-      </article>
+      <Article
+        title={title}
+        createdAt={createdAt}
+        updatedAt={updatedAt}
+        authorName={author.username}
+        authorImage={author.image}
+      >
+        {mdxLoading ? <p>LOADING</p> : <MDXOutput />}
+      </Article>
     </>
   );
 }

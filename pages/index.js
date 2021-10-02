@@ -9,11 +9,13 @@ import hackPlus from '@public/images/logos/HackPlus.svg';
 import { Gradient } from '@lib/gradient';
 import { FiChevronRight } from 'react-icons/fi';
 import Layout from '@components/layouts/Layout';
+import Footer from '@components/layouts/Footer';
+import Header from '@components/layouts/Header';
 
 export default function Home() {
   useEffect(() => {
     const gradient = new Gradient();
-    gradient.initGradient('.gradient-canvas');
+    gradient.initGradient('.home-gradient-canvas');
   }, []);
 
   return (
@@ -23,9 +25,11 @@ export default function Home() {
         <meta name='description' content='Project Lumiere website' />
       </Head>
 
+      <Header pageType='home' />
+
       <div className='relative -mt-44 h-[396px] lg:h-[360px] sm:h-[320px]'>
         <canvas
-          className='gradient-canvas absolute top-0'
+          className='home-gradient-canvas absolute top-0'
           data-js-darken-top
           data-transition-in
         />
@@ -85,9 +89,10 @@ export default function Home() {
             </figure>
           </div>
         </section>
+      </div>
 
-        <main className='mb-36'>
-          {/* <section className='mt-48'>
+      <main className='mb-36'>
+        {/* <section className='mt-48'>
             <h2 className='heading-secondary'>
               Create beautiful and informative content
             </h2>
@@ -102,12 +107,9 @@ export default function Home() {
               Developed, managed, and run by students
             </h2>
           </section> */}
-        </main>
-      </div>
+      </main>
+
+      <Footer />
     </>
   );
 }
-
-Home.getLayout = function getLayout(page) {
-  return <Layout>{page}</Layout>;
-};

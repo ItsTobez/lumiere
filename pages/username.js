@@ -27,23 +27,21 @@ export default function Username() {
   };
 
   return (
-    <>
-      <h1>Set your username</h1>
-      <form onSubmit={submitUsername}>
-        <span>@</span>
-        <input
-          type='text'
-          autoFocus
-          onChange={(e) => setUsername(e.target.value)}
-          value={username}
-        />
-        <input type='submit' value='Submit username' disabled={!username} />
-      </form>
-      <p>{error}</p>
-      <p>
-        Okay I really need to work on this LMFAO. PR
-        https://github.com/AnthonyKuang/ProjectLumiere/blob/main/pages/username.js
-      </p>
-    </>
+    <div className='h-screen grid place-items-center'>
+      <div>
+        <h1>Set your username</h1>
+        <form onSubmit={submitUsername}>
+          <span>@</span>
+          <input
+            type='text'
+            autoFocus
+            onChange={(e) => setUsername(e.target.value)}
+            value={username}
+          />
+          <input type='submit' value='Submit username' disabled={!username} />
+        </form>
+        <p>{error}</p>
+      </div>
+    </div>
   );
 }
