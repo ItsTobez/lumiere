@@ -115,11 +115,11 @@
 }
 
 .hint.warn {
-  @apply bg-red-100 text-red-500 font-medium px-4 py-2 rounded-lg;
+  @apply bg-yellow-100 text-yellow-500 font-medium px-4 py-2 rounded-lg;
 }
 
 .hint.error {
-  @apply bg-yellow-100 text-yellow-500 font-medium px-4 py-2 rounded-lg;
+  @apply bg-red-100 text-red-500 font-medium px-4 py-2 rounded-lg;
 }
 
 .token.tag,
