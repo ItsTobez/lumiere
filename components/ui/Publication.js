@@ -4,6 +4,24 @@ import Image from 'next/image';
 export default function Publication({ post, visibility }) {
   const router = useRouter();
 
+  const unpublishPost = async (slug) => {
+    try {
+      const body = { slug };
+      await fetch('/api/post/unpublish', {
+        method: 'DELETE',
+        headers: { 'Content-Type': 'application/json' },
+        body: JSON.stringify(body),
+      });
+      await router.push('/me/publications');
+    } catch (error) {
+      console.error(error);
+    }
+  };
+
+  const editPost = async (slug) => {
+    router.push(`/me/publications/${slug}`);
+  };
+
   const deletePost = async (slug) => {
     try {
       const body = { slug };
@@ -38,12 +56,26 @@ export default function Publication({ post, visibility }) {
         <p>Updated at: {post.updatedAt}</p>
       </div>
       {visibility === 'private' && (
-        <button
-          className='border border-gray-700'
-          onClick={() => deletePost(post.slug)}
-        >
-          Delete
-        </button>
+        <>
+          <button
+            className='border border-gray-700'
+            onClick={() => editPost(post.slug)}
+          >
+            Edit
+          </button>
+          <button
+            className='border border-gray-700'
+            onClick={() => unpublishPost(post.slug)}
+          >
+            Unpublish
+          </button>
+          <button
+            className='border border-gray-700'
+            onClick={() => deletePost(post.slug)}
+          >
+            Delete
+          </button>
+        </>
       )}
     </>
   );
