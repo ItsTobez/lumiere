@@ -140,10 +140,6 @@ x> Here is an error (red).
   }}
 />
 
-## Just for fun - TicTacToe
-
-<TicTacToe />
-
 ---
 
 # Creating your own components

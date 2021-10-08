@@ -41,7 +41,7 @@
   }
 
   .header-gradient-canvas {
-    @apply w-full h-full opacity-60;
+    @apply w-full h-full blur-2xl opacity-20;
     --gradient-color-1: #ef008f;
     --gradient-color-2: #6ec3f4;
     --gradient-color-3: #7038ff;

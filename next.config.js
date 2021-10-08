@@ -1,6 +1,3 @@
-// This controls how Next.js utilizes tools like Webpack and Babel to generate regular HTML, CSS, JS from the files in this folder
-// See https://nextjs.org/docs/api-reference/next.config.js/introduction
-
 module.exports = {
   reactStrictMode: true,
   images: {
@@ -10,7 +7,25 @@ module.exports = {
   webpack(config) {
     config.module.rules.push({
       test: /\.mdx$/,
-      use: [{ loader: 'xdm/webpack.cjs', options: {} }],
+      use: [
+        {
+          loader: 'xdm/webpack.cjs',
+          options: {
+            remarkPlugins: [
+              require('remark-gfm'),
+              require('remark-unwrap-images'),
+              require('remark-emoji'),
+              require('remark-hint'),
+            ],
+            rehypePlugins: [
+              [require('rehype-wrap'), { wrapper: 'main' }],
+              require('rehype-slug'),
+              [require('@jsdevtools/rehype-toc'), { position: 'afterend' }],
+              require('@mapbox/rehype-prism'),
+            ],
+          },
+        },
+      ],
     });
 
     return config;

@@ -1,7 +1,6 @@
 import { useState } from 'react';
 import Link from 'next/link';
 import Confetti from 'react-confetti';
-import { TicTacToe } from '@anatu/tictactoegame';
 import CodeSandboxButton from '@uiw/react-codesandbox';
 import CodepenButton from '@uiw/react-codepen';
 import StackBlitzButton from '@uiw/react-stackblitz';
@@ -81,7 +80,6 @@ const MDXComponents = {
   a,
   img,
   ConfettiComponent,
-  TicTacToe,
   CodeSandboxButton,
   CodeSandboxEmbed,
   CodepenButton,

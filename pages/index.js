@@ -8,7 +8,6 @@ import { useEffect } from 'react';
 import hackPlus from '@public/images/logos/HackPlus.svg';
 import { Gradient } from '@lib/gradient';
 import { FiChevronRight } from 'react-icons/fi';
-import Layout from '@components/layouts/Layout';
 import Footer from '@components/layouts/Footer';
 import Header from '@components/layouts/Header';
 
@@ -65,7 +64,7 @@ export default function Home() {
           </div>
         </section>
 
-        <section className='mt-48'>
+        <section className='mt-48 mb-32'>
           <div className='flex justify-between flex-wrap'>
             <figure className='relative w-32 h-12 lg:w-28 lg:h-9 md:w-24 md:h-7'>
               <Image
@@ -91,22 +90,76 @@ export default function Home() {
         </section>
       </div>
 
-      <main className='mb-36'>
-        {/* <section className='mt-48'>
-            <h2 className='heading-secondary'>
-              Create beautiful and informative content
-            </h2>
-          </section>
+      <hr className='container border-gray-800' />
 
-          <section className='mt-48'>
-            <h2 className='heading-secondary'>Technical writing, done right</h2>
-          </section>
+      <main className='mb-36 mt-28 container'>
+        <section className='flex justify-around'>
+          <div className='relative inline-block -rotate-6'>
+            <div className='absolute bg-gradient-to-tr from-purple-600 to-blue-600 -inset-0.5 rounded-lg blur-xl opacity-40'></div>
+            <div className='relative px-7 py-4 bg-gray-900 opacity-90 rounded-lg leading-none'>
+              <pre className='language-jsx leading-normal text-xs'>
+                <code className='language-jsx'>
+                  <span className='token comment'>
+                    {'// header component w/ navbar'}
+                  </span>
+                  <br />
+                  <span className='token keyword module'>export</span>{' '}
+                  <span className='token keyword module'>default</span>{' '}
+                  <span className='token keyword'>function</span>{' '}
+                  <span className='token function'>
+                    <span className='token maybe-className-name'>Header</span>
+                  </span>
+                  <span className='token punctuation'>(</span>
+                  <span className='token punctuation'>)</span>{' '}
+                  <span className='token punctuation'>{'{'}</span>
+                  <br />
+                  <span className='token keyword control-flow ml-4'>
+                    return
+                  </span>{' '}
+                  <span className='token punctuation'>(</span>
+                  <br />
+                  <span className='token tag'>
+                    <span className='token tag'>
+                      <span className='token punctuation ml-8'>&lt;</span>div
+                    </span>
+                    <span className='token punctuation'>&gt;</span>
+                  </span>
+                  <br />
+                  <span className='token plain-text'></span>
+                  <span className='token tag'>
+                    <span className='token tag'>
+                      <span className='token punctuation ml-12'>&lt;</span>
+                      header
+                    </span>
+                    <span className='token punctuation'>&gt;</span>
+                  </span>
+                  <span className='token plain-text'>Header</span>
+                  <span className='token tag'>
+                    <span className='token tag'>
+                      <span className='token punctuation'>&lt;/</span>header
+                    </span>
+                    <span className='token punctuation'>&gt;</span>
+                  </span>
+                  <span className='token plain-text'></span>
+                  <br />
+                  <span className='token tag'>
+                    <span className='token tag'>
+                      <span className='token punctuation ml-8'>&lt;/</span>div
+                    </span>
+                    <span className='token punctuation'>&gt;</span>
+                  </span>
+                  <br />
+                  <span className='token punctuation ml-4'>)</span>
+                  <span className='token punctuation'>;</span>
+                  <br />
+                  <span className='token punctuation'>{'}'}</span>
+                </code>
+              </pre>
+            </div>
+          </div>
 
-          <section className='mt-48'>
-            <h2 className='heading-secondary'>
-              Developed, managed, and run by students
-            </h2>
-          </section> */}
+          <div>Cool</div>
+        </section>
       </main>
 
       <Footer />
