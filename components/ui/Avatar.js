@@ -67,38 +67,38 @@ export default function Avatar({ renderPosition }) {
                 </Link>
               </div>
             </div>
-            <div className='px-7 py-5 border-b border-gray-700'>
+            <div className='my-4'>
               <Link href='/editor'>
-                <a className='block mb-3 hover:text-gray-300 transition-colors duration-75'>
+                <a className='px-7 py-2 block hover:text-gray-300 hover:bg-gray-700 hover:bg-opacity-70 transition-all duration-75'>
                   New Publication
                 </a>
               </Link>
               <Link href='/me/drafts'>
-                <a className='block mb-3 hover:text-gray-300 transition-colors duration-75'>
+                <a className='px-7 py-2 block hover:text-gray-300 hover:bg-gray-700 hover:bg-opacity-70 transition-all duration-75'>
                   Drafts
                 </a>
               </Link>
               <Link href='/me/publications'>
-                <a className='block hover:text-gray-300 transition-colors duration-75'>
+                <a className='px-7 py-2 block hover:text-gray-300 hover:bg-gray-700 hover:bg-opacity-70 transition-all duration-75'>
                   Publications
                 </a>
               </Link>
             </div>
-            <div className='px-7 py-5'>
+            <div className='pt-4 mb-4 border-t border-gray-700'>
               <Link href='/me/statistics'>
-                <a className='block mb-3 hover:text-gray-300 transition-colors duration-75 beta'>
+                <a className='px-7 py-2 block hover:text-gray-300 hover:bg-gray-700 hover:bg-opacity-70 transition-all duration-75'>
                   Statistics
                 </a>
               </Link>
               <Link href='/me/settings'>
-                <a className='block hover:text-gray-300 transition-colors duration-75 beta'>
+                <a className='px-7 py-2 block hover:text-gray-300 hover:bg-gray-700 hover:bg-opacity-70 transition-all duration-75'>
                   Settings
                 </a>
               </Link>
             </div>
             <div className='flex justify-center'>
               <button
-                className='text-sm block w-full bg-gray-700 hover:bg-gray-600 transition-colors duration-75 text-gray-200 rounded-b-lg py-4'
+                className='text-sm block w-full bg-gray-700 hover:bg-gray-600 transition-colors duration-75 text-gray-200 rounded-b-md py-4'
                 onClick={() =>
                   signOut({
                     callbackUrl: '/',
