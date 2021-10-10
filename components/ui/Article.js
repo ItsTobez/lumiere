@@ -32,7 +32,7 @@ export default function Article({
           </div>
         </section>
       )}
-      {children}
+      <section className='py-12'>{children}</section>
     </ProseContainer>
   );
 }

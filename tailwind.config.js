@@ -88,8 +88,46 @@ module.exports = {
         },
       },
       typography: (theme) => ({
+        DEFAULT: {
+          css: {
+            '[class="toc"]': {
+              position: 'absolute',
+              top: 0,
+              left: 0,
+            },
+            '[class="hint tip"]': {
+              backgroundColor: theme('colors.green.100', colors.green[100]),
+              color: theme('colors.green.600', colors.green[600]),
+            },
+            '[class="hint warn"]': {
+              backgroundColor: theme('colors.yellow.100', colors.yellow[100]),
+              color: theme('colors.yellow.600', colors.yellow[600]),
+            },
+            '[class="hint error"]': {
+              backgroundColor: theme('colors.red.100', colors.red[100]),
+              color: theme('colors.red.600', colors.red[600]),
+            },
+          },
+        },
         dark: {
           css: {
+            '[class="toc"]': {
+              position: 'absolute',
+              top: 0,
+              left: 0,
+            },
+            '[class="hint tip"]': {
+              backgroundColor: theme('colors.green.900', colors.green[900]),
+              color: theme('colors.green.400', colors.green[400]),
+            },
+            '[class="hint warn"]': {
+              backgroundColor: theme('colors.yellow.900', colors.yellow[900]),
+              color: theme('colors.yellow.400', colors.yellow[400]),
+            },
+            '[class="hint error"]': {
+              backgroundColor: theme('colors.red.900', colors.red[900]),
+              color: theme('colors.red.400', colors.red[400]),
+            },
             color: theme('colors.gray.300', colors.gray[300]),
             '[class~="lead"]': {
               color: theme('colors.gray.400', colors.gray[400]),

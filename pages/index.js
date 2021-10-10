@@ -15,7 +15,7 @@ export default function Home() {
   }, []);
 
   return (
-    <>
+    <div className='bg-gray-900'>
       <Head>
         <title>Lumiere | Beautiful CS Publications</title>
         <meta name='description' content='Lumiere website' />
@@ -160,6 +160,6 @@ export default function Home() {
       </main>
 
       <Footer />
-    </>
+    </div>
   );
 }

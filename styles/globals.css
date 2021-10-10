@@ -9,7 +9,7 @@
   }
 
   body {
-    @apply text-gray-400 bg-gray-900 min-h-screen;
+    @apply text-gray-400 bg-gray-100 dark:bg-gray-900 min-h-screen;
   }
 
   h1,
@@ -98,7 +98,7 @@
     @apply opacity-100 block;
   }
 
-  .hint.tip {
+  /* .hint.tip {
     @apply bg-green-900 text-green-400 font-medium px-4 py-2 rounded-lg;
   }
 
@@ -108,7 +108,7 @@
 
   .hint.error {
     @apply bg-red-900 text-red-400 font-medium px-4 py-2 rounded-lg;
-  }
+  } */
 
   .token.tag,
   .token.class-name,
