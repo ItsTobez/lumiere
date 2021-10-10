@@ -57,7 +57,7 @@ const ConfettiComponent = () => {
       exactly {count} times
       {pieces ? (
         <Confetti
-          colors={['#0366d6']}
+          colors={['#0366d6', '#000000', '#ffffff']}
           numberOfPieces={pieces}
           confettiSource={coords}
           recycle={false}

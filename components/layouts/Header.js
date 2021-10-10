@@ -52,7 +52,7 @@ export default function Header({
               placeholder='Untitled'
               value={title}
               ref={titleInput}
-              className={`rounded-lg bg-transparent text-xl ml-3 py-2 px-4 w-96 hover:bg-gray-800 transition-colors duration-75 text-gray-300 focus:outline-none focus:ring-2 ${
+              className={`rounded-lg bg-transparent text-xl ml-3 py-2 px-4 w-96 hover:bg-gray-800 transition-colors text-gray-300 focus:outline-none focus:ring-2 ${
                 title ? 'focus:ring-blue-600' : 'focus:ring-red-600'
               } placeholder-gray-500`}
               onClick={(e) => e.target.select()}
@@ -65,7 +65,7 @@ export default function Header({
             <input
               type='text'
               value={title}
-              className='rounded-lg bg-transparent text-xl ml-3 py-2 px-4 w-96 hover:bg-gray-800 transition-colors duration-75 text-gray-300 cursor-not-allowed'
+              className='rounded-lg bg-transparent text-xl ml-3 py-2 px-4 w-96 hover:bg-gray-800 transition-colors text-gray-300 cursor-not-allowed'
               disabled
             />
           )}
@@ -114,12 +114,12 @@ export default function Header({
                 {({ open }) => (
                   <>
                     <Popover.Button>
-                      <div className='flex hover:text-gray-300 transition-colors duration-75 items-center'>
+                      <div className='flex hover:text-gray-300 transition-colors items-center'>
                         <p className='font-medium lg:text-xs'>Media</p>
                         <FiChevronDown
                           className={`${
                             open ? 'transform rotate-180' : ''
-                          } ml-1 w-5 lg:w-4 h-5 lg:h-4 transition-transform duration-75`}
+                          } ml-1 w-5 lg:w-4 h-5 lg:h-4 transition-transform`}
                         />
                       </div>
                     </Popover.Button>
@@ -137,12 +137,12 @@ export default function Header({
                 {({ open }) => (
                   <>
                     <Popover.Button>
-                      <div className='flex hover:text-gray-300 transition-colors duration-75 items-center'>
+                      <div className='flex hover:text-gray-300 transition-colors items-center'>
                         <p className='font-medium lg:text-xs'>Company</p>
                         <FiChevronDown
                           className={`${
                             open ? 'transform rotate-180' : ''
-                          } ml-1 w-5 lg:w-4 h-5 lg:h-4 transition-transform duration-75`}
+                          } ml-1 w-5 lg:w-4 h-5 lg:h-4 transition-transform`}
                         />
                       </div>
                     </Popover.Button>
@@ -178,7 +178,7 @@ export default function Header({
           )}
 
           <button
-            className='hidden md:grid ml-auto place-items-center rounded-2xl bg-gray-500 hover:bg-gray-400 w-12 h-8 opacity-80 hover:opacity-100 transition duration-75'
+            className='hidden md:grid ml-auto place-items-center rounded-2xl bg-gray-500 hover:bg-gray-400 w-12 h-8 opacity-80 hover:opacity-100 transition'
             onClick={() => setIsOpen(true)}
           >
             <IoReorderThreeOutline className='w-6 h-7 text-gray-100' />
@@ -239,12 +239,12 @@ export default function Header({
                 {({ open }) => (
                   <>
                     <Popover.Button>
-                      <div className='flex hover:text-gray-300 transition-colors duration-75 items-center'>
+                      <div className='flex hover:text-gray-300 transition-colors items-center'>
                         <p className='font-medium lg:text-xs'>Media</p>
                         <FiChevronDown
                           className={`${
                             open ? 'transform rotate-180' : ''
-                          } ml-1 w-5 lg:w-4 h-5 lg:h-4 transition-transform duration-75`}
+                          } ml-1 w-5 lg:w-4 h-5 lg:h-4 transition-transform`}
                         />
                       </div>
                     </Popover.Button>
@@ -262,12 +262,12 @@ export default function Header({
                 {({ open }) => (
                   <>
                     <Popover.Button>
-                      <div className='flex hover:text-gray-300 transition-colors duration-75 items-center'>
+                      <div className='flex hover:text-gray-300 transition-colors items-center'>
                         <p className='font-medium lg:text-xs'>Company</p>
                         <FiChevronDown
                           className={`${
                             open ? 'transform rotate-180' : ''
-                          } ml-1 w-5 lg:w-4 h-5 lg:h-4 transition-transform duration-75`}
+                          } ml-1 w-5 lg:w-4 h-5 lg:h-4 transition-transform`}
                         />
                       </div>
                     </Popover.Button>
@@ -303,7 +303,7 @@ export default function Header({
           )}
 
           <button
-            className='hidden md:grid ml-auto place-items-center rounded-2xl bg-gray-500 hover:bg-gray-400 w-12 h-8 opacity-80 hover:opacity-100 transition duration-75'
+            className='hidden md:grid ml-auto place-items-center rounded-2xl bg-gray-500 hover:bg-gray-400 w-12 h-8 opacity-80 hover:opacity-100 transition'
             onClick={() => setIsOpen(true)}
           >
             <IoReorderThreeOutline className='w-6 h-7 text-gray-100' />

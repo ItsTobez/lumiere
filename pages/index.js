@@ -1,6 +1,3 @@
-// pages/index.js maps to projectlumiere.org/ (our homepage)
-// See https://nextjs.org/docs/routing/introduction#index-routes
-
 import Head from 'next/head';
 import Image from 'next/image';
 import Link from 'next/link';

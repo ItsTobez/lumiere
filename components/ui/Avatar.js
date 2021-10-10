@@ -9,7 +9,7 @@ export default function Avatar({ renderPosition }) {
   return (
     <Menu as='div' className='md:hidden'>
       <Menu.Button className='flex cursor-pointer'>
-        <div className='p-0.5 bg-gradient-to-tr from-amber-500 to-fuchsia-700 rounded-full hover:opacity-80 transition-opacity duration-75'>
+        <div className='p-0.5 bg-gradient-to-tr from-amber-500 to-fuchsia-700 rounded-full hover:opacity-80 transition-opacity'>
           <div className='p-0.5 bg-gray-900 rounded-full'>
             <figure className='relative w-10 lg:w-9 h-10 lg:h-9'>
               <Image
@@ -24,7 +24,12 @@ export default function Avatar({ renderPosition }) {
         </div>
       </Menu.Button>
 
-      <Menu.Items as='div' className='absolute w-full left-0 bottom-0 z-10'>
+      <Menu.Items
+        as='div'
+        className={`${
+          renderPosition === 'container' ? 'left-4' : '-left-2'
+        } absolute w-full bottom-0 z-10`}
+      >
         <div
           className={`${
             renderPosition === 'container' && 'container'
@@ -40,7 +45,7 @@ export default function Avatar({ renderPosition }) {
           >
             <div className='flex justify-between items-center border-b border-gray-700 px-7 py-5 beta'>
               <Link href='/me/settings'>
-                <a className='block p-0.5 bg-gradient-to-tr from-amber-500 to-fuchsia-700 rounded-full hover:opacity-80 transition-opacity duration-75'>
+                <a className='block p-0.5 bg-gradient-to-tr from-amber-500 to-fuchsia-700 rounded-full hover:opacity-80 transition-opacity'>
                   <div className='p-0.5 bg-gray-900 rounded-full'>
                     <figure className='relative w-8 h-8'>
                       <Image
@@ -56,12 +61,12 @@ export default function Avatar({ renderPosition }) {
               </Link>
               <div className='ml-4'>
                 <Link href='/me/settings'>
-                  <a className='text-gray-300 hover:text-gray-200 transition-colors duration-75 font-medium inline-block'>
+                  <a className='text-gray-300 hover:text-gray-200 transition-colors font-medium inline-block'>
                     {session.user.username}
                   </a>
                 </Link>
                 <Link href='/me/settings'>
-                  <a className='block text-sm hover:text-gray-300 transition-colors duration-75'>
+                  <a className='block text-sm hover:text-gray-300 transition-colors'>
                     {session.user.email}
                   </a>
                 </Link>
@@ -69,36 +74,36 @@ export default function Avatar({ renderPosition }) {
             </div>
             <div className='my-4'>
               <Link href='/editor'>
-                <a className='px-7 py-2 block hover:text-gray-300 hover:bg-gray-700 hover:bg-opacity-70 transition-all duration-75'>
+                <a className='px-7 py-2 block hover:text-gray-300 hover:bg-gray-700 hover:bg-opacity-70 transition-all'>
                   New Publication
                 </a>
               </Link>
               <Link href='/me/drafts'>
-                <a className='px-7 py-2 block hover:text-gray-300 hover:bg-gray-700 hover:bg-opacity-70 transition-all duration-75'>
+                <a className='px-7 py-2 block hover:text-gray-300 hover:bg-gray-700 hover:bg-opacity-70 transition-all'>
                   Drafts
                 </a>
               </Link>
               <Link href='/me/publications'>
-                <a className='px-7 py-2 block hover:text-gray-300 hover:bg-gray-700 hover:bg-opacity-70 transition-all duration-75'>
+                <a className='px-7 py-2 block hover:text-gray-300 hover:bg-gray-700 hover:bg-opacity-70 transition-all'>
                   Publications
                 </a>
               </Link>
             </div>
             <div className='pt-4 mb-4 border-t border-gray-700'>
               <Link href='/me/statistics'>
-                <a className='px-7 py-2 block hover:text-gray-300 hover:bg-gray-700 hover:bg-opacity-70 transition-all duration-75'>
+                <a className='px-7 py-2 block hover:text-gray-300 hover:bg-gray-700 hover:bg-opacity-70 transition-all'>
                   Statistics
                 </a>
               </Link>
               <Link href='/me/settings'>
-                <a className='px-7 py-2 block hover:text-gray-300 hover:bg-gray-700 hover:bg-opacity-70 transition-all duration-75'>
+                <a className='px-7 py-2 block hover:text-gray-300 hover:bg-gray-700 hover:bg-opacity-70 transition-all'>
                   Settings
                 </a>
               </Link>
             </div>
             <div className='flex justify-center'>
               <button
-                className='text-sm block w-full bg-gray-700 hover:bg-gray-600 transition-colors duration-75 text-gray-200 rounded-b-md py-4'
+                className='text-sm block w-full bg-gray-700 hover:bg-gray-600 transition-colors text-gray-200 rounded-b-md py-4'
                 onClick={() =>
                   signOut({
                     callbackUrl: '/',

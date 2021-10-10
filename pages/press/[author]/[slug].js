@@ -1,7 +1,7 @@
 import prisma from '@lib/prisma';
 import { useState, useEffect } from 'react';
-import Header from '@components/layouts/Header';
 import Article from '@components/ui/Article';
+import Layout from '@components/layouts/Layout';
 import { compileMDX } from '@lib/xdm';
 
 export default function Publication({
@@ -22,18 +22,15 @@ export default function Publication({
   }, [content]);
 
   return (
-    <>
-      <Header />
-      <Article
-        title={title}
-        createdAt={createdAt}
-        updatedAt={updatedAt}
-        authorName={author.username}
-        authorImage={author.image}
-      >
-        {mdxLoading ? <p>LOADING</p> : <MDXOutput />}
-      </Article>
-    </>
+    <Article
+      title={title}
+      createdAt={createdAt}
+      updatedAt={updatedAt}
+      authorName={author.username}
+      authorImage={author.image}
+    >
+      {mdxLoading ? <p>LOADING</p> : <MDXOutput />}
+    </Article>
   );
 }
 
@@ -65,4 +62,8 @@ export const getServerSideProps = async ({ params }) => {
   return {
     props: post,
   };
+};
+
+Publication.getLayout = function getLayout(page) {
+  return <Layout>{page}</Layout>;
 };

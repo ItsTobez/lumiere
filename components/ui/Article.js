@@ -1,4 +1,6 @@
 import Image from 'next/image';
+import { useTheme } from 'next-themes';
+import { useState, useEffect } from 'react';
 
 export default function Article({
   children,
@@ -9,15 +11,25 @@ export default function Article({
   authorName,
   authorImage,
 }) {
+  const [mounted, setMounted] = useState(false);
+  const { theme, setTheme } = useTheme();
+
+  useEffect(() => {
+    setMounted(true);
+  }, []);
+
   return (
-    <article className='break-words overflow-y-auto bg-[#fafafa] max-w-none prose'>
+    <article className='break-words overflow-y-auto bg-gray-100 dark:bg-gray-900 max-w-none prose dark:prose-dark smooth-scroll'>
       <div className='container py-12'>
+        {mounted && (
+          <button
+            onClick={() => setTheme(theme === 'light' ? 'dark' : 'light')}
+          >
+            {theme}
+          </button>
+        )}
         {title && (
-          <section className='mb-12 border rounded-lg pt-8 pb-2 px-12'>
-            <div className='mb-4'>
-              <button className='beta mr-4'>Change theme</button>
-              <button className='beta'>Change colors</button>
-            </div>
+          <section className='mb-12 border border-gray-300 dark:border-gray-700 rounded-lg pt-8 pb-2 px-12'>
             <h1 className='!text-6xl !mb-4'>{title}</h1>
             {pageType === 'publication' && (
               <>

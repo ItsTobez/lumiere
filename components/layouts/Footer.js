@@ -9,7 +9,7 @@ export default function Footer() {
   return (
     <footer className='bg-gray-800 border-t border-gray-700 pt-14 pb-8 md:pt-10'>
       <div className='container'>
-        <nav className='flex justify-between text-sm lg:text-xs leading-loose text-gray-500 transition-colors duration-75 md:hidden'>
+        <nav className='flex justify-between text-sm lg:text-xs leading-loose text-gray-500 transition-colors md:hidden'>
           <ul className='beta'>
             <h3 className='heading-tertiary'>Media</h3>
             <li>
@@ -311,7 +311,7 @@ export default function Footer() {
                 target='_blank'
                 rel='noreferrer noopener'
               >
-                <FaLinkedin className='w-5 h-5 text-gray-400 hover:text-gray-300 transition-colors duration-75' />
+                <FaLinkedin className='w-5 h-5 text-gray-400 hover:text-gray-300 transition-colors' />
               </a>
               <div className='border-r border-gray-700 mx-3' />
               <a
@@ -319,7 +319,7 @@ export default function Footer() {
                 target='_blank'
                 rel='noreferrer noopener'
               >
-                <FaGithub className='w-5 h-5 text-gray-400 hover:text-gray-300 transition-colors duration-75' />
+                <FaGithub className='w-5 h-5 text-gray-400 hover:text-gray-300 transition-colors' />
               </a>
             </div>
           </div>
@@ -355,7 +355,7 @@ export default function Footer() {
               target='_blank'
               rel='noreferrer noopener'
             >
-              <FaLinkedin className='w-5 h-5 text-gray-400 hover:text-gray-300 transition-colors duration-75' />
+              <FaLinkedin className='w-5 h-5 text-gray-400 hover:text-gray-300 transition-colors' />
             </a>
             <div className='border-r border-gray-700 mx-3' />
             <a
@@ -363,7 +363,7 @@ export default function Footer() {
               target='_blank'
               rel='noreferrer noopener'
             >
-              <FaGithub className='w-5 h-5 text-gray-400 hover:text-gray-300 transition-colors duration-75' />
+              <FaGithub className='w-5 h-5 text-gray-400 hover:text-gray-300 transition-colors' />
             </a>
           </div>
 

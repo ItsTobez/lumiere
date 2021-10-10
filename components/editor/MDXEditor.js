@@ -16,7 +16,7 @@ export default function MDXEditor({
       gutterSize={10}
       dragInterval={1}
       snapOffset={30}
-      className='split h-editor overflow-y-hidden'
+      className='flex h-editor overflow-y-hidden'
       gutter={(_, direction) => {
         const gutter = document.createElement('div');
         gutter.className = `gutter gutter-${direction}`;
