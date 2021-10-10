@@ -303,7 +303,7 @@ export default function Footer() {
               height='41'
               frameBorder='0'
               scrolling='no'
-              className='scale-90'
+              className='scale-90 dark:rounded-lg'
             />
             <div className='flex'>
               <a
@@ -346,7 +346,7 @@ export default function Footer() {
             height='41'
             frameBorder='0'
             scrolling='no'
-            className='scale-75 mx-auto mt-2'
+            className='scale-75 mx-auto mt-2 dark:rounded-lg'
           />
 
           <div className='flex justify-center mt-8'>

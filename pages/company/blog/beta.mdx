@@ -1,13 +1,7 @@
-import BlogLayout from '@components/layouts/Layout';
+import BlogLayout from '@components/layouts/BlogLayout';
 
 export default function Layout({ children }) {
-  return (
-    <BlogLayout>
-      <article className='break-words overflow-y-auto bg-[#fafafa] max-w-none prose'>
-        <div className='container py-12'>{children}</div>
-      </article>
-    </BlogLayout>
-  );
+  return <BlogLayout>{children}</BlogLayout>;
 }
 
 # Beta Test 🐶
@@ -296,7 +290,7 @@ I am also looking towards expanding the team, dm me for more info! So far I've b
 
 ---
 
-# Final works
+# Final words
 
 I am so grateful to each and every one of you! I've always looked forward to the day where I could build something like Lumiere, and I couldn't have done it without Hack Club :))
 

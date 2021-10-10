@@ -7,6 +7,8 @@ import Header from '@components/layouts/Header';
 import { useBeforeunload } from 'react-beforeunload';
 
 export default function Editor() {
+  const [collapsed, setCollapsed] = useState(false);
+
   const initialContent = `# Markdown Syntax - Heading 1
 
 ## Heading 2
@@ -203,6 +205,8 @@ export const CoolComponent = ({ children }) => {
         showUntitledError={showUntitledError}
         setTitle={setTitle}
         setSlug={setSlug}
+        collapsed={collapsed}
+        setCollapsed={setCollapsed}
       />
       <MDXEditor
         content={content}
@@ -210,6 +214,7 @@ export const CoolComponent = ({ children }) => {
         title={title}
         authorName={session.user.username}
         authorImage={session.user.image}
+        collapsed={collapsed}
       />
       <Toaster position='bottom-left' />
     </>

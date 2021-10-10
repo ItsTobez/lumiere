@@ -8,6 +8,7 @@ export default function MDXEditor({
   title,
   authorName,
   authorImage,
+  collapsed,
 }) {
   return (
     <Split
@@ -16,7 +17,9 @@ export default function MDXEditor({
       gutterSize={10}
       dragInterval={1}
       snapOffset={30}
-      className='flex h-editor overflow-y-hidden'
+      className={`flex ${
+        collapsed ? 'h-screen -mt-18' : 'h-editor'
+      } overflow-y-hidden`}
       gutter={(_, direction) => {
         const gutter = document.createElement('div');
         gutter.className = `gutter gutter-${direction}`;
