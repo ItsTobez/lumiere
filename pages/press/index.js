@@ -1,19 +1,26 @@
 import Layout from '@components/layouts/Layout';
+import Head from 'next/head';
 import prisma from '@lib/prisma';
 import Publication from '@components/ui/Publication';
 
 export default function Press({ publications }) {
   return (
-    <main className='container'>
-      <h1>Public Publications</h1>
-      {publications.map((publication) => (
-        <Publication
-          key={publication.id}
-          post={publication}
-          visibility='public'
-        />
-      ))}
-    </main>
+    <>
+      <Head>
+        <title>Lumiere Press</title>
+      </Head>
+
+      <main className='container'>
+        <h1>Public Publications</h1>
+        {publications.map((publication) => (
+          <Publication
+            key={publication.id}
+            post={publication}
+            visibility='public'
+          />
+        ))}
+      </main>
+    </>
   );
 }
 

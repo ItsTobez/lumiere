@@ -2,6 +2,7 @@ import prisma from '@lib/prisma';
 import { useState, useEffect } from 'react';
 import Article from '@components/ui/Article';
 import Layout from '@components/layouts/Layout';
+import Head from 'next/head';
 import { compileMDX } from '@lib/xdm';
 
 export default function Publication({
@@ -22,15 +23,21 @@ export default function Publication({
   }, [content]);
 
   return (
-    <Article
-      title={title}
-      createdAt={createdAt}
-      updatedAt={updatedAt}
-      authorName={author.username}
-      authorImage={author.image}
-    >
-      {mdxLoading ? <p>LOADING</p> : <MDXOutput />}
-    </Article>
+    <>
+      <Head>
+        <title>{`${author.username} | ${title}`}</title>
+      </Head>
+
+      <Article
+        title={title}
+        createdAt={createdAt}
+        updatedAt={updatedAt}
+        authorName={author.username}
+        authorImage={author.image}
+      >
+        {mdxLoading ? <p>LOADING</p> : <MDXOutput />}
+      </Article>
+    </>
   );
 }
 

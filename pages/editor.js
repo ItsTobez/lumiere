@@ -1,4 +1,5 @@
 import { useState, useRef } from 'react';
+import Head from 'next/head';
 import { signIn, useSession } from 'next-auth/react';
 import { useRouter } from 'next/router';
 import toast, { Toaster } from 'react-hot-toast';
@@ -197,6 +198,10 @@ export const CoolComponent = ({ children }) => {
 
   return (
     <>
+      <Head>
+        <title>Lumiere Editor</title>
+      </Head>
+
       <Header
         pageType='editor'
         title={title}

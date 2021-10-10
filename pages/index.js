@@ -17,8 +17,8 @@ export default function Home() {
   return (
     <>
       <Head>
-        <title>Project Lumiere</title>
-        <meta name='description' content='Project Lumiere website' />
+        <title>Lumiere | Beautiful CS Publications</title>
+        <meta name='description' content='Lumiere website' />
       </Head>
 
       <Header pageType='home' />
@@ -89,7 +89,7 @@ export default function Home() {
 
       <hr className='container border-gray-800' />
 
-      <main className='mb-36 mt-28 container'>
+      <main className='mt-28 container'>
         <section className='flex justify-around'>
           <div className='relative inline-block -rotate-6'>
             <div className='absolute bg-gradient-to-tr from-purple-600 to-blue-600 -inset-0.5 rounded-lg blur-xl opacity-40'></div>

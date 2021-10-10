@@ -1,6 +1,7 @@
 import Layout from '@components/layouts/Layout';
 import Publication from '@components/ui/Publication';
 import prisma from '@lib/prisma';
+import Head from 'next/head';
 import { getSession, useSession, signIn } from 'next-auth/react';
 
 export default function Publications({ publications }) {
@@ -14,16 +15,21 @@ export default function Publications({ publications }) {
   if (status === 'loading') return null;
 
   return (
-    <main className='container'>
-      <h1>Your Publications</h1>
-      {publications.map((publication) => (
-        <Publication
-          post={publication}
-          key={publication.id}
-          visibility='private'
-        />
-      ))}
-    </main>
+    <>
+      <Head>
+        <title>My Publications</title>
+      </Head>
+      <main className='container'>
+        <h1>Your Publications</h1>
+        {publications.map((publication) => (
+          <Publication
+            post={publication}
+            key={publication.id}
+            visibility='private'
+          />
+        ))}
+      </main>
+    </>
   );
 }
 

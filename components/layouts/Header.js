@@ -1,5 +1,4 @@
 import Link from 'next/link';
-import Head from 'next/head';
 import Image from 'next/image';
 import { useEffect } from 'react';
 import { signIn, useSession } from 'next-auth/react';
@@ -36,9 +35,6 @@ export default function Header({
   if (pageType === 'editor') {
     return (
       <>
-        <Head>
-          <title>Editor | Lumiere</title>
-        </Head>
         <header
           className={`relative h-18 transition-transform origin-top ${
             collapsed ? 'scale-y-0' : 'scale-y-1'
@@ -72,7 +68,7 @@ export default function Header({
                   setSlug(
                     e.target.value
                       .replaceAll(/[`~!@#$%^&*()_+={}|[;:'"<>,./?]/g, '')
-                      .replaceAll(' ', '')
+                      .replaceAll(' ', '-')
                       .toLowerCase()
                   );
                 }}
@@ -101,11 +97,11 @@ export default function Header({
           </div>
         </header>
         <button
-          className='rounded-b-full bg-gray-500 w-7 h-6 grid place-items-center absolute left-1/2 -translate-x-1/2 top-0 z-50'
+          className='rounded-b-md hover:rounded-b-full bg-gray-600 w-8 h-6 grid place-items-center absolute left-1/2 -translate-x-1/2 top-0 -translate-y-4 hover:translate-y-0 transition-all z-50'
           onClick={() => setCollapsed(!collapsed)}
         >
           <FiChevronUp
-            className={`w-5 h-5 text-gray-300 -mt-0.5 transition-transform ${
+            className={`w-5 h-5 text-gray-100 -mt-0.5 transition-transform ${
               collapsed && 'rotate-180'
             }`}
           />
@@ -235,7 +231,7 @@ export default function Header({
     );
   } else {
     return (
-      <header className='sticky top-0 z-50 h-18 lg:h-16 flex items-center border-b border-gray-700 bg-gray-900'>
+      <header className='sticky top-0 z-50 h-18 lg:h-16 flex items-center border-b border-gray-700 bg-gray-900 mb-14'>
         <div className='absolute w-full h-full -mt-60 lg:-mt-64 z-0'>
           <div className='relative h-48'>
             <canvas

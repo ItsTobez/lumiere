@@ -3,10 +3,12 @@ import { getSession, useSession, signIn } from 'next-auth/react';
 import { useRouter } from 'next/router';
 import { useState } from 'react';
 import MDXEditor from '@components/editor/MDXEditor';
+import Head from 'next/head';
 import Header from '@components/layouts/Header';
 
-export default function EditDraft(props) {
+export default function Draft(props) {
   const title = props.title;
+  const [collapsed, setCollapsed] = useState(false);
   const [content, setContent] = useState(props.content);
   const slug = props.slug;
   const router = useRouter();
@@ -35,14 +37,23 @@ export default function EditDraft(props) {
 
   return (
     <>
+      <Head>
+        <title>[Draft] {title}</title>
+      </Head>
       <Header
         pageType='editor'
         title={title}
         content={content}
         setContent={setContent}
         saveDraft={saveDraft}
+        collapsed={collapsed}
+        setCollapsed={setCollapsed}
       />
-      <MDXEditor content={content} setContent={setContent} />
+      <MDXEditor
+        content={content}
+        setContent={setContent}
+        collapsed={collapsed}
+      />
     </>
   );
 }
