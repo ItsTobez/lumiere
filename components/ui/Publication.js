@@ -36,46 +36,53 @@ export default function Publication({ post, visibility }) {
     }
   };
 
+  const getDateAndTime = (string) => {
+    return new Date(string).toLocaleString('en-US', {weekday: 'long', day: 'numeric', month: 'long', year: 'numeric', hour: 'numeric', minute: 'numeric', hour12: true});
+  }
+
   return (
     <>
       <div
-        className='border border-gray-700 cursor-pointer'
+        className='border border-gray-700 p-5 rounded-lg cursor-pointer'
         onClick={() =>
           router.push(`/press/${post.author.username}/${post.slug}`)
         }
       >
-        <h2>{post.title}</h2>
-        <p>Author: {post.author.username}</p>
-        <Image
-          src={post.author.image}
-          alt={`Image of ${post.author.username}`}
-          width={40}
-          height={40}
-        />
-        <p>Created at: {post.createdAt}</p>
-        <p>Updated at: {post.updatedAt}</p>
+        <h2 className='font-bold text-xl'>{post.title}</h2>
+        <div className='flex items-center my-2 space-x-2'>
+          <Image
+              src={post.author.image}
+              alt={`Image of ${post.author.username}`}
+              className='rounded-full'
+              width={40}
+              height={40}
+          />
+          <p>{post.author.username}</p>
+        </div>
+        <p>Created on {getDateAndTime(post.createdAt)}</p>
+        <p>Updated on {getDateAndTime(post.updatedAt)}</p>
       </div>
       {visibility === 'private' && (
-        <>
+        <div className='flex flex-row space-x-2'>
           <button
-            className='border border-gray-700'
+            className='mt-2 p-2.5 border border-gray-700 hover:border-white hover:text-white rounded-lg'
             onClick={() => editPost(post.slug)}
           >
             Edit
           </button>
           <button
-            className='border border-gray-700'
+            className='mt-2 p-2.5 border border-gray-700 hover:border-white hover:text-white rounded-lg'
             onClick={() => unpublishPost(post.slug)}
           >
             Unpublish
           </button>
           <button
-            className='border border-gray-700'
+            className='mt-2 p-2.5 border border-red-700 hover:border-red-500 hover:text-white rounded-lg'
             onClick={() => deletePost(post.slug)}
           >
             Delete
           </button>
-        </>
+        </div>
       )}
     </>
   );
