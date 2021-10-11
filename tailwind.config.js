@@ -90,6 +90,10 @@ module.exports = {
       typography: (theme) => ({
         DEFAULT: {
           css: {
+            '[class="toc"]': {
+              fontSize: '12px',
+              marginRight: '64px',
+            },
             '[class="hint tip"]': {
               backgroundColor: theme('colors.green.100', colors.green[100]),
               color: theme('colors.green.600', colors.green[600]),
@@ -124,6 +128,10 @@ module.exports = {
         },
         dark: {
           css: {
+            '[class="toc"]': {
+              fontSize: '12px',
+              marginRight: '64px',
+            },
             '[class="hint tip"]': {
               backgroundColor: theme('colors.green.900', colors.green[900]),
               color: theme('colors.green.400', colors.green[400]),
