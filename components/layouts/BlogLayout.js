@@ -6,7 +6,9 @@ export default function BlogLayout({ children }) {
   return (
     <>
       <Header />
-      <ProseContainer>{children}</ProseContainer>
+      <ProseContainer>
+        <section className='flex flex-row-reverse'>{children}</section>
+      </ProseContainer>
       <Footer />
     </>
   );
