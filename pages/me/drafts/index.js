@@ -21,7 +21,7 @@ export default function Drafts({ drafts }) {
       </Head>
 
       <main className='container'>
-        <h1>Drafts</h1>
+        <h1 className='heading-primary mb-5'>Drafts</h1>
         {drafts.map((draft) => (
           <Draft post={draft} key={draft.id} />
         ))}
