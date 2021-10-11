@@ -90,7 +90,7 @@ export default function Home() {
       <hr className='container border-gray-800' />
 
       <main className='mt-28 container'>
-        <section className='flex justify-around'>
+        <section>
           <div className='relative inline-block -rotate-6'>
             <div className='absolute bg-gradient-to-tr from-purple-600 to-blue-600 -inset-0.5 rounded-lg blur-xl opacity-40'></div>
             <div className='relative px-7 py-4 bg-gray-900 opacity-90 rounded-lg leading-none'>
@@ -154,8 +154,6 @@ export default function Home() {
               </pre>
             </div>
           </div>
-
-          <div>Cool</div>
         </section>
       </main>
 
