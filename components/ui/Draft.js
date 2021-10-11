@@ -31,28 +31,34 @@ export default function Post({ post }) {
     }
   };
 
+  const getDateAndTime = (string) => {
+      return new Date(string).toLocaleString('en-US', {weekday: 'long', day: 'numeric', month: 'long', year: 'numeric', hour: 'numeric', minute: 'numeric', hour12: true});
+  }
+
   return (
     <>
       <div
-        className='border border-gray-700 cursor-pointer'
+        className='border border-gray-700 p-5 rounded-xl cursor-pointer'
         onClick={() => router.push(`/me/drafts/${post.slug}`)}
       >
-        <h2>{post.title}</h2>
-        <p>Created at: {post.createdAt}</p>
-        <p>Updated at: {post.updatedAt}</p>
+        <h2 className='font-bold text-xl'>{post.title}</h2>
+        <p>Created on {getDateAndTime(post.createdAt)}</p>
+        <p>Updated on {getDateAndTime(post.updatedAt)}</p>
       </div>
-      <button
-        className='border border-gray-700'
-        onClick={() => publishPost(post.slug)}
-      >
-        Publish
-      </button>
-      <button
-        className='border border-gray-700'
-        onClick={() => deletePost(post.slug)}
-      >
-        Delete
-      </button>
+        <div className='flex flex-row space-x-2'>
+          <button
+            className='mt-2 p-2.5 button-tertiary'
+            onClick={() => publishPost(post.slug)}
+          >
+            Publish
+          </button>
+          <button
+            className='mt-2 p-2.5 button-tertiary border-red-700 hover:border-red-400'
+            onClick={() => deletePost(post.slug)}
+          >
+            Delete
+          </button>
+        </div>
     </>
   );
 }

@@ -20,7 +20,7 @@ export default function Publications({ publications }) {
         <title>My Publications</title>
       </Head>
       <main className='container'>
-        <h1>Your Publications</h1>
+        <h1 className='heading-primary mb-5'>Your Publications</h1>
         {publications.map((publication) => (
           <Publication
             post={publication}
