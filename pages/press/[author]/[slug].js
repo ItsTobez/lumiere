@@ -34,6 +34,7 @@ export default function Publication({
         updatedAt={updatedAt}
         authorName={author.username}
         authorImage={author.image}
+        pageType='publication'
       >
         {mdxLoading ? <p>LOADING</p> : <MDXOutput />}
       </Article>

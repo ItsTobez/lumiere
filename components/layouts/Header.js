@@ -226,7 +226,7 @@ export default function Header({
     );
   } else {
     return (
-      <header className='sticky top-0 z-50 h-18 lg:h-16 flex items-center border-b border-gray-700 bg-gray-900 mb-14'>
+      <header className='sticky top-0 z-50 h-18 lg:h-16 flex items-center border-b border-gray-700 bg-gray-900 mb-16'>
         <div className='absolute w-full h-full -mt-60 lg:-mt-64 z-0'>
           <div className='relative h-48'>
             <canvas

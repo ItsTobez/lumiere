@@ -38,7 +38,6 @@ export default function Post({ post }) {
         onClick={() => router.push(`/me/drafts/${post.slug}`)}
       >
         <h2>{post.title}</h2>
-        <p>{post.content}</p>
         <p>Created at: {post.createdAt}</p>
         <p>Updated at: {post.updatedAt}</p>
       </div>

@@ -32,7 +32,9 @@ export default function Article({
           </div>
         </section>
       )}
-      <section className='py-12'>{children}</section>
+      <section className={`${pageType === 'publication' ? 'py-0' : 'py-12'}`}>
+        {children}
+      </section>
     </ProseContainer>
   );
 }
