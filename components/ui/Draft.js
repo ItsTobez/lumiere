@@ -38,7 +38,7 @@ export default function Post({ post }) {
   return (
     <>
       <div
-        className='border border-gray-700 p-5 rounded-lg cursor-pointer'
+        className='border border-gray-700 p-5 rounded-xl cursor-pointer'
         onClick={() => router.push(`/me/drafts/${post.slug}`)}
       >
         <h2 className='font-bold text-xl'>{post.title}</h2>
@@ -47,13 +47,13 @@ export default function Post({ post }) {
       </div>
         <div className='flex flex-row space-x-2'>
           <button
-            className='mt-2 p-2.5 border border-gray-700 hover:border-white hover:text-white rounded-lg'
+            className='mt-2 p-2.5 button-tertiary'
             onClick={() => publishPost(post.slug)}
           >
             Publish
           </button>
           <button
-            className='mt-2 p-2.5 border border-red-700 hover:border-red-500 hover:text-white rounded-lg'
+            className='mt-2 p-2.5 button-tertiary border-red-700 hover:border-red-400'
             onClick={() => deletePost(post.slug)}
           >
             Delete
