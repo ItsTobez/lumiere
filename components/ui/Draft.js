@@ -53,7 +53,7 @@ export default function Post({ post }) {
             Publish
           </button>
           <button
-            className='mt-2 p-2.5 border border-gray-700 hover:border-white hover:text-white rounded-lg'
+            className='mt-2 p-2.5 border border-red-700 hover:border-red-500 hover:text-white rounded-lg'
             onClick={() => deletePost(post.slug)}
           >
             Delete
