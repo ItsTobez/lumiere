@@ -72,7 +72,7 @@ module.exports = {
         18: '72px',
       },
       animation: {
-        tilt: 'tilt 5s infinite linear',
+        tilt: 'tilt 3s infinite linear',
       },
       keyframes: {
         tilt: {

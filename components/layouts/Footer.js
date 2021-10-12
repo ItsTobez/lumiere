@@ -10,7 +10,7 @@ export default function Footer() {
     <footer className='bg-gray-800 border-t border-gray-700 pt-14 pb-8 md:pt-10 mt-24'>
       <div className='container'>
         <nav className='flex justify-between text-sm lg:text-xs leading-loose text-gray-500 transition-colors md:hidden'>
-          <ul className='beta'>
+          <ul>
             <h3 className='heading-tertiary'>Media</h3>
             <li>
               <Link href='/press'>
@@ -28,7 +28,7 @@ export default function Footer() {
               </Link>
             </li>
           </ul>
-          <ul className='beta'>
+          <ul>
             <h3 className='heading-tertiary'>Resources</h3>
             <li>
               <Link href='/resources/contributing'>
@@ -46,7 +46,7 @@ export default function Footer() {
               </Link>
             </li>
           </ul>
-          <ul className='beta'>
+          <ul>
             <h3 className='heading-tertiary'>Company</h3>
             <li>
               <Link href='/'>
@@ -74,7 +74,7 @@ export default function Footer() {
               </Link>
             </li>
           </ul>
-          <ul className='beta'>
+          <ul>
             <h3 className='heading-tertiary'>Legal</h3>
             <li>
               <Link href='/legal/privacy'>
@@ -112,7 +112,7 @@ export default function Footer() {
                     <FiPlus className='w-2.5 h-2.5' />
                   )}
                 </Disclosure.Button>
-                <Disclosure.Panel as='ul' className='mt-1 ml-3 beta'>
+                <Disclosure.Panel as='ul' className='mt-1 ml-3'>
                   <li>
                     <Link href='/press'>
                       <a className='hover:text-gray-400 mb-2 block'>
@@ -156,7 +156,7 @@ export default function Footer() {
                     <FiPlus className='w-2.5 h-2.5' />
                   )}
                 </Disclosure.Button>
-                <Disclosure.Panel as='ul' className='mt-1 ml-3 beta'>
+                <Disclosure.Panel as='ul' className='mt-1 ml-3'>
                   <li>
                     <Link href='/resources/contributing'>
                       <a className='hover:text-gray-400 mb-2 block'>
@@ -200,7 +200,7 @@ export default function Footer() {
                     <FiPlus className='w-2.5 h-2.5' />
                   )}
                 </Disclosure.Button>
-                <Disclosure.Panel as='ul' className='mt-1 ml-3 beta'>
+                <Disclosure.Panel as='ul' className='mt-1 ml-3'>
                   <li>
                     <Link href='/'>
                       <a className='hover:text-gray-400 mb-2 block'>Home</a>
@@ -250,7 +250,7 @@ export default function Footer() {
                     <FiPlus className='w-2.5 h-2.5' />
                   )}
                 </Disclosure.Button>
-                <Disclosure.Panel as='ul' className='mt-1 ml-3 beta'>
+                <Disclosure.Panel as='ul' className='mt-1 ml-3'>
                   <li>
                     <Link href='/legal/privacy'>
                       <a className='hover:text-gray-400 mb-2 block'>

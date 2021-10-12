@@ -7,12 +7,19 @@ import { Gradient } from '@lib/gradient';
 import { FiChevronRight } from 'react-icons/fi';
 import Footer from '@components/layouts/Footer';
 import Header from '@components/layouts/Header';
+import { useLocalStorage } from 'react-use';
 
 export default function Home() {
+  const [value, setValue] = useLocalStorage('refresh', false);
+
   useEffect(() => {
     const gradient = new Gradient();
     gradient.initGradient('.home-gradient-canvas');
-  }, []);
+    if (value) {
+      location.reload();
+      setValue(false);
+    }
+  }, [value, setValue]);
 
   return (
     <div className='bg-gray-900'>
@@ -71,16 +78,16 @@ export default function Home() {
                 objectFit='contain'
               />
             </figure>
-            <figure className='relative w-32 h-12 lg:w-28 lg:h-9 md:w-24 md:h-7 beta'>
+            <figure className='relative w-32 h-12 lg:w-28 lg:h-9 md:w-24 md:h-7'>
               <div className='bg-gray-800 h-full grid place-items-center'></div>
             </figure>
-            <figure className='relative w-32 h-12 lg:w-28 lg:h-9 md:w-24 md:h-7 beta'>
+            <figure className='relative w-32 h-12 lg:w-28 lg:h-9 md:w-24 md:h-7'>
               <div className='bg-gray-800 h-full grid place-items-center'></div>
             </figure>
-            <figure className='relative w-32 h-12 lg:w-28 lg:h-9 md:w-24 md:h-7 beta'>
+            <figure className='relative w-32 h-12 lg:w-28 lg:h-9 md:w-24 md:h-7'>
               <div className='bg-gray-800 h-full grid place-items-center'></div>
             </figure>
-            <figure className='relative w-32 h-12 lg:w-28 lg:h-9 md:w-24 md:h-7 beta'>
+            <figure className='relative w-32 h-12 lg:w-28 lg:h-9 md:w-24 md:h-7'>
               <div className='bg-gray-800 h-full grid place-items-center'></div>
             </figure>
           </div>
@@ -90,69 +97,74 @@ export default function Home() {
       <hr className='container border-gray-800' />
 
       <main className='mt-28 container'>
-        <section>
-          <div className='relative inline-block -rotate-6'>
-            <div className='absolute bg-gradient-to-tr from-purple-600 to-blue-600 -inset-0.5 rounded-lg blur-xl opacity-40'></div>
-            <div className='relative px-7 py-4 bg-gray-900 opacity-90 rounded-lg leading-none'>
-              <pre className='language-jsx leading-normal text-xs'>
-                <code className='language-jsx'>
-                  <span className='token comment'>
-                    {'// header component w/ navbar'}
-                  </span>
-                  <br />
-                  <span className='token keyword module'>export</span>{' '}
-                  <span className='token keyword module'>default</span>{' '}
-                  <span className='token keyword'>function</span>{' '}
-                  <span className='token function'>
-                    <span className='token maybe-className-name'>Header</span>
-                  </span>
-                  <span className='token punctuation'>(</span>
-                  <span className='token punctuation'>)</span>{' '}
-                  <span className='token punctuation'>{'{'}</span>
-                  <br />
-                  <span className='token keyword control-flow ml-4'>
-                    return
-                  </span>{' '}
-                  <span className='token punctuation'>(</span>
-                  <br />
-                  <span className='token tag'>
-                    <span className='token tag'>
-                      <span className='token punctuation ml-8'>&lt;</span>div
+        <section className='flex justify-between'>
+          <figure className='flex-1'>
+            <div className='relative inline-block -rotate-6'>
+              <div className='absolute bg-gradient-to-tr from-purple-600 to-blue-600 -inset-0.5 rounded-lg blur-xl opacity-40 animate-tilt'></div>
+              <div className='relative px-7 py-4 bg-gray-900 opacity-90 rounded-lg leading-none'>
+                <pre className='language-jsx leading-normal text-2xs'>
+                  <code className='language-jsx'>
+                    <span className='token comment'>
+                      {'// header component w/ navbar'}
                     </span>
-                    <span className='token punctuation'>&gt;</span>
-                  </span>
-                  <br />
-                  <span className='token plain-text'></span>
-                  <span className='token tag'>
-                    <span className='token tag'>
-                      <span className='token punctuation ml-12'>&lt;</span>
-                      header
+                    <br />
+                    <span className='token keyword module'>export</span>{' '}
+                    <span className='token keyword module'>default</span>{' '}
+                    <span className='token keyword'>function</span>{' '}
+                    <span className='token function'>
+                      <span className='token maybe-className-name'>Header</span>
                     </span>
-                    <span className='token punctuation'>&gt;</span>
-                  </span>
-                  <span className='token plain-text'>Header</span>
-                  <span className='token tag'>
+                    <span className='token punctuation'>(</span>
+                    <span className='token punctuation'>)</span>{' '}
+                    <span className='token punctuation'>{'{'}</span>
+                    <br />
+                    <span className='token keyword control-flow ml-4'>
+                      return
+                    </span>{' '}
+                    <span className='token punctuation'>(</span>
+                    <br />
                     <span className='token tag'>
-                      <span className='token punctuation'>&lt;/</span>header
+                      <span className='token tag'>
+                        <span className='token punctuation ml-8'>&lt;</span>div
+                      </span>
+                      <span className='token punctuation'>&gt;</span>
                     </span>
-                    <span className='token punctuation'>&gt;</span>
-                  </span>
-                  <span className='token plain-text'></span>
-                  <br />
-                  <span className='token tag'>
+                    <br />
+                    <span className='token plain-text'></span>
                     <span className='token tag'>
-                      <span className='token punctuation ml-8'>&lt;/</span>div
+                      <span className='token tag'>
+                        <span className='token punctuation ml-12'>&lt;</span>
+                        header
+                      </span>
+                      <span className='token punctuation'>&gt;</span>
                     </span>
-                    <span className='token punctuation'>&gt;</span>
-                  </span>
-                  <br />
-                  <span className='token punctuation ml-4'>)</span>
-                  <span className='token punctuation'>;</span>
-                  <br />
-                  <span className='token punctuation'>{'}'}</span>
-                </code>
-              </pre>
+                    <span className='token plain-text'>Header</span>
+                    <span className='token tag'>
+                      <span className='token tag'>
+                        <span className='token punctuation'>&lt;/</span>header
+                      </span>
+                      <span className='token punctuation'>&gt;</span>
+                    </span>
+                    <span className='token plain-text'></span>
+                    <br />
+                    <span className='token tag'>
+                      <span className='token tag'>
+                        <span className='token punctuation ml-8'>&lt;/</span>div
+                      </span>
+                      <span className='token punctuation'>&gt;</span>
+                    </span>
+                    <br />
+                    <span className='token punctuation ml-4'>)</span>
+                    <span className='token punctuation'>;</span>
+                    <br />
+                    <span className='token punctuation'>{'}'}</span>
+                  </code>
+                </pre>
+              </div>
             </div>
+          </figure>
+          <div className='flex-1'>
+            <h2>A cutting-edge editing experience</h2>
           </div>
         </section>
       </main>

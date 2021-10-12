@@ -95,7 +95,7 @@ export default function Avatar({ renderPosition }) {
               </div>
               <div className='pt-4 mb-4 border-t border-gray-700'>
                 <Link href='/me/statistics'>
-                  <a className='px-7 py-2 block hover:text-gray-300 hover:bg-gray-700 hover:bg-opacity-70 transition-all'>
+                  <a className='px-7 py-2 block hover:text-gray-300 hover:bg-gray-700 hover:bg-opacity-70 transition-all beta'>
                     Statistics
                   </a>
                 </Link>
