@@ -39,7 +39,7 @@ export default function Settings() {
                     <h2 className='font-bold text-xl'>Delete your account</h2>
                     <p>You can choose to delete your account at any time. Do note that doing so may result in all your previously-created posts being permanently deleted. If you&#39;re sure, you may delete your account by clicking on the button below.</p>
                     <button
-                        className='button-tertiary px-5 py-3 lg:py-2.5 mt-5 !border-red-500 !dark:border-red-700 text-red-500 hover:text-red-300 dark:text-red-500 dark:hover:text-red-300'
+                        className='px-5 py-3 lg:py-2.5 mt-5 button-tertiary !border-red-500 !text-red-500 hover:!text-red-400'
                         onClick={() => deleteAccount()}
                     >
                         Delete my account
