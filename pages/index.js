@@ -46,14 +46,14 @@ export default function Home() {
             </p>
             <div className='mt-20 sm:mt-10 flex'>
               <Link href='/press'>
-                <a className='flex items-center mr-6 button-secondary pl-4 pr-2 py-2 text-xs lg:text-2xs sm:pl-3 sm:pr-1.5 sm:py-1.5'>
+                <a className='flex items-center mr-6 button-secondary pl-4 pr-2 py-2 text-xs lg:text-2xs sm:pl-3 sm:pr-1.5 sm:py-1.5 !bg-gray-700 !border-gray-700 !text-gray-200 !hover:bg-gray-900 !hover:border-gray-300'>
                   <p className='mr-2'>See Publications</p>
                   <FiChevronRight className='w-5 h-5 lg:w-4 lg:h-4' />
                 </a>
               </Link>
               <button
                 type='button'
-                className='button-tertiary px-4 py-2 text-xs lg:text-2xs sm:py-1.5 beta'
+                className='button-tertiary px-4 py-2 text-xs lg:text-2xs sm:py-1.5 beta !border-gray-700 !text-gray-400 !hover:text-gray-300'
               >
                 Support us
               </button>
