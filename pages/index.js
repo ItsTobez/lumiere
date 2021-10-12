@@ -34,7 +34,7 @@ export default function Home() {
       <div className='container -mt-32 lg:-mt-28 sm:-mt-9'>
         <section className='mt-14 sm:mt-0 flex'>
           <div className='max-w-xl z-10'>
-            <h1 className='heading-primary'>
+            <h1 className='heading-primary !text-white'>
               Jumpstart your{' '}
               <span className='gradient-text'>Computer Science</span> career
               today.
