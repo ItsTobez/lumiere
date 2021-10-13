@@ -64,7 +64,8 @@ module.exports = {
         '2xs': '0.75rem',
       },
       height: {
-        editor: 'calc(100vh - 72px)',
+        'editor-lg': 'calc(100vh - 72px)',
+        'editor-sm': 'calc(100vh - 64px)',
       },
       spacing: {
         0.25: '1px',

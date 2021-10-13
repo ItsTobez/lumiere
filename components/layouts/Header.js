@@ -36,14 +36,14 @@ export default function Header({
     return (
       <>
         <header
-          className={`relative h-18 transition-transform origin-top ${
+          className={`relative h-18 lg:h-16 transition-transform origin-top ${
             collapsed ? 'scale-y-0' : 'scale-y-1'
           } flex items-center border-b border-gray-700 bg-gray-900 px-6`}
         >
           <div className='flex items-center'>
             <Link href='/'>
               <a>
-                <figure className='relative w-10 h-10 mb-1'>
+                <figure className='relative w-10 h-10 lg:w-9 lg:h-9 mb-1'>
                   <Image
                     src={projectLumiere}
                     alt='Project Lumiere logo'
@@ -59,7 +59,7 @@ export default function Header({
                 placeholder='Untitled'
                 value={title}
                 ref={titleInput}
-                className={`rounded-lg bg-transparent text-xl ml-3 py-2 px-4 w-96 hover:bg-gray-800 transition-colors text-gray-300 focus:outline-none focus:ring-2 ${
+                className={`rounded-lg bg-transparent text-xl lg:text-lg ml-3 py-2 lg:py-1.5 px-4 w-96 md:w-72 sm:w-48 hover:bg-gray-800 transition-colors text-gray-300 focus:outline-none focus:ring-2 ${
                   title ? 'focus:ring-blue-600' : 'focus:ring-red-600'
                 } placeholder-gray-500`}
                 onClick={(e) => e.target.select()}
@@ -84,7 +84,7 @@ export default function Header({
           </div>
           <div className='flex ml-auto'>
             <button
-              className='button-tertiary text-xs px-4 mr-6'
+              className='button-tertiary text-xs lg:text-2xs px-4 py-3 mr-6'
               onClick={title ? saveDraft : showUntitledError}
             >
               Save draft
@@ -93,6 +93,7 @@ export default function Header({
               profileImageSrc={session.user.image}
               profileName={session.user.name}
               renderPosition='fullscreen'
+              pageType='editor'
             />
           </div>
         </header>
