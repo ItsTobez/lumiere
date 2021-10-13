@@ -46,7 +46,7 @@ export default function Authenticate({ providers }) {
           </Link>
         </div>
         <div className='relative'>
-          <div className='absolute -inset-0.5 bg-gradient-to-r from-pink-600 to-purple-600 rounded-lg blur opacity-75 animate-tilt'></div>
+          <div className='absolute -inset-0.5 bg-gradient-to-r from-pink-600 to-purple-600 rounded-lg blur opacity-75'></div>
           <section className='relative max-w-3xl px-7 py-4 rounded-lg bg-gray-900'>
             {Object.values(providers).map((provider) => (
               <button

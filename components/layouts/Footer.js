@@ -7,88 +7,116 @@ import { Disclosure } from '@headlessui/react';
 
 export default function Footer() {
   return (
-    <footer className='bg-gray-800 border-t border-gray-700 pt-14 pb-8 md:pt-10 mt-24'>
+    <footer className='bg-gray-800 border-t border-gray-700 pt-14 pb-8 md:pt-10 mt-36'>
       <div className='container'>
-        <nav className='flex justify-between text-sm lg:text-xs leading-loose text-gray-500 transition-colors md:hidden'>
-          <ul className='beta'>
+        <nav className='flex justify-between text-sm lg:text-xs leading-loose transition-colors md:hidden'>
+          <ul>
             <h3 className='heading-tertiary'>Media</h3>
             <li>
               <Link href='/press'>
-                <a className='hover:text-gray-400'>Lumiere Press</a>
+                <a className='text-gray-500 font-normal hover:text-gray-400'>
+                  Lumiere Press
+                </a>
               </Link>
             </li>
             <li>
               <Link href='/channel'>
-                <a className='hover:text-gray-400'>Lumiere Channel</a>
+                <a className='text-gray-500 font-normal hover:text-gray-400'>
+                  Lumiere Channel
+                </a>
               </Link>
             </li>
             <li>
               <Link href='/media'>
-                <a className='hover:text-gray-400'>About Media</a>
+                <a className='text-gray-500 font-normal hover:text-gray-400'>
+                  About Media
+                </a>
               </Link>
             </li>
           </ul>
-          <ul className='beta'>
+          <ul>
             <h3 className='heading-tertiary'>Resources</h3>
             <li>
               <Link href='/resources/contributing'>
-                <a className='hover:text-gray-400'>Contributing</a>
+                <a className='text-gray-500 font-normal hover:text-gray-400'>
+                  Contributing
+                </a>
               </Link>
             </li>
             <li>
               <Link href='/changelog'>
-                <a className='hover:text-gray-400'>Changelog</a>
+                <a className='text-gray-500 font-normal hover:text-gray-400'>
+                  Changelog
+                </a>
               </Link>
             </li>
             <li>
               <Link href='/contact'>
-                <a className='hover:text-gray-400'>Contact Us</a>
+                <a className='text-gray-500 font-normal hover:text-gray-400'>
+                  Contact Us
+                </a>
               </Link>
             </li>
           </ul>
-          <ul className='beta'>
+          <ul>
             <h3 className='heading-tertiary'>Company</h3>
             <li>
               <Link href='/'>
-                <a className='hover:text-gray-400'>Home</a>
+                <a className='text-gray-500 font-normal hover:text-gray-400'>
+                  Home
+                </a>
               </Link>
             </li>
             <li>
               <Link href='/company/blog'>
-                <a className='hover:text-gray-400'>Blog</a>
+                <a className='text-gray-500 font-normal hover:text-gray-400'>
+                  Blog
+                </a>
               </Link>
             </li>
             <li>
               <Link href='/company/team'>
-                <a className='hover:text-gray-400'>Team</a>
+                <a className='text-gray-500 font-normal hover:text-gray-400'>
+                  Team
+                </a>
               </Link>
             </li>
             <li>
               <Link href='/company/donate'>
-                <a className='hover:text-gray-400'>Support Us</a>
+                <a className='text-gray-500 font-normal hover:text-gray-400'>
+                  Support Us
+                </a>
               </Link>
             </li>
             <li>
               <Link href='/company/brand'>
-                <a className='hover:text-gray-400'>Brand</a>
+                <a className='text-gray-500 font-normal hover:text-gray-400'>
+                  Brand
+                </a>
               </Link>
             </li>
           </ul>
-          <ul className='beta'>
+          <ul>
             <h3 className='heading-tertiary'>Legal</h3>
             <li>
               <Link href='/legal/privacy'>
-                <a className='hover:text-gray-400'>Privacy Policy</a>
+                <a className='text-gray-500 font-normal hover:text-gray-400'>
+                  Privacy Policy
+                </a>
               </Link>
             </li>
             <li>
               <Link href='/legal/terms'>
-                <a className='hover:text-gray-400'>Terms of Service</a>
+                <a className='text-gray-500 font-normal hover:text-gray-400'>
+                  Terms of Service
+                </a>
               </Link>
             </li>
             <li>
               <Link href='/legal/cla'>
-                <a className='hover:text-gray-400'>Contributors</a>
+                <a className='text-gray-500 font-normal hover:text-gray-400'>
+                  Contributors
+                </a>
               </Link>
             </li>
           </ul>
@@ -112,24 +140,24 @@ export default function Footer() {
                     <FiPlus className='w-2.5 h-2.5' />
                   )}
                 </Disclosure.Button>
-                <Disclosure.Panel as='ul' className='mt-1 ml-3 beta'>
+                <Disclosure.Panel as='ul' className='mt-1 ml-3'>
                   <li>
                     <Link href='/press'>
-                      <a className='hover:text-gray-400 mb-2 block'>
+                      <a className='text-gray-500 font-normal hover:text-gray-400 mb-2 block'>
                         Lumiere Press
                       </a>
                     </Link>
                   </li>
                   <li>
                     <Link href='/channel'>
-                      <a className='hover:text-gray-400 mb-2 block'>
+                      <a className='text-gray-500 font-normal hover:text-gray-400 mb-2 block'>
                         Lumiere Channel
                       </a>
                     </Link>
                   </li>
                   <li>
                     <Link href='/media'>
-                      <a className='hover:text-gray-400 mb-4 block'>
+                      <a className='text-gray-500 font-normal hover:text-gray-400 mb-4 block'>
                         About Media
                       </a>
                     </Link>
@@ -156,24 +184,24 @@ export default function Footer() {
                     <FiPlus className='w-2.5 h-2.5' />
                   )}
                 </Disclosure.Button>
-                <Disclosure.Panel as='ul' className='mt-1 ml-3 beta'>
+                <Disclosure.Panel as='ul' className='mt-1 ml-3'>
                   <li>
                     <Link href='/resources/contributing'>
-                      <a className='hover:text-gray-400 mb-2 block'>
+                      <a className='text-gray-500 font-normal hover:text-gray-400 mb-2 block'>
                         Contributing
                       </a>
                     </Link>
                   </li>
                   <li>
                     <Link href='/changelog'>
-                      <a className='hover:text-gray-400 mb-2 block'>
+                      <a className='text-gray-500 font-normal hover:text-gray-400 mb-2 block'>
                         Changelog
                       </a>
                     </Link>
                   </li>
                   <li>
                     <Link href='/contact'>
-                      <a className='hover:text-gray-400 mb-4 block'>
+                      <a className='text-gray-500 font-normal hover:text-gray-400 mb-4 block'>
                         Contact Us
                       </a>
                     </Link>
@@ -200,32 +228,40 @@ export default function Footer() {
                     <FiPlus className='w-2.5 h-2.5' />
                   )}
                 </Disclosure.Button>
-                <Disclosure.Panel as='ul' className='mt-1 ml-3 beta'>
+                <Disclosure.Panel as='ul' className='mt-1 ml-3'>
                   <li>
                     <Link href='/'>
-                      <a className='hover:text-gray-400 mb-2 block'>Home</a>
+                      <a className='text-gray-500 font-normal hover:text-gray-400 mb-2 block'>
+                        Home
+                      </a>
                     </Link>
                   </li>
                   <li>
                     <Link href='/company/blog'>
-                      <a className='hover:text-gray-400 mb-2 block'>Blog</a>
+                      <a className='text-gray-500 font-normal hover:text-gray-400 mb-2 block'>
+                        Blog
+                      </a>
                     </Link>
                   </li>
                   <li>
                     <Link href='/company/team'>
-                      <a className='hover:text-gray-400 mb-2 block'>Team</a>
+                      <a className='text-gray-500 font-normal hover:text-gray-400 mb-2 block'>
+                        Team
+                      </a>
                     </Link>
                   </li>
                   <li>
                     <Link href='/company/donate'>
-                      <a className='hover:text-gray-400 mb-2 block'>
+                      <a className='text-gray-500 font-normal hover:text-gray-400 mb-2 block'>
                         Support Us
                       </a>
                     </Link>
                   </li>
                   <li>
                     <Link href='/company/brand'>
-                      <a className='hover:text-gray-400 mb-4 block'>Brand</a>
+                      <a className='text-gray-500 font-normal hover:text-gray-400 mb-4 block'>
+                        Brand
+                      </a>
                     </Link>
                   </li>
                 </Disclosure.Panel>
@@ -250,24 +286,24 @@ export default function Footer() {
                     <FiPlus className='w-2.5 h-2.5' />
                   )}
                 </Disclosure.Button>
-                <Disclosure.Panel as='ul' className='mt-1 ml-3 beta'>
+                <Disclosure.Panel as='ul' className='mt-1 ml-3'>
                   <li>
                     <Link href='/legal/privacy'>
-                      <a className='hover:text-gray-400 mb-2 block'>
+                      <a className='text-gray-500 font-normal hover:text-gray-400 mb-2 block'>
                         Privacy Policy
                       </a>
                     </Link>
                   </li>
                   <li>
                     <Link href='/legal/terms'>
-                      <a className='hover:text-gray-400 mb-4 block'>
+                      <a className='text-gray-500 font-normal hover:text-gray-400 mb-4 block'>
                         Terms of Service
                       </a>
                     </Link>
                   </li>
                   <li>
                     <Link href='/legal/cla'>
-                      <a className='hover:text-gray-400 mb-4 block'>
+                      <a className='text-gray-500 font-normal hover:text-gray-400 mb-4 block'>
                         Contributors
                       </a>
                     </Link>

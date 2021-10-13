@@ -54,6 +54,7 @@ module.exports = {
     },
     transitionDuration: {
       DEFAULT: '75ms',
+      200: '200ms',
     },
     extend: {
       fontFamily: {
@@ -64,28 +65,13 @@ module.exports = {
         '2xs': '0.75rem',
       },
       height: {
-        editor: 'calc(100vh - 72px)',
+        'editor-lg': 'calc(100vh - 72px)',
+        'editor-sm': 'calc(100vh - 64px)',
       },
       spacing: {
         0.25: '1px',
         5.5: '22px',
         18: '72px',
-      },
-      animation: {
-        tilt: 'tilt 5s infinite linear',
-      },
-      keyframes: {
-        tilt: {
-          '0%, 50%, 100%': {
-            transform: 'rotate(0deg)',
-          },
-          '25%': {
-            transform: 'rotate(1deg)',
-          },
-          '75%': {
-            transform: 'rotate(-1deg)',
-          },
-        },
       },
       typography: (theme) => ({
         DEFAULT: {
