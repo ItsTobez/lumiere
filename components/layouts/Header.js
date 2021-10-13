@@ -275,7 +275,9 @@ export default function Header({
                     <Popover.Panel className='absolute -bottom-5.5 left-0 bg-gray-900 border-b border-gray-700 bg-opacity-90 w-full z-10'>
                       <div className='container'>
                         <Link href='/press'>
-                          <a className='block'>Lumiere Press</a>
+                          <a className='block' onClick={() => setIsOpen(false)}>
+                            Lumiere Press
+                          </a>
                         </Link>
                       </div>
                     </Popover.Panel>

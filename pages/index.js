@@ -105,15 +105,15 @@ export default function Home({ tweets }) {
 
       <hr className='container border-gray-800' />
 
-      <main className='mt-28 container'>
+      <main className='mt-32 container'>
         <section className='flex justify-between items-center'>
           <figure className='flex-1'>
             <div className='group relative -rotate-3 group z-10'>
-              <div className='absolute bg-gradient-to-tr from-amber-600 to-pink-600 -inset-0.5 rounded-lg blur-2xl group-hover:blur-xl group-hover:opacity-60 transition-all duration-200 opacity-50 animate-tilt' />
+              <div className='absolute bg-gradient-to-tr from-amber-600 to-pink-600 -inset-0.5 rounded-lg blur-2xl group-hover:blur-xl group-hover:opacity-60 transition-all duration-200 opacity-50' />
               <Tweet key={tweets[0].id} forceDark {...tweets[0]} />
             </div>
             <div className='group relative inline-block rotate-3 bottom-4 left-28'>
-              <div className='absolute bg-gradient-to-tr from-purple-600 to-blue-600 -inset-0.5 rounded-lg blur-2xl group-hover:blur-xl group-hover:opacity-60 transition-all duration-200 opacity-50 animate-tilt' />
+              <div className='absolute bg-gradient-to-tr from-purple-600 to-blue-600 -inset-0.5 rounded-lg blur-2xl group-hover:blur-xl group-hover:opacity-60 transition-all duration-200 opacity-50' />
               <div className='relative px-7 py-4 bg-gray-900 opacity-90 rounded-lg leading-none'>
                 <pre className='language-jsx leading-normal text-2xs'>
                   <code className='language-jsx'>
@@ -185,8 +185,9 @@ export default function Home({ tweets }) {
               <a href='https://mdxjs.com/' target='_blank' rel='noreferrer'>
                 MDX
               </a>{' '}
-              editor empowers creators with capabilities never seen before. We
-              support the entire GFM-Compliant{' '}
+              editor empowers creators with capabilities never seen in
+              traditional publication platforms. We support the entire
+              GFM-Compliant{' '}
               <a
                 href='https://daringfireball.net/projects/markdown/'
                 target='_blank'

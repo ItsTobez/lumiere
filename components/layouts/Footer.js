@@ -7,7 +7,7 @@ import { Disclosure } from '@headlessui/react';
 
 export default function Footer() {
   return (
-    <footer className='bg-gray-800 border-t border-gray-700 pt-14 pb-8 md:pt-10 mt-24'>
+    <footer className='bg-gray-800 border-t border-gray-700 pt-14 pb-8 md:pt-10 mt-36'>
       <div className='container'>
         <nav className='flex justify-between text-sm lg:text-xs leading-loose transition-colors md:hidden'>
           <ul>
