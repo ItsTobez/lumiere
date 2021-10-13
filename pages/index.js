@@ -8,8 +8,11 @@ import { FiChevronRight } from 'react-icons/fi';
 import Footer from '@components/layouts/Footer';
 import Header from '@components/layouts/Header';
 import { useLocalStorage } from 'react-use';
+import Tweet from '@components/ui/Tweet';
+import { getTweets } from '@lib/twitter';
+import { FaMarkdown, FaReact } from 'react-icons/fa';
 
-export default function Home() {
+export default function Home({ tweets }) {
   const [value, setValue] = useLocalStorage('refresh', false);
 
   useEffect(() => {
@@ -97,10 +100,10 @@ export default function Home() {
       <hr className='container border-gray-800' />
 
       <main className='mt-28 container'>
-        <section className='flex justify-between'>
+        <section className='flex justify-between items-center'>
           <figure className='flex-1'>
-            <div className='relative inline-block -rotate-6'>
-              <div className='absolute bg-gradient-to-tr from-purple-600 to-blue-600 -inset-0.5 rounded-lg blur-xl opacity-40 animate-tilt'></div>
+            <div className='relative inline-block rotate-3 left-28'>
+              <div className='absolute bg-gradient-to-tr from-purple-600 to-blue-600 -inset-0.5 rounded-lg blur-xl opacity-50 animate-tilt'></div>
               <div className='relative px-7 py-4 bg-gray-900 opacity-90 rounded-lg leading-none'>
                 <pre className='language-jsx leading-normal text-2xs'>
                   <code className='language-jsx'>
@@ -162,9 +165,24 @@ export default function Home() {
                 </pre>
               </div>
             </div>
+            <div className='relative -rotate-2 bottom-12'>
+              <div className='absolute bg-gradient-to-tr from-amber-600 to-pink-600 -inset-0.5 rounded-lg blur-xl opacity-50 animate-tilt'></div>
+              <Tweet key={tweets[0].id} {...tweets[0]} />
+            </div>
           </figure>
-          <div className='flex-1'>
-            <h2>A cutting-edge editing experience</h2>
+          <div className='flex-1 ml-32'>
+            <h2 className='heading-secondary'>
+              A cutting-edge editing experience.
+            </h2>
+            <p className='mt-8'>
+              Our live MDX editor empowers creators with capabilities never seen
+              before. All of Markdown, GFM-compliant spec is supported, in
+              addition to an infinitely extensible set of React components.
+            </p>
+            <div className='mt-12 flex items-center'>
+              <FaMarkdown className='h-14 w-14 text-gray-300' />
+              <FaReact className='h-12 w-12 ml-6 text-gray-300' />
+            </div>
           </div>
         </section>
       </main>
@@ -173,3 +191,9 @@ export default function Home() {
     </div>
   );
 }
+
+export const getStaticProps = async () => {
+  const tweets = await getTweets(['1395436062411984899']);
+
+  return { props: { tweets } };
+};
