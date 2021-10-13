@@ -1,13 +1,22 @@
 import { useRouter } from 'next/router';
+import { useSession, signIn } from 'next-auth/react';
 import { useState } from 'react';
 import Head from 'next/head';
 import Image from 'next/image';
-import projectLumiere from "@public/images/logos/ProjectLumiere.svg";
+import projectLumiere from '@public/images/logos/ProjectLumiere.svg';
+import { useLocalStorage } from 'react-use';
 
 export default function Username() {
   const [username, setUsername] = useState('');
   const [error, setError] = useState(null);
   const router = useRouter();
+  const [_, setValue] = useLocalStorage('refresh', false);
+  const { status } = useSession({
+    required: true,
+    onUnauthenticated() {
+      signIn();
+    },
+  });
 
   const submitUsername = async (e) => {
     e.preventDefault();
@@ -20,6 +29,7 @@ export default function Username() {
         body: JSON.stringify(body),
       });
       if (response.status === 200) {
+        setValue(true);
         await router.push(router.query.callbackUrl);
       } else {
         setError('Username already taken');
@@ -29,23 +39,30 @@ export default function Username() {
     }
   };
 
+  if (status === 'loading') return null;
+
   return (
     <>
       <Head>
-        <title>Welcome | Lumiere</title>
+        <title>Username | Lumiere</title>
       </Head>
       <div className='h-screen grid place-items-center text-center'>
         <main>
-          <object className='flex justify-center'>
+          <figure className='flex justify-center'>
             <Image
-                src={projectLumiere}
-                alt='Project Lumiere logo'
-                height={100}
-                width={100}
+              src={projectLumiere}
+              alt='Project Lumiere logo'
+              height={100}
+              width={100}
             />
-          </object>
-          <h1 className='mt-2 heading-primary text-white'>Welcome to Lumiere!</h1>
-          <p className='mt-2 mb-5'>Let&#39;s get started. Set your username below and you&#39;re all set to go.</p>
+          </figure>
+          <h1 className='mt-2 heading-primary text-gray-100'>
+            Welcome to Lumiere!
+          </h1>
+          <p className='mt-2 mb-5'>
+            Let&#39;s get started. Set your username below and you&#39;re all
+            set to go.
+          </p>
           <form onSubmit={submitUsername} className='space-x-2'>
             <span>@</span>
             <input
@@ -54,9 +71,14 @@ export default function Username() {
               onChange={(e) => setUsername(e.target.value)}
               value={username}
               placeholder='Username'
-              className={`py-3 lg:py-2.5 rounded-lg border-2 bg-transparent pr-9 lg:pr-8 pl-4 text-sm border-gray-700 focus:border-transparent focus:outline-none focus:ring-2 focus:ring-blue-600 hover:border-gray-600 placeholder-gray-500`}
+              className='py-3 lg:py-2.5 rounded-lg border-2 bg-transparent pr-9 lg:pr-8 pl-4 text-sm border-gray-700 focus:border-transparent focus:outline-none focus:ring-2 focus:ring-blue-600 hover:border-gray-600 placeholder-gray-500'
             />
-            <input type='submit' value='Submit username' className='px-5 py-3 lg:py-2.5 button-tertiary bg-transparent cursor-pointer' />
+            <input
+              type='submit'
+              value='Submit username'
+              className='px-5 py-3 lg:py-2.5 text-sm button-tertiary bg-transparent cursor-pointer'
+              disabled={!username}
+            />
           </form>
           <p>{error}</p>
         </main>

@@ -1,4 +1,5 @@
 import { useRouter } from 'next/router';
+import { getTimeAndDate } from '@lib/utilities/formatDate';
 
 export default function Post({ post }) {
   const router = useRouter();
@@ -31,34 +32,30 @@ export default function Post({ post }) {
     }
   };
 
-  const getDateAndTime = (string) => {
-      return new Date(string).toLocaleString('en-US', {weekday: 'long', day: 'numeric', month: 'long', year: 'numeric', hour: 'numeric', minute: 'numeric', hour12: true});
-  }
-
   return (
     <>
       <div
-        className='border border-gray-700 p-5 rounded-xl cursor-pointer'
+        className='border border-gray-300 dark:border-gray-700 p-5 rounded-xl cursor-pointer'
         onClick={() => router.push(`/me/drafts/${post.slug}`)}
       >
         <h2 className='font-bold text-xl'>{post.title}</h2>
-        <p>Created on {getDateAndTime(post.createdAt)}</p>
-        <p>Updated on {getDateAndTime(post.updatedAt)}</p>
+        <p>Created on {getTimeAndDate(post.createdAt)}</p>
+        <p>Updated on {getTimeAndDate(post.updatedAt)}</p>
       </div>
-        <div className='flex flex-row space-x-2'>
-          <button
-            className='mt-2 p-2.5 button-tertiary'
-            onClick={() => publishPost(post.slug)}
-          >
-            Publish
-          </button>
-          <button
-            className='mt-2 p-2.5 button-tertiary border-red-700 hover:border-red-400'
-            onClick={() => deletePost(post.slug)}
-          >
-            Delete
-          </button>
-        </div>
+      <div className='flex space-x-2 mt-2'>
+        <button
+          className='p-2.5 button-tertiary'
+          onClick={() => publishPost(post.slug)}
+        >
+          Publish
+        </button>
+        <button
+          className='p-2.5 button-tertiary border-red-700 hover:border-red-400'
+          onClick={() => deletePost(post.slug)}
+        >
+          Delete
+        </button>
+      </div>
     </>
   );
 }
