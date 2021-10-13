@@ -9,6 +9,7 @@ export default function Tweet({
   created_at,
   public_metrics,
   referenced_tweets,
+  forceDark,
 }) {
   const authorUrl = `https://twitter.com/${author.username}`;
   const likeUrl = `https://twitter.com/intent/like?tweet_id=${id}`;
@@ -22,7 +23,13 @@ export default function Tweet({
     referenced_tweets && referenced_tweets.find((t) => t.type === 'quoted');
 
   return (
-    <div className='relative opacity-90 rounded-lg border border-gray-200 dark:border-gray-800 px-6 py-4 my-4 w-full bg-gray-100 dark:bg-gray-900'>
+    <div
+      className={`relative opacity-90 rounded-lg border dark:border-gray-700 px-7 py-5 my-4 w-full ${
+        forceDark
+          ? 'bg-gray-900 border-gray-700'
+          : 'border-gray-200 bg-gray-100'
+      } dark:bg-gray-900`}
+    >
       <div className='flex items-center'>
         <a
           className='flex h-12 w-12'
@@ -45,14 +52,16 @@ export default function Tweet({
           className='author flex flex-col ml-4 !no-underline'
         >
           <span
-            className='flex items-center font-bold !text-gray-900 dark:!text-gray-100 leading-5'
+            className={`flex items-center font-bold ${
+              forceDark ? 'text-gray-100' : '!text-gray-900'
+            } dark:!text-gray-100 leading-5`}
             title={author.name}
           >
             {author.name}
             {author.verified ? (
               <svg
                 aria-label='Verified Account'
-                className='ml-1 text-blue-500 dark:text-gray-100 inline h-4 w-4'
+                className='ml-1 text-blue-500 inline h-4 w-4'
                 viewBox='0 0 24 24'
               >
                 <g fill='currentColor'>
@@ -84,7 +93,11 @@ export default function Tweet({
           </svg>
         </a>
       </div>
-      <div className='mt-4 mb-1 leading-normal whitespace-pre-wrap text-lg !text-gray-700 dark:!text-gray-300'>
+      <div
+        className={`mt-4 mb-1 leading-normal whitespace-pre-wrap text-lg ${
+          forceDark ? '!text-gray-300' : '!text-gray-700'
+        } dark:!text-gray-300`}
+      >
         {formattedText}
       </div>
       {media && media.length ? (

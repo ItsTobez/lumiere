@@ -77,29 +77,29 @@ export default function Avatar({ renderPosition, pageType }) {
             </div>
             <div className='my-4'>
               <Link href='/editor'>
-                <a className='px-7 py-2 block hover:text-gray-300 hover:bg-gray-700 hover:bg-opacity-70 transition-all'>
+                <a className='px-7 py-2 block text-gray-400 font-normal hover:text-gray-300 hover:bg-gray-700 hover:bg-opacity-70 transition-all'>
                   New Publication
                 </a>
               </Link>
               <Link href='/me/drafts'>
-                <a className='px-7 py-2 block hover:text-gray-300 hover:bg-gray-700 hover:bg-opacity-70 transition-all'>
+                <a className='px-7 py-2 block text-gray-400 font-normal hover:text-gray-300 hover:bg-gray-700 hover:bg-opacity-70 transition-all'>
                   Drafts
                 </a>
               </Link>
               <Link href='/me/publications'>
-                <a className='px-7 py-2 block hover:text-gray-300 hover:bg-gray-700 hover:bg-opacity-70 transition-all'>
+                <a className='px-7 py-2 block text-gray-400 font-normal hover:text-gray-300 hover:bg-gray-700 hover:bg-opacity-70 transition-all'>
                   Publications
                 </a>
               </Link>
             </div>
             <div className='pt-4 mb-4 border-t border-gray-700'>
               <Link href='/me/statistics'>
-                <a className='px-7 py-2 block hover:text-gray-300 hover:bg-gray-700 hover:bg-opacity-70 transition-all beta'>
+                <a className='px-7 py-2 block text-gray-400 font-normal hover:text-gray-300 hover:bg-gray-700 hover:bg-opacity-70 transition-all beta'>
                   Statistics
                 </a>
               </Link>
               <Link href='/me/settings'>
-                <a className='px-7 py-2 block hover:text-gray-300 hover:bg-gray-700 hover:bg-opacity-70 transition-all'>
+                <a className='px-7 py-2 block text-gray-400 font-normal hover:text-gray-300 hover:bg-gray-700 hover:bg-opacity-70 transition-all'>
                   Settings
                 </a>
               </Link>
@@ -107,7 +107,7 @@ export default function Avatar({ renderPosition, pageType }) {
             {mounted && (
               <div className='pt-4 mb-4 border-t border-gray-700'>
                 <button
-                  className='px-7 py-2 w-full hover:text-gray-300 hover:bg-gray-700 hover:bg-opacity-70 transition-all flex justify-between items-center'
+                  className='px-7 py-2 w-full text-gray-400 font-normal hover:text-gray-300 hover:bg-gray-700 hover:bg-opacity-70 transition-all flex justify-between items-center'
                   onClick={() => setTheme(theme === 'light' ? 'dark' : 'light')}
                 >
                   <p>Theme</p>

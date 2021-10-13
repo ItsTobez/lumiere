@@ -3,6 +3,7 @@ import Image from 'next/image';
 import Link from 'next/link';
 import { useEffect } from 'react';
 import hackPlus from '@public/images/logos/HackPlus.svg';
+import hackClub from '@public/images/logos/HackClub.svg';
 import { Gradient } from '@lib/gradient';
 import { FiChevronRight } from 'react-icons/fi';
 import Footer from '@components/layouts/Footer';
@@ -82,7 +83,12 @@ export default function Home({ tweets }) {
               />
             </figure>
             <figure className='relative w-32 h-12 lg:w-28 lg:h-9 md:w-24 md:h-7'>
-              <div className='bg-gray-800 h-full grid place-items-center'></div>
+              <Image
+                src={hackClub}
+                alt='Hack Plus Logo'
+                layout='fill'
+                objectFit='contain'
+              />
             </figure>
             <figure className='relative w-32 h-12 lg:w-28 lg:h-9 md:w-24 md:h-7'>
               <div className='bg-gray-800 h-full grid place-items-center'></div>
@@ -102,8 +108,12 @@ export default function Home({ tweets }) {
       <main className='mt-28 container'>
         <section className='flex justify-between items-center'>
           <figure className='flex-1'>
-            <div className='relative inline-block rotate-3 left-28'>
-              <div className='absolute bg-gradient-to-tr from-purple-600 to-blue-600 -inset-0.5 rounded-lg blur-xl opacity-50 animate-tilt'></div>
+            <div className='group relative -rotate-3 group z-10'>
+              <div className='absolute bg-gradient-to-tr from-amber-600 to-pink-600 -inset-0.5 rounded-lg blur-2xl group-hover:blur-xl group-hover:opacity-60 transition-all duration-200 opacity-50 animate-tilt' />
+              <Tweet key={tweets[0].id} forceDark {...tweets[0]} />
+            </div>
+            <div className='group relative inline-block rotate-3 bottom-4 left-28'>
+              <div className='absolute bg-gradient-to-tr from-purple-600 to-blue-600 -inset-0.5 rounded-lg blur-2xl group-hover:blur-xl group-hover:opacity-60 transition-all duration-200 opacity-50 animate-tilt' />
               <div className='relative px-7 py-4 bg-gray-900 opacity-90 rounded-lg leading-none'>
                 <pre className='language-jsx leading-normal text-2xs'>
                   <code className='language-jsx'>
@@ -165,23 +175,35 @@ export default function Home({ tweets }) {
                 </pre>
               </div>
             </div>
-            <div className='relative -rotate-2 bottom-12'>
-              <div className='absolute bg-gradient-to-tr from-amber-600 to-pink-600 -inset-0.5 rounded-lg blur-xl opacity-50 animate-tilt'></div>
-              <Tweet key={tweets[0].id} {...tweets[0]} />
-            </div>
           </figure>
           <div className='flex-1 ml-32'>
-            <h2 className='heading-secondary'>
-              A cutting-edge editing experience.
+            <h2 className='heading-secondary text-gray-200'>
+              The most cutting-edge editing experience.
             </h2>
-            <p className='mt-8'>
-              Our live MDX editor empowers creators with capabilities never seen
-              before. All of Markdown, GFM-compliant spec is supported, in
-              addition to an infinitely extensible set of React components.
+            <p className='mt-12 leading-relaxed'>
+              Our live{' '}
+              <a href='https://mdxjs.com/' target='_blank' rel='noreferrer'>
+                MDX
+              </a>{' '}
+              editor empowers creators with capabilities never seen before. We
+              support the entire GFM-Compliant{' '}
+              <a
+                href='https://daringfireball.net/projects/markdown/'
+                target='_blank'
+                rel='noreferrer'
+              >
+                Markdown
+              </a>{' '}
+              spec, in addition to an infinitely extensible set of{' '}
+              <a href='https://reactjs.org/' target='_blank' rel='noreferrer'>
+                React
+              </a>{' '}
+              components.
             </p>
-            <div className='mt-12 flex items-center'>
-              <FaMarkdown className='h-14 w-14 text-gray-300' />
-              <FaReact className='h-12 w-12 ml-6 text-gray-300' />
+            <hr className='border-gray-800 mt-9' />
+            <div className='mt-6 flex items-center'>
+              <FaMarkdown className='h-10 w-10 text-gray-500 hover:text-gray-300 transition-colors' />
+              <FaReact className='h-8 w-8 ml-6 text-gray-500 hover:text-gray-300 transition-colors' />
             </div>
           </div>
         </section>

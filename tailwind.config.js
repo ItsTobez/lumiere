@@ -54,6 +54,7 @@ module.exports = {
     },
     transitionDuration: {
       DEFAULT: '75ms',
+      200: '200ms',
     },
     extend: {
       fontFamily: {
