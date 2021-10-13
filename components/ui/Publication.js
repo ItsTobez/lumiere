@@ -40,7 +40,7 @@ export default function Publication({ post, visibility }) {
   return (
     <>
       <div
-        className='border border-gray-700 p-5 rounded-xl cursor-pointer'
+        className='border border-gray-300 dark:border-gray-700 p-5 rounded-xl cursor-pointer'
         onClick={() =>
           router.push(`/press/${post.author.username}/${post.slug}`)
         }

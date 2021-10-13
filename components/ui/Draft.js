@@ -35,7 +35,7 @@ export default function Post({ post }) {
   return (
     <>
       <div
-        className='border border-gray-700 p-5 rounded-xl cursor-pointer'
+        className='border border-gray-300 dark:border-gray-700 p-5 rounded-xl cursor-pointer'
         onClick={() => router.push(`/me/drafts/${post.slug}`)}
       >
         <h2 className='font-bold text-xl'>{post.title}</h2>
