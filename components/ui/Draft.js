@@ -50,7 +50,7 @@ export default function Post({ post }) {
           Publish
         </button>
         <button
-          className='p-2.5 button-tertiary border-red-700 hover:border-red-400'
+          className='p-2.5 button-tertiary transition-colors border-red-500 text-red-500 hover:text-red-400'
           onClick={() => deletePost(post.slug)}
         >
           Delete

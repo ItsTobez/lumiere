@@ -74,7 +74,7 @@ export default function Publication({ post, visibility }) {
             Unpublish
           </button>
           <button
-            className='p-2.5 button-tertiary border-red-700 hover:border-red-400'
+            className='p-2.5 button-tertiary border-red-500 transition-colors text-red-500 hover:text-red-400'
             onClick={() => deletePost(post.slug)}
           >
             Delete
