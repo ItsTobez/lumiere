@@ -11,7 +11,8 @@ export default function Press({ publications }) {
       </Head>
 
       <main className='container'>
-        <h1>Public Publications</h1>
+        <h1 className='heading-primary mb-5'>Lumiere Press</h1>
+        <section className='flex flex-col space-y-5'>
         {publications.map((publication) => (
           <Publication
             key={publication.id}
@@ -19,6 +20,7 @@ export default function Press({ publications }) {
             visibility='public'
           />
         ))}
+        </section>
       </main>
     </>
   );
