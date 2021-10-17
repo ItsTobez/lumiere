@@ -58,7 +58,6 @@ export default function Settings() {
           <button
             type="button"
             className="button-tertiary px-5 py-3 lg:py-2.5 mt-5 transition-colors border-red-500 text-red-500 hover:text-red-400"
-
             onClick={() => deleteAccount()}
           >
             Delete my account

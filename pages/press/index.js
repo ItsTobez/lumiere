@@ -10,16 +10,16 @@ export default function Press({ publications }) {
         <title>Lumiere Press</title>
       </Head>
 
-      <main className='container'>
-        <h1 className='heading-primary mb-5'>Lumiere Press</h1>
-        <section className='flex flex-col space-y-5'>
-        {publications.map((publication) => (
-          <Publication
-            key={publication.id}
-            post={publication}
-            visibility="public"
-          />
-        ))}
+      <main className="container">
+        <h1 className="mb-5 heading-primary">Lumiere Press</h1>
+        <section className="flex flex-col space-y-5">
+          {publications.map((publication) => (
+            <Publication
+              key={publication.id}
+              post={publication}
+              visibility="public"
+            />
+          ))}
         </section>
       </main>
     </>
