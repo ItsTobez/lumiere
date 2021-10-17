@@ -28,9 +28,9 @@ export default function MDXEditor({
     >
       <section>
         <MonacoEditor
-          defaultLanguage='markdown'
+          defaultLanguage="markdown"
           value={content}
-          theme='vs-dark'
+          theme="vs-dark"
           options={{
             minimap: {
               enabled: false,

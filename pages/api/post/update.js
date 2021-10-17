@@ -11,7 +11,7 @@ export default async function handle(req, res) {
       authorUsername_slug: { authorUsername, slug },
     },
     data: {
-      content: content,
+      content,
     },
   });
   res.json(result);

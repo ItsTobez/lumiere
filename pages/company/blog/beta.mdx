@@ -1,4 +1,4 @@
-import BlogLayout from '@components/layouts/BlogLayout';
+import BlogLayout from "@components/layouts/BlogLayout";
 
 export default function Layout({ children }) {
   return <BlogLayout>{children}</BlogLayout>;
@@ -122,7 +122,7 @@ something **strong**, and finally a little `code()`.
 
 ````markdown
 ```js
-console.log('cool');
+console.log("cool");
 ```
 
 ```jsx
@@ -202,15 +202,15 @@ Alright, next try this:
 ```jsx
 <CodeSandboxButton
   files={{
-    'package.json': {
+    "package.json": {
       content: {
         dependencies: {
-          react: 'latest',
-          'react-dom': 'latest',
+          react: "latest",
+          "react-dom": "latest",
         },
       },
     },
-    'index.html': {
+    "index.html": {
       content: `<div id="root"></div>`,
     },
   }}
@@ -224,15 +224,15 @@ This embeds a button. We can even embed the iframe through the `<CodeSandboxEmbe
 ```jsx
 <CodeSandboxEmbed
   files={{
-    'package.json': {
+    "package.json": {
       content: {
         dependencies: {
-          react: 'latest',
-          'react-dom': 'latest',
+          react: "latest",
+          "react-dom": "latest",
         },
       },
     },
-    'index.html': {
+    "index.html": {
       content: `<div id="root"></div>`,
     },
   }}
@@ -258,7 +258,7 @@ Similar to writing your own HTML, you are not just limited to the components tha
 ```jsx
 export const CoolComponent = ({ children }) => {
   return (
-    <a href='https://mdxjs.com/' target='_blank'>
+    <a href="https://mdxjs.com/" target="_blank">
       {children}
     </a>
   );

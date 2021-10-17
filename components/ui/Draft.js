@@ -34,23 +34,26 @@ export default function Post({ post }) {
 
   return (
     <>
-      <div
-        className='border border-gray-300 dark:border-gray-700 p-5 rounded-xl cursor-pointer'
+      <button
+        type="button"
+        className="p-5 border border-gray-300 cursor-pointer dark:border-gray-700 rounded-xl"
         onClick={() => router.push(`/me/drafts/${post.slug}`)}
       >
-        <h2 className='font-bold text-xl'>{post.title}</h2>
+        <h2 className="text-xl font-bold">{post.title}</h2>
         <p>Created on {getTimeAndDate(post.createdAt)}</p>
         <p>Updated on {getTimeAndDate(post.updatedAt)}</p>
-      </div>
-      <div className='flex space-x-2 mt-2'>
+      </button>
+      <div className="flex mt-2 space-x-2">
         <button
-          className='p-2.5 button-tertiary'
+          type="button"
+          className="p-2.5 button-tertiary"
           onClick={() => publishPost(post.slug)}
         >
           Publish
         </button>
         <button
-          className='p-2.5 button-tertiary border-red-700 hover:border-red-400'
+          type="button"
+          className="p-2.5 button-tertiary border-red-700 hover:border-red-400"
           onClick={() => deletePost(post.slug)}
         >
           Delete

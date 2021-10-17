@@ -10,13 +10,13 @@ export default function Press({ publications }) {
         <title>Lumiere Press</title>
       </Head>
 
-      <main className='container'>
+      <main className="container">
         <h1>Public Publications</h1>
         {publications.map((publication) => (
           <Publication
             key={publication.id}
             post={publication}
-            visibility='public'
+            visibility="public"
           />
         ))}
       </main>

@@ -7,114 +7,114 @@ import { Disclosure } from '@headlessui/react';
 
 export default function Footer() {
   return (
-    <footer className='bg-gray-800 border-t border-gray-700 pt-14 pb-8 md:pt-10 mt-36'>
-      <div className='container'>
-        <nav className='flex justify-between text-sm lg:text-xs leading-loose transition-colors md:hidden'>
+    <footer className="pb-8 bg-gray-800 border-t border-gray-700 pt-14 md:pt-10 mt-36">
+      <div className="container">
+        <nav className="flex justify-between text-sm leading-loose transition-colors lg:text-xs md:hidden">
           <ul>
-            <h3 className='heading-tertiary'>Media</h3>
+            <h3 className="heading-tertiary">Media</h3>
             <li>
-              <Link href='/press'>
-                <a className='text-gray-500 font-normal hover:text-gray-400'>
+              <Link href="/press">
+                <a className="font-normal text-gray-500 hover:text-gray-400">
                   Lumiere Press
                 </a>
               </Link>
             </li>
             <li>
-              <Link href='/channel'>
-                <a className='text-gray-500 font-normal hover:text-gray-400'>
+              <Link href="/channel">
+                <a className="font-normal text-gray-500 hover:text-gray-400">
                   Lumiere Channel
                 </a>
               </Link>
             </li>
             <li>
-              <Link href='/media'>
-                <a className='text-gray-500 font-normal hover:text-gray-400'>
+              <Link href="/media">
+                <a className="font-normal text-gray-500 hover:text-gray-400">
                   About Media
                 </a>
               </Link>
             </li>
           </ul>
           <ul>
-            <h3 className='heading-tertiary'>Resources</h3>
+            <h3 className="heading-tertiary">Resources</h3>
             <li>
-              <Link href='/resources/contributing'>
-                <a className='text-gray-500 font-normal hover:text-gray-400'>
+              <Link href="/resources/contributing">
+                <a className="font-normal text-gray-500 hover:text-gray-400">
                   Contributing
                 </a>
               </Link>
             </li>
             <li>
-              <Link href='/changelog'>
-                <a className='text-gray-500 font-normal hover:text-gray-400'>
+              <Link href="/changelog">
+                <a className="font-normal text-gray-500 hover:text-gray-400">
                   Changelog
                 </a>
               </Link>
             </li>
             <li>
-              <Link href='/contact'>
-                <a className='text-gray-500 font-normal hover:text-gray-400'>
+              <Link href="/contact">
+                <a className="font-normal text-gray-500 hover:text-gray-400">
                   Contact Us
                 </a>
               </Link>
             </li>
           </ul>
           <ul>
-            <h3 className='heading-tertiary'>Company</h3>
+            <h3 className="heading-tertiary">Company</h3>
             <li>
-              <Link href='/'>
-                <a className='text-gray-500 font-normal hover:text-gray-400'>
+              <Link href="/">
+                <a className="font-normal text-gray-500 hover:text-gray-400">
                   Home
                 </a>
               </Link>
             </li>
             <li>
-              <Link href='/company/blog'>
-                <a className='text-gray-500 font-normal hover:text-gray-400'>
+              <Link href="/company/blog">
+                <a className="font-normal text-gray-500 hover:text-gray-400">
                   Blog
                 </a>
               </Link>
             </li>
             <li>
-              <Link href='/company/team'>
-                <a className='text-gray-500 font-normal hover:text-gray-400'>
+              <Link href="/company/team">
+                <a className="font-normal text-gray-500 hover:text-gray-400">
                   Team
                 </a>
               </Link>
             </li>
             <li>
-              <Link href='/company/donate'>
-                <a className='text-gray-500 font-normal hover:text-gray-400'>
+              <Link href="/company/donate">
+                <a className="font-normal text-gray-500 hover:text-gray-400">
                   Support Us
                 </a>
               </Link>
             </li>
             <li>
-              <Link href='/company/brand'>
-                <a className='text-gray-500 font-normal hover:text-gray-400'>
+              <Link href="/company/brand">
+                <a className="font-normal text-gray-500 hover:text-gray-400">
                   Brand
                 </a>
               </Link>
             </li>
           </ul>
           <ul>
-            <h3 className='heading-tertiary'>Legal</h3>
+            <h3 className="heading-tertiary">Legal</h3>
             <li>
-              <Link href='/legal/privacy'>
-                <a className='text-gray-500 font-normal hover:text-gray-400'>
+              <Link href="/legal/privacy">
+                <a className="font-normal text-gray-500 hover:text-gray-400">
                   Privacy Policy
                 </a>
               </Link>
             </li>
             <li>
-              <Link href='/legal/terms'>
-                <a className='text-gray-500 font-normal hover:text-gray-400'>
+              <Link href="/legal/terms">
+                <a className="font-normal text-gray-500 hover:text-gray-400">
                   Terms of Service
                 </a>
               </Link>
             </li>
             <li>
-              <Link href='/legal/cla'>
-                <a className='text-gray-500 font-normal hover:text-gray-400'>
+              <Link href="/legal/cla">
+                <a className="font-normal text-gray-500 hover:text-gray-400">
                   Contributors
                 </a>
               </Link>
@@ -122,42 +122,42 @@ export default function Footer() {
           </ul>
         </nav>
 
-        <nav className='text-xs text-gray-500'>
+        <nav className="text-xs text-gray-500">
           <Disclosure
-            as='div'
-            className='hidden md:block border-b border-gray-700'
+            as="div"
+            className="hidden border-b border-gray-700 md:block"
           >
             {({ open }) => (
               <>
                 <Disclosure.Button
-                  as='h3'
-                  className='heading-tertiary flex justify-between items-center cursor-pointer py-4'
+                  as="h3"
+                  className="flex items-center justify-between py-4 cursor-pointer heading-tertiary"
                 >
                   <p>Media</p>
                   {open ? (
-                    <FiMinus className='w-2.5 h-2.5' />
+                    <FiMinus className="w-2.5 h-2.5" />
                   ) : (
-                    <FiPlus className='w-2.5 h-2.5' />
+                    <FiPlus className="w-2.5 h-2.5" />
                   )}
                 </Disclosure.Button>
-                <Disclosure.Panel as='ul' className='mt-1 ml-3'>
+                <Disclosure.Panel as="ul" className="mt-1 ml-3">
                   <li>
-                    <Link href='/press'>
-                      <a className='text-gray-500 font-normal hover:text-gray-400 mb-2 block'>
+                    <Link href="/press">
+                      <a className="block mb-2 font-normal text-gray-500 hover:text-gray-400">
                         Lumiere Press
                       </a>
                     </Link>
                   </li>
                   <li>
-                    <Link href='/channel'>
-                      <a className='text-gray-500 font-normal hover:text-gray-400 mb-2 block'>
+                    <Link href="/channel">
+                      <a className="block mb-2 font-normal text-gray-500 hover:text-gray-400">
                         Lumiere Channel
                       </a>
                     </Link>
                   </li>
                   <li>
-                    <Link href='/media'>
-                      <a className='text-gray-500 font-normal hover:text-gray-400 mb-4 block'>
+                    <Link href="/media">
+                      <a className="block mb-4 font-normal text-gray-500 hover:text-gray-400">
                         About Media
                       </a>
                     </Link>
@@ -168,40 +168,40 @@ export default function Footer() {
           </Disclosure>
 
           <Disclosure
-            as='div'
-            className='hidden md:block border-b border-gray-700'
+            as="div"
+            className="hidden border-b border-gray-700 md:block"
           >
             {({ open }) => (
               <>
                 <Disclosure.Button
-                  as='h3'
-                  className='heading-tertiary flex justify-between items-center cursor-pointer py-4'
+                  as="h3"
+                  className="flex items-center justify-between py-4 cursor-pointer heading-tertiary"
                 >
                   <p>Resources</p>
                   {open ? (
-                    <FiMinus className='w-2.5 h-2.5' />
+                    <FiMinus className="w-2.5 h-2.5" />
                   ) : (
-                    <FiPlus className='w-2.5 h-2.5' />
+                    <FiPlus className="w-2.5 h-2.5" />
                   )}
                 </Disclosure.Button>
-                <Disclosure.Panel as='ul' className='mt-1 ml-3'>
+                <Disclosure.Panel as="ul" className="mt-1 ml-3">
                   <li>
-                    <Link href='/resources/contributing'>
-                      <a className='text-gray-500 font-normal hover:text-gray-400 mb-2 block'>
+                    <Link href="/resources/contributing">
+                      <a className="block mb-2 font-normal text-gray-500 hover:text-gray-400">
                         Contributing
                       </a>
                     </Link>
                   </li>
                   <li>
-                    <Link href='/changelog'>
-                      <a className='text-gray-500 font-normal hover:text-gray-400 mb-2 block'>
+                    <Link href="/changelog">
+                      <a className="block mb-2 font-normal text-gray-500 hover:text-gray-400">
                         Changelog
                       </a>
                     </Link>
                   </li>
                   <li>
-                    <Link href='/contact'>
-                      <a className='text-gray-500 font-normal hover:text-gray-400 mb-4 block'>
+                    <Link href="/contact">
+                      <a className="block mb-4 font-normal text-gray-500 hover:text-gray-400">
                         Contact Us
                       </a>
                     </Link>
@@ -212,54 +212,54 @@ export default function Footer() {
           </Disclosure>
 
           <Disclosure
-            as='div'
-            className='hidden md:block border-b border-gray-700'
+            as="div"
+            className="hidden border-b border-gray-700 md:block"
           >
             {({ open }) => (
               <>
                 <Disclosure.Button
-                  as='h3'
-                  className='heading-tertiary flex justify-between items-center cursor-pointer py-4'
+                  as="h3"
+                  className="flex items-center justify-between py-4 cursor-pointer heading-tertiary"
                 >
                   <p>Company</p>
                   {open ? (
-                    <FiMinus className='w-2.5 h-2.5' />
+                    <FiMinus className="w-2.5 h-2.5" />
                   ) : (
-                    <FiPlus className='w-2.5 h-2.5' />
+                    <FiPlus className="w-2.5 h-2.5" />
                   )}
                 </Disclosure.Button>
-                <Disclosure.Panel as='ul' className='mt-1 ml-3'>
+                <Disclosure.Panel as="ul" className="mt-1 ml-3">
                   <li>
-                    <Link href='/'>
-                      <a className='text-gray-500 font-normal hover:text-gray-400 mb-2 block'>
+                    <Link href="/">
+                      <a className="block mb-2 font-normal text-gray-500 hover:text-gray-400">
                         Home
                       </a>
                     </Link>
                   </li>
                   <li>
-                    <Link href='/company/blog'>
-                      <a className='text-gray-500 font-normal hover:text-gray-400 mb-2 block'>
+                    <Link href="/company/blog">
+                      <a className="block mb-2 font-normal text-gray-500 hover:text-gray-400">
                         Blog
                       </a>
                     </Link>
                   </li>
                   <li>
-                    <Link href='/company/team'>
-                      <a className='text-gray-500 font-normal hover:text-gray-400 mb-2 block'>
+                    <Link href="/company/team">
+                      <a className="block mb-2 font-normal text-gray-500 hover:text-gray-400">
                         Team
                       </a>
                     </Link>
                   </li>
                   <li>
-                    <Link href='/company/donate'>
-                      <a className='text-gray-500 font-normal hover:text-gray-400 mb-2 block'>
+                    <Link href="/company/donate">
+                      <a className="block mb-2 font-normal text-gray-500 hover:text-gray-400">
                         Support Us
                       </a>
                     </Link>
                   </li>
                   <li>
-                    <Link href='/company/brand'>
-                      <a className='text-gray-500 font-normal hover:text-gray-400 mb-4 block'>
+                    <Link href="/company/brand">
+                      <a className="block mb-4 font-normal text-gray-500 hover:text-gray-400">
                         Brand
                       </a>
                     </Link>
@@ -270,40 +270,40 @@ export default function Footer() {
           </Disclosure>
 
           <Disclosure
-            as='div'
-            className='hidden md:block border-b border-gray-700'
+            as="div"
+            className="hidden border-b border-gray-700 md:block"
           >
             {({ open }) => (
               <>
                 <Disclosure.Button
-                  as='h3'
-                  className='heading-tertiary flex justify-between items-center cursor-pointer py-4'
+                  as="h3"
+                  className="flex items-center justify-between py-4 cursor-pointer heading-tertiary"
                 >
                   <p>Legal</p>
                   {open ? (
-                    <FiMinus className='w-2.5 h-2.5' />
+                    <FiMinus className="w-2.5 h-2.5" />
                   ) : (
-                    <FiPlus className='w-2.5 h-2.5' />
+                    <FiPlus className="w-2.5 h-2.5" />
                   )}
                 </Disclosure.Button>
-                <Disclosure.Panel as='ul' className='mt-1 ml-3'>
+                <Disclosure.Panel as="ul" className="mt-1 ml-3">
                   <li>
-                    <Link href='/legal/privacy'>
-                      <a className='text-gray-500 font-normal hover:text-gray-400 mb-2 block'>
+                    <Link href="/legal/privacy">
+                      <a className="block mb-2 font-normal text-gray-500 hover:text-gray-400">
                         Privacy Policy
                       </a>
                     </Link>
                   </li>
                   <li>
-                    <Link href='/legal/terms'>
-                      <a className='text-gray-500 font-normal hover:text-gray-400 mb-4 block'>
+                    <Link href="/legal/terms">
+                      <a className="block mb-4 font-normal text-gray-500 hover:text-gray-400">
                         Terms of Service
                       </a>
                     </Link>
                   </li>
                   <li>
-                    <Link href='/legal/cla'>
-                      <a className='text-gray-500 font-normal hover:text-gray-400 mb-4 block'>
+                    <Link href="/legal/cla">
+                      <a className="block mb-4 font-normal text-gray-500 hover:text-gray-400">
                         Contributors
                       </a>
                     </Link>
@@ -314,96 +314,98 @@ export default function Footer() {
           </Disclosure>
         </nav>
 
-        <section className='md:hidden'>
-          <figure className='flex items-center mt-14 cursor-default select-none'>
-            <div className='relative w-7 h-7 mr-2 mb-1'>
+        <section className="md:hidden">
+          <figure className="flex items-center cursor-default select-none mt-14">
+            <div className="relative mb-0.5 mr-1.5 w-7 h-7">
               <Image
                 src={projectLumiere}
-                alt='Project Lumiere logo'
-                layout='fill'
-                objectFit='contain'
+                alt="Project Lumiere logo"
+                layout="fill"
+                objectFit="contain"
               />
             </div>
-            <figcaption className='text-gray-200 text-xl font-semibold'>
+            <figcaption className="font-serif text-[22px] text-gray-300">
               Lumiere
             </figcaption>
           </figure>
 
-          <div className='flex justify-between items-center text-gray-500 lg:-mt-1'>
-            <p className='text-xs lg:text-2xs'>
+          <div className="flex items-center justify-between text-gray-500 lg:-mt-1">
+            <p className="text-xs lg:text-2xs">
               &copy; 2021 Project Lumiere 501(c)(3). All rights reserved.
             </p>
             <iframe
-              src='https://projectlumiere.instatus.com/embed-status/dark-sm'
-              width='230'
-              height='41'
-              frameBorder='0'
-              scrolling='no'
-              className='scale-90 dark:rounded-lg'
+              title="Instatus"
+              src="https://projectlumiere.instatus.com/embed-status/dark-sm"
+              width="230"
+              height="41"
+              frameBorder="0"
+              scrolling="no"
+              className="scale-90 dark:rounded-lg"
             />
-            <div className='flex'>
+            <div className="flex">
               <a
-                href='https://www.linkedin.com/company/project-lumiere'
-                target='_blank'
-                rel='noreferrer noopener'
+                href="https://www.linkedin.com/company/project-lumiere"
+                target="_blank"
+                rel="noreferrer noopener"
               >
-                <FaLinkedin className='w-5 h-5 text-gray-400 hover:text-gray-300 transition-colors' />
+                <FaLinkedin className="w-5 h-5 text-gray-400 transition-colors hover:text-gray-300" />
               </a>
-              <div className='border-r border-gray-700 mx-3' />
+              <div className="mx-3 border-r border-gray-600" />
               <a
-                href='https://github.com/AnthonyKuang/ProjectLumiere'
-                target='_blank'
-                rel='noreferrer noopener'
+                href="https://github.com/AnthonyKuang/ProjectLumiere"
+                target="_blank"
+                rel="noreferrer noopener"
               >
-                <FaGithub className='w-5 h-5 text-gray-400 hover:text-gray-300 transition-colors' />
+                <FaGithub className="w-5 h-5 text-gray-400 transition-colors hover:text-gray-300" />
               </a>
             </div>
           </div>
         </section>
 
-        <section className='hidden md:block'>
-          <figure className='flex items-center mt-12 cursor-default select-none justify-center'>
-            <div className='relative w-6 h-6 mr-1 mb-1'>
+        <section className="hidden md:block">
+          <figure className="flex items-center justify-center mt-12 cursor-default select-none">
+            <div className="relative w-6 h-6 mb-0.5 mr-1">
               <Image
                 src={projectLumiere}
-                alt='Project Lumiere logo'
-                layout='fill'
-                objectFit='contain'
+                alt="Project Lumiere logo"
+                layout="fill"
+                objectFit="contain"
               />
             </div>
-            <figcaption className='text-gray-200 text-lg font-semibold'>
+            <figcaption className="font-serif text-xl text-gray-300">
               Lumiere
             </figcaption>
           </figure>
 
           <iframe
-            src='https://projectlumiere.instatus.com/embed-status/dark-sm'
-            width='230'
-            height='41'
-            frameBorder='0'
-            scrolling='no'
-            className='scale-75 mx-auto mt-2 dark:rounded-lg'
+            title="Instatus"
+            src="https://projectlumiere.instatus.com/embed-status/dark-sm"
+            width="230"
+            height="41"
+            frameBorder="0"
+            scrolling="no"
+            className="mx-auto mt-2 scale-75 dark:rounded-lg"
           />
 
-          <div className='flex justify-center mt-8'>
+          <div className="flex justify-center mt-8">
             <a
-              href='https://www.linkedin.com/company/project-lumiere'
-              target='_blank'
-              rel='noreferrer noopener'
+              href="https://www.linkedin.com/company/project-lumiere"
+              target="_blank"
+              rel="noreferrer noopener"
             >
-              <FaLinkedin className='w-5 h-5 text-gray-400 hover:text-gray-300 transition-colors' />
+              <FaLinkedin className="w-5 h-5 text-gray-400 transition-colors hover:text-gray-300" />
             </a>
-            <div className='border-r border-gray-700 mx-3' />
+            <div className="mx-3 border-r border-gray-600" />
             <a
-              href='https://github.com/AnthonyKuang/ProjectLumiere'
-              target='_blank'
-              rel='noreferrer noopener'
+              href="https://github.com/AnthonyKuang/ProjectLumiere"
+              target="_blank"
+              rel="noreferrer noopener"
             >
-              <FaGithub className='w-5 h-5 text-gray-400 hover:text-gray-300 transition-colors' />
+              <FaGithub className="w-5 h-5 text-gray-400 transition-colors hover:text-gray-300" />
             </a>
           </div>
 
-          <p className='text-2xs text-gray-500 text-center my-4'>
+          <p className="my-4 text-center text-gray-500 text-2xs">
             &copy; 2021 Project Lumiere 501(c)(3). All rights reserved.
           </p>
         </section>

@@ -203,7 +203,7 @@ export const CoolComponent = ({ children }) => {
       </Head>
 
       <Header
-        pageType='editor'
+        pageType="editor"
         title={title}
         titleInput={titleInput}
         saveDraft={saveDraft}
@@ -221,7 +221,7 @@ export const CoolComponent = ({ children }) => {
         authorImage={session.user.image}
         collapsed={collapsed}
       />
-      <Toaster position='bottom-left' />
+      <Toaster position="bottom-left" />
     </>
   );
 }

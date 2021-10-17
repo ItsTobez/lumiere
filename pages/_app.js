@@ -13,11 +13,11 @@ export default function ProjectLumiere({
     <SessionProvider session={session}>
       <ThemeProvider
         enableSystem={false}
-        attribute='class'
-        defaultTheme='dark'
+        attribute="class"
+        defaultTheme="dark"
         disableTransitionOnChange
       >
-        <NextNProgress color='#3e73ea' options={{ showSpinner: false }} />
+        <NextNProgress color="#3e73ea" options={{ showSpinner: false }} />
         {getLayout(<Component {...pageProps} />)}
       </ThemeProvider>
     </SessionProvider>
