@@ -7,10 +7,10 @@ import Head from 'next/head';
 import Header from '@components/layouts/Header';
 
 export default function Draft(props) {
-  const title = props.title;
+  const { title } = props;
   const [collapsed, setCollapsed] = useState(false);
   const [content, setContent] = useState(props.content);
-  const slug = props.slug;
+  const { slug } = props;
   const router = useRouter();
   const { status } = useSession({
     required: true,
@@ -41,7 +41,7 @@ export default function Draft(props) {
         <title>[Draft] {title}</title>
       </Head>
       <Header
-        pageType='editor'
+        pageType="editor"
         title={title}
         content={content}
         setContent={setContent}
@@ -61,7 +61,7 @@ export default function Draft(props) {
 export const getServerSideProps = async ({ req, params }) => {
   const session = await getSession({ req });
   const authorUsername = session.user.username;
-  const slug = params.slug;
+  const { slug } = params;
 
   const post = await prisma.post.findUnique({
     where: {

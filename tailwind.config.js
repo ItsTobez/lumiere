@@ -18,8 +18,6 @@ module.exports = {
     colors: {
       transparent: 'transparent',
       current: 'currentColor',
-      white: '#fff',
-      black: '#000',
       gray: {
         100: '#fcfcfd',
         200: '#e6e8ec',
@@ -59,6 +57,7 @@ module.exports = {
     extend: {
       fontFamily: {
         sans: ['Inter', ...defaultTheme.fontFamily.sans],
+        serif: ['Grenze Gotisch', ...defaultTheme.fontFamily.serif],
       },
       fontSize: {
         xs: '0.8rem',

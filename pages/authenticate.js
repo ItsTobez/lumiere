@@ -10,12 +10,14 @@ export default function Authenticate({ providers }) {
   const { data: session, status } = useSession();
 
   if (status === 'authenticated') {
-    !session.user.username
-      ? router.push({
-          pathname: '/me/settings/username',
-          query: { callbackUrl: router.query.callbackUrl },
-        })
-      : router.push(router.query.callbackUrl);
+    if (session.user.username) {
+      router.push(router.query.callbackUrl);
+    } else {
+      router.push({
+        pathname: '/me/settings/username',
+        query: { callbackUrl: router.query.callbackUrl },
+      });
+    }
 
     return null;
   }
@@ -30,31 +32,32 @@ export default function Authenticate({ providers }) {
         <title>Authenticate</title>
       </Head>
 
-      <main className='h-screen grid place-items-center'>
-        <div className='absolute top-5 left-6'>
-          <Link href='/'>
+      <main className="grid h-screen place-items-center">
+        <div className="absolute top-5 left-6">
+          <Link href="/">
             <a>
-              <figure className='relative w-14 h-14'>
+              <figure className="relative w-14 h-14">
                 <Image
                   src={projectLumiere}
-                  alt='Project Lumiere logo'
-                  layout='fill'
-                  objectFit='contain'
+                  alt="Project Lumiere logo"
+                  layout="fill"
+                  objectFit="contain"
                 />
               </figure>
             </a>
           </Link>
         </div>
-        <div className='relative'>
-          <div className='absolute -inset-0.5 bg-gradient-to-r from-pink-600 to-purple-600 rounded-lg blur opacity-75'></div>
-          <section className='relative max-w-3xl px-7 py-4 rounded-lg bg-gray-900'>
+        <div className="relative">
+          <div className="absolute -inset-0.5 bg-gradient-to-r from-pink-600 to-purple-600 rounded-lg blur opacity-75" />
+          <section className="relative max-w-3xl py-4 bg-gray-900 rounded-lg px-7">
             {Object.values(providers).map((provider) => (
               <button
+                type="button"
                 key={provider.name}
                 onClick={() => {
                   signIn(provider.id);
                 }}
-                className='block'
+                className="block"
               >
                 <p>Sign in with {provider.name}</p>
               </button>

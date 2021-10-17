@@ -16,17 +16,17 @@ export default function Avatar({ renderPosition, pageType }) {
   }, []);
 
   return (
-    <Menu as='div' className={pageType !== 'editor' && 'md:hidden'}>
-      <Menu.Button className='flex cursor-pointer'>
-        <div className='p-0.5 bg-gradient-to-tr from-amber-500 to-fuchsia-700 rounded-full hover:opacity-80 transition-opacity'>
-          <div className='p-0.5 bg-gray-900 rounded-full'>
-            <figure className='relative w-10 lg:w-9 h-10 lg:h-9'>
+    <Menu as="div" className={pageType !== 'editor' && 'md:hidden'}>
+      <Menu.Button className="flex cursor-pointer">
+        <div className="p-0.5 bg-gradient-to-tr from-amber-500 to-fuchsia-700 rounded-full hover:opacity-80 transition-opacity">
+          <div className="p-0.5 bg-gray-900 rounded-full">
+            <figure className="relative w-10 h-10 lg:w-9 lg:h-9">
               <Image
                 src={session.user.image}
                 alt={`Picture of ${session.user.name}`}
-                layout='fill'
-                objectFit='contain'
-                className='rounded-full'
+                layout="fill"
+                objectFit="contain"
+                className="rounded-full"
               />
             </figure>
           </div>
@@ -34,7 +34,7 @@ export default function Avatar({ renderPosition, pageType }) {
       </Menu.Button>
 
       <Menu.Items
-        as='div'
+        as="div"
         className={`${
           renderPosition === 'container' ? 'left-4' : '-left-2'
         } absolute w-full bottom-0 z-10`}
@@ -45,69 +45,70 @@ export default function Avatar({ renderPosition, pageType }) {
           } relative`}
         >
           <Menu.Item
-            as='div'
+            as="div"
             className={`absolute ${
               renderPosition === 'container'
                 ? 'right-12 bg-opacity-100 dark:bg-opacity-95 xl:right-8'
                 : 'right-4'
             } top-0.25 rounded-b-lg bg-gray-800 border-b border-l border-r border-gray-700`}
           >
-            <div className='flex justify-between items-center border-b border-gray-700 px-7 py-5'>
-              <div className='p-0.5 bg-gradient-to-tr from-amber-500 to-fuchsia-700 rounded-full'>
-                <div className='p-0.5 bg-gray-900 rounded-full'>
-                  <figure className='relative w-8 h-8'>
+            <div className="flex items-center justify-between py-5 border-b border-gray-700 px-7">
+              <div className="p-0.5 bg-gradient-to-tr from-amber-500 to-fuchsia-700 rounded-full">
+                <div className="p-0.5 bg-gray-900 rounded-full">
+                  <figure className="relative w-8 h-8">
                     <Image
                       src={session.user.image}
                       alt={`Picture of ${session.user.name}`}
-                      layout='fill'
-                      objectFit='contain'
-                      className='rounded-full'
+                      layout="fill"
+                      objectFit="contain"
+                      className="rounded-full"
                     />
                   </figure>
                 </div>
               </div>
-              <div className='ml-4'>
-                <p className='text-gray-300 font-medium inline-block cursor-default'>
+              <div className="ml-4">
+                <p className="inline-block font-medium text-gray-300 cursor-default">
                   {session.user.username}
                 </p>
-                <p className='block text-sm cursor-default'>
+                <p className="block text-sm cursor-default">
                   {session.user.email}
                 </p>
               </div>
             </div>
-            <div className='my-4'>
-              <Link href='/editor'>
-                <a className='px-7 py-2 block text-gray-400 font-normal hover:text-gray-300 hover:bg-gray-700 hover:bg-opacity-70 transition-all'>
+            <div className="my-4">
+              <Link href="/editor">
+                <a className="block py-2 font-normal text-gray-400 transition-all px-7 hover:text-gray-300 hover:bg-gray-700 hover:bg-opacity-70">
                   New Publication
                 </a>
               </Link>
-              <Link href='/me/drafts'>
-                <a className='px-7 py-2 block text-gray-400 font-normal hover:text-gray-300 hover:bg-gray-700 hover:bg-opacity-70 transition-all'>
+              <Link href="/me/drafts">
+                <a className="block py-2 font-normal text-gray-400 transition-all px-7 hover:text-gray-300 hover:bg-gray-700 hover:bg-opacity-70">
                   Drafts
                 </a>
               </Link>
-              <Link href='/me/publications'>
-                <a className='px-7 py-2 block text-gray-400 font-normal hover:text-gray-300 hover:bg-gray-700 hover:bg-opacity-70 transition-all'>
+              <Link href="/me/publications">
+                <a className="block py-2 font-normal text-gray-400 transition-all px-7 hover:text-gray-300 hover:bg-gray-700 hover:bg-opacity-70">
                   Publications
                 </a>
               </Link>
             </div>
-            <div className='pt-4 mb-4 border-t border-gray-700'>
-              <Link href='/me/statistics'>
-                <a className='px-7 py-2 block text-gray-400 font-normal hover:text-gray-300 hover:bg-gray-700 hover:bg-opacity-70 transition-all beta'>
+            <div className="pt-4 mb-4 border-t border-gray-700">
+              <Link href="/me/statistics">
+                <a className="block py-2 font-normal text-gray-400 transition-all px-7 hover:text-gray-300 hover:bg-gray-700 hover:bg-opacity-70 beta">
                   Statistics
                 </a>
               </Link>
-              <Link href='/me/settings'>
-                <a className='px-7 py-2 block text-gray-400 font-normal hover:text-gray-300 hover:bg-gray-700 hover:bg-opacity-70 transition-all'>
+              <Link href="/me/settings">
+                <a className="block py-2 font-normal text-gray-400 transition-all px-7 hover:text-gray-300 hover:bg-gray-700 hover:bg-opacity-70">
                   Settings
                 </a>
               </Link>
             </div>
             {mounted && (
-              <div className='pt-4 mb-4 border-t border-gray-700'>
+              <div className="pt-4 mb-4 border-t border-gray-700">
                 <button
-                  className='px-7 py-2 w-full text-gray-400 font-normal hover:text-gray-300 hover:bg-gray-700 hover:bg-opacity-70 transition-all flex justify-between items-center'
+                  type="button"
+                  className="flex items-center justify-between w-full py-2 font-normal text-gray-400 transition-all px-7 hover:text-gray-300 hover:bg-gray-700 hover:bg-opacity-70"
                   onClick={() => setTheme(theme === 'light' ? 'dark' : 'light')}
                 >
                   <p>Theme</p>
@@ -115,9 +116,10 @@ export default function Avatar({ renderPosition, pageType }) {
                 </button>
               </div>
             )}
-            <div className='flex justify-center'>
+            <div className="flex justify-center">
               <button
-                className='text-sm block w-full bg-gray-700 hover:bg-gray-600 transition-colors text-gray-200 rounded-b-md py-4'
+                type="button"
+                className="block w-full py-4 text-sm text-gray-200 transition-colors bg-gray-700 hover:bg-gray-600 rounded-b-md"
                 onClick={() =>
                   signOut({
                     callbackUrl: '/',

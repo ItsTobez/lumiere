@@ -39,18 +39,19 @@ export default function Publication({ post, visibility }) {
 
   return (
     <>
-      <div
-        className='border border-gray-300 dark:border-gray-700 p-5 rounded-xl cursor-pointer'
+      <button
+        type="button"
+        className="p-5 border border-gray-300 cursor-pointer dark:border-gray-700 rounded-xl"
         onClick={() =>
           router.push(`/press/${post.author.username}/${post.slug}`)
         }
       >
-        <h2 className='font-bold text-xl'>{post.title}</h2>
-        <div className='flex items-center my-2 space-x-2'>
+        <h2 className="text-xl font-bold">{post.title}</h2>
+        <div className="flex items-center my-2 space-x-2">
           <Image
             src={post.author.image}
             alt={`Image of ${post.author.username}`}
-            className='rounded-full'
+            className="rounded-full"
             width={40}
             height={40}
           />
@@ -58,23 +59,26 @@ export default function Publication({ post, visibility }) {
         </div>
         <p>Created on {getTimeAndDate(post.createdAt)}</p>
         <p>Updated on {getTimeAndDate(post.updatedAt)}</p>
-      </div>
+      </button>
       {visibility === 'private' && (
-        <div className='flex flex-row mt-2 space-x-2'>
+        <div className="flex flex-row mt-2 space-x-2">
           <button
-            className='p-2.5 button-tertiary'
+            type="button"
+            className="p-2.5 button-tertiary"
             onClick={() => editPost(post.slug)}
           >
             Edit
           </button>
           <button
-            className='p-2.5 button-tertiary'
+            type="button"
+            className="p-2.5 button-tertiary"
             onClick={() => unpublishPost(post.slug)}
           >
             Unpublish
           </button>
           <button
-            className='p-2.5 button-tertiary border-red-500 transition-colors text-red-500 hover:text-red-400'
+            type="button"
+            className="p-2.5 button-tertiary border-red-500 transition-colors text-red-500 hover:text-red-400"
             onClick={() => deletePost(post.slug)}
           >
             Delete

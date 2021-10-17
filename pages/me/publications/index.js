@@ -19,13 +19,13 @@ export default function Publications({ publications }) {
       <Head>
         <title>My Publications</title>
       </Head>
-      <main className='container'>
-        <h1 className='heading-primary mb-5'>Your Publications</h1>
+      <main className="container">
+        <h1 className="mb-5 heading-primary">Your Publications</h1>
         {publications.map((publication) => (
           <Publication
             post={publication}
             key={publication.id}
-            visibility='private'
+            visibility="private"
           />
         ))}
       </main>

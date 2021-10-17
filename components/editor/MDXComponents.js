@@ -6,28 +6,30 @@ import CodepenButton from '@uiw/react-codepen';
 import StackBlitzButton from '@uiw/react-stackblitz';
 
 const a = (props) => {
-  const href = props.href;
+  const { href, children } = props;
   const isInternalLink = href && (href.startsWith('/') || href.startsWith('#'));
 
   if (isInternalLink) {
     return (
       <Link href={href}>
-        <a {...props} />
+        <a>{children}</a>
       </Link>
     );
   }
 
-  return <a target='_blank' rel='noopener noreferrer' {...props} />;
-};
-
-const img = ({ src, alt }) => {
   return (
-    <figure>
-      <img src={src} alt={alt} />
-      <figcaption>{alt}</figcaption>
-    </figure>
+    <a target="_blank" rel="noopener noreferrer" href={href}>
+      {children}
+    </a>
   );
 };
+
+const img = ({ src, alt }) => (
+  <figure>
+    <img src={src} alt={alt} />
+    <figcaption>{alt}</figcaption>
+  </figure>
+);
 
 const ConfettiComponent = () => {
   const [coords, setCoords] = useState(undefined);
@@ -48,9 +50,9 @@ const ConfettiComponent = () => {
     <>
       You{' '}
       <button
-        type='button'
+        type="button"
         onClick={onClick}
-        className='bg-blue-550 cursor-help'
+        className="bg-blue-550 cursor-help"
       >
         clicked me
       </button>{' '}
@@ -68,13 +70,11 @@ const ConfettiComponent = () => {
   );
 };
 
-const CodeSandboxEmbed = (props) => {
-  return (
-    <div className='h-[800px]'>
-      <CodeSandboxButton {...props} />
-    </div>
-  );
-};
+const CodeSandboxEmbed = (props) => (
+  <div className="h-[800px]">
+    <CodeSandboxButton {...props} />
+  </div>
+);
 
 const MDXComponents = {
   a,

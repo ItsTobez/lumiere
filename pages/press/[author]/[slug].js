@@ -34,7 +34,7 @@ export default function Publication({
         updatedAt={updatedAt}
         authorName={author.username}
         authorImage={author.image}
-        pageType='publication'
+        pageType="publication"
       >
         {mdxLoading ? <p>LOADING</p> : <MDXOutput />}
       </Article>
@@ -44,7 +44,7 @@ export default function Publication({
 
 export const getServerSideProps = async ({ params }) => {
   const authorUsername = params.author;
-  const slug = params.slug;
+  const { slug } = params;
 
   const post = await prisma.post.findUnique({
     where: {

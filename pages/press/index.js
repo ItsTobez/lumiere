@@ -17,7 +17,7 @@ export default function Press({ publications }) {
           <Publication
             key={publication.id}
             post={publication}
-            visibility='public'
+            visibility="public"
           />
         ))}
         </section>

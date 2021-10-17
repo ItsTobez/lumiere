@@ -5,6 +5,7 @@ import { useRouter } from 'next/router';
 import { useLocalStorage } from 'react-use';
 
 export default function Settings() {
+  // eslint-disable-next-line no-unused-vars
   const [_, setValue] = useLocalStorage('refresh', false);
   const router = useRouter();
   const { status } = useSession({
@@ -15,7 +16,7 @@ export default function Settings() {
   });
 
   const deleteAccount = async () => {
-    const confirmed = confirm(
+    const confirmed = window.confirm(
       "Are you sure you'd like to delete your account? This action is irreversible."
     );
 
@@ -44,10 +45,10 @@ export default function Settings() {
       <Head>
         <title>Settings</title>
       </Head>
-      <main className='container'>
-        <h1 className='heading-primary'>Settings</h1>
-        <section className='mt-5'>
-          <h2 className='font-bold text-xl'>Delete your account</h2>
+      <main className="container">
+        <h1 className="heading-primary">Settings</h1>
+        <section className="mt-5">
+          <h2 className="text-xl font-bold">Delete your account</h2>
           <p>
             You can choose to delete your account at any time. Do note that
             doing so may result in all your previously-created posts being
@@ -55,7 +56,9 @@ export default function Settings() {
             by clicking on the button below.
           </p>
           <button
-            className='button-tertiary px-5 py-3 lg:py-2.5 mt-5 transition-colors border-red-500 text-red-500 hover:text-red-400'
+            type="button"
+            className="button-tertiary px-5 py-3 lg:py-2.5 mt-5 transition-colors border-red-500 text-red-500 hover:text-red-400"
+
             onClick={() => deleteAccount()}
           >
             Delete my account

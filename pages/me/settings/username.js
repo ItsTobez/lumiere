@@ -10,6 +10,7 @@ export default function Username() {
   const [username, setUsername] = useState('');
   const [error, setError] = useState(null);
   const router = useRouter();
+  // eslint-disable-next-line no-unused-vars
   const [_, setValue] = useLocalStorage('refresh', false);
   const { status } = useSession({
     required: true,
@@ -46,37 +47,36 @@ export default function Username() {
       <Head>
         <title>Username | Lumiere</title>
       </Head>
-      <div className='h-screen grid place-items-center text-center'>
+      <div className="grid h-screen text-center place-items-center">
         <main>
-          <figure className='flex justify-center'>
+          <figure className="flex justify-center">
             <Image
               src={projectLumiere}
-              alt='Project Lumiere logo'
+              alt="Project Lumiere logo"
               height={100}
               width={100}
             />
           </figure>
-          <h1 className='mt-2 heading-primary text-gray-100'>
+          <h1 className="mt-2 text-gray-100 heading-primary">
             Welcome to Lumiere!
           </h1>
-          <p className='mt-2 mb-5'>
+          <p className="mt-2 mb-5">
             Let&#39;s get started. Set your username below and you&#39;re all
             set to go.
           </p>
-          <form onSubmit={submitUsername} className='space-x-2'>
+          <form onSubmit={submitUsername} className="space-x-2">
             <span>@</span>
             <input
-              type='text'
-              autoFocus
+              type="text"
               onChange={(e) => setUsername(e.target.value)}
               value={username}
-              placeholder='Username'
-              className='py-3 lg:py-2.5 rounded-lg border-2 bg-transparent pr-9 lg:pr-8 pl-4 text-sm border-gray-700 focus:border-transparent focus:outline-none focus:ring-2 focus:ring-blue-600 hover:border-gray-600 placeholder-gray-500'
+              placeholder="Username"
+              className="py-3 lg:py-2.5 rounded-lg border-2 bg-transparent pr-9 lg:pr-8 pl-4 text-sm border-gray-700 focus:border-transparent focus:outline-none focus:ring-2 focus:ring-blue-600 hover:border-gray-600 placeholder-gray-500"
             />
             <input
-              type='submit'
-              value='Submit username'
-              className='px-5 py-3 lg:py-2.5 text-sm button-tertiary bg-transparent cursor-pointer'
+              type="button"
+              value="Submit username"
+              className="px-5 py-3 lg:py-2.5 text-sm button-tertiary bg-transparent cursor-pointer"
               disabled={!username}
             />
           </form>

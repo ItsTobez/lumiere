@@ -6,9 +6,9 @@ export default async function handle(req, res) {
   const session = await getSession({ req });
   const result = await prisma.post.create({
     data: {
-      title: title,
-      content: content,
-      slug: slug,
+      title,
+      content,
+      slug,
       author: { connect: { username: session.user.username } },
     },
   });
