@@ -324,7 +324,7 @@ export default function Footer() {
                 objectFit="contain"
               />
             </div>
-            <figcaption className="font-serif text-[22px] text-gray-300">
+            <figcaption className="font-serif text-2xl text-gray-300">
               Lumiere
             </figcaption>
           </figure>

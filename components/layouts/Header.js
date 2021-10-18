@@ -117,8 +117,8 @@ export default function Header({
           <div className="pr-8 border-r border-gray-600 lg:pr-7 md:border-0 md:pr-0">
             <Link href="/">
               <a>
-                <figure className="flex items-center mb-0.5 group">
-                  <div className="relative w-10 lg:w-8 h-10 lg:h-8 mr-1.5">
+                <figure className="flex items-center group">
+                  <div className="relative w-10 lg:w-8 h-10 lg:h-8 mr-1.5 mb-0.5">
                     <Image
                       src={projectLumiere}
                       alt="Project Lumiere logo"
@@ -126,7 +126,7 @@ export default function Header({
                       objectFit="contain"
                     />
                   </div>
-                  <figcaption className="font-serif text-[28px] leading-none text-gray-300 transition-colors duration-200 lg:text-2xl group-hover:text-gray-200">
+                  <figcaption className="mb-1 font-serif text-3xl leading-none text-gray-300 transition-colors duration-200 lg:text-2xl group-hover:text-gray-200 lg:mb-0.5">
                     Lumiere
                   </figcaption>
                 </figure>
@@ -245,8 +245,8 @@ export default function Header({
         <div className="pr-8 border-r border-gray-600 lg:pr-7 md:border-0 md:pr-0">
           <Link href="/">
             <a>
-              <figure className="flex items-center mb-0.5 group">
-                <div className="relative w-10 lg:w-8 h-10 lg:h-8 mr-1.5">
+              <figure className="flex items-center group">
+                <div className="relative w-10 lg:w-8 h-10 lg:h-8 mr-1.5 mb-0.5">
                   <Image
                     src={projectLumiere}
                     alt="Project Lumiere logo"
@@ -254,7 +254,7 @@ export default function Header({
                     objectFit="contain"
                   />
                 </div>
-                <figcaption className="font-serif text-[28px] leading-none text-gray-300 transition-colors duration-200 lg:text-2xl group-hover:text-gray-200">
+                <figcaption className="mb-1 font-serif text-3xl leading-none text-gray-300 transition-colors duration-200 lg:text-2xl group-hover:text-gray-200 lg:mb-0.5">
                   Lumiere
                 </figcaption>
               </figure>
