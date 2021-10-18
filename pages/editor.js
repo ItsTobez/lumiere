@@ -185,7 +185,7 @@ export const CoolComponent = ({ children }) => {
 
   const showUntitledError = () => {
     titleInput.current.focus();
-    toast('You must set a title to your publication before saving.');
+    toast.error('You must set a title to your publication before saving.');
   };
 
   useBeforeunload((event) => {
