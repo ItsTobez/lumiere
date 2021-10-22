@@ -51,9 +51,9 @@ export default function Home({ tweets }) {
               publications.
             </h1>
             <p className="pr-8 mt-10 text-lg lg:text-base lg:pr-14 sm:text-sm sm:pr-0 sm:leading-relaxed xs:text-xs">
-              Project Lumiere is a media publication platform that accelerates
-              creating CompSci content. We make it easy for our creators to
-              learn in public and simultaneously gain an audience.
+              Lumiere is the most powerful CompSci publication platform in the
+              world, powered by a cutting-edge MDX (Markdown + React) editor.
+              Did we mention free and open source?
             </p>
             <div className="flex mt-20 sm:mt-10">
               <Link href="/press">
