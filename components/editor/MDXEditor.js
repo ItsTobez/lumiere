@@ -1,4 +1,4 @@
-import React, { useMemo, memo, useCallback } from 'react';
+import { useMemo, memo, useCallback } from 'react';
 import { VFileMessage } from 'vfile-message';
 import CodeMirror from 'rodemirror';
 import { basicSetup } from '@codemirror/basic-setup';
