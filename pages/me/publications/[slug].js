@@ -5,12 +5,16 @@ import { useRouter } from 'next/router';
 import { useState } from 'react';
 import MDXEditor from '@components/editor/MDXEditor';
 import Header from '@components/layouts/Header';
+import { useXdm } from '@lib/xdm';
 
-export default function EditPublication(props) {
-  const { title } = props;
+export default function EditPublication({
+  title,
+  slug,
+  content,
+  createdAt,
+  updatedAt,
+}) {
   const [collapsed, setCollapsed] = useState(false);
-  const [content, setContent] = useState(props.content);
-  const { slug } = props;
   const router = useRouter();
   const { status } = useSession({
     required: true,
@@ -19,9 +23,13 @@ export default function EditPublication(props) {
     },
   });
 
+  const [state, setConfig] = useXdm({
+    value: content,
+  });
+
   const savePublication = async () => {
     try {
-      const body = { content, slug };
+      const body = { content: state.value, slug };
       await fetch('/api/post/update', {
         method: 'PATCH',
         headers: { 'Content-Type': 'application/json' },
@@ -40,20 +48,16 @@ export default function EditPublication(props) {
       <Head>
         <title>[Publication] {title}</title>
       </Head>
+
       <Header
         pageType="editor"
         title={title}
         content={content}
-        setContent={setContent}
         saveDraft={savePublication}
         collapsed={collapsed}
         setCollapsed={setCollapsed}
       />
-      <MDXEditor
-        content={content}
-        setContent={setContent}
-        collapsed={collapsed}
-      />
+      <MDXEditor state={state} setConfig={setConfig} collapsed={collapsed} />
     </>
   );
 }

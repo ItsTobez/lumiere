@@ -1,9 +1,11 @@
-import { useMemo, memo, useCallback } from 'react';
+import { useMemo, memo, useCallback, useState } from 'react';
 import { VFileMessage } from 'vfile-message';
 import CodeMirror from 'rodemirror';
 import { basicSetup } from '@codemirror/basic-setup';
 import { markdown as langMarkdown } from '@codemirror/lang-markdown';
 import { oneDark } from '@codemirror/theme-one-dark';
+import { keymap } from '@codemirror/view';
+import { indentWithTab } from '@codemirror/commands';
 import { ErrorBoundary } from 'react-error-boundary';
 import Split from 'react-split';
 
@@ -35,7 +37,13 @@ const FallbackComponent = ({ error }) => {
 };
 
 export default function Editor({ state, setConfig, collapsed }) {
-  const extensions = useMemo(() => [basicSetup, oneDark, langMarkdown()], []);
+  const extensions = useMemo(
+    () => [basicSetup, oneDark, keymap.of([indentWithTab]), langMarkdown()],
+    []
+  );
+
+  const [editorView, setEditorView] = useState(null);
+
   const onUpdate = useCallback(
     (v) => {
       if (v.docChanged) {
@@ -61,11 +69,12 @@ export default function Editor({ state, setConfig, collapsed }) {
         return gutter;
       }}
     >
-      <section>
+      <section className="overflow-y-auto">
         <MemoizedCodeMirror
           value={state.value}
           extensions={extensions}
           onUpdate={onUpdate}
+          onEditorViewChange={(view) => setEditorView(view)}
         />
       </section>
 
@@ -77,6 +86,16 @@ export default function Editor({ state, setConfig, collapsed }) {
             </article>
           </ErrorBoundary>
         ) : null}
+        <button
+          type="button"
+          onClick={() =>
+            editorView.dispatch({
+              changes: { from: 0, insert: '\n<div>Nice</div>' },
+            })
+          }
+        >
+          Insert an element into editor
+        </button>
       </section>
     </Split>
   );

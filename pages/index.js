@@ -50,10 +50,10 @@ export default function Home({ tweets }) {
               <span className="gradient-text">Computer Science</span>{' '}
               publications.
             </h1>
-            <p className="pr-8 mt-10 text-lg lg:text-base lg:pr-14 sm:text-sm sm:pr-0 sm:leading-relaxed xs:text-xs">
+            <p className="pr-16 mt-10 text-lg lg:text-base lg:pr-28 sm:pr-0 sm:text-sm sm:leading-relaxed xs:text-xs">
               Lumiere is the most powerful CompSci publication platform in the
-              world, powered by a cutting-edge MDX (Markdown + React) editor.
-              Did we mention free and open source?
+              world, powered by the MDX editor of your dreams. Breathtaking
+              levels of customization and liberty, by design.
             </p>
             <div className="flex mt-20 sm:mt-10">
               <Link href="/press">

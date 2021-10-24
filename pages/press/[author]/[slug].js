@@ -1,9 +1,7 @@
 import prisma from '@lib/prisma';
-import { useState, useEffect } from 'react';
-import Article from '@components/ui/Article';
 import Layout from '@components/layouts/Layout';
 import Head from 'next/head';
-import { compileMDX } from '@lib/xdm';
+import { useEffect } from 'react';
 
 export default function Publication({
   title,
@@ -12,14 +10,8 @@ export default function Publication({
   updatedAt,
   author,
 }) {
-  const [mdxLoading, setMDXLoading] = useState(true);
-  const [MDXOutput, setMDXOutput] = useState(() => {
-    const mdxComponent = ({ children }) => <>{children}</>;
-    return mdxComponent;
-  });
-
   useEffect(() => {
-    compileMDX(content, setMDXOutput, setMDXLoading);
+    console.log(content);
   }, [content]);
 
   return (
@@ -28,16 +20,9 @@ export default function Publication({
         <title>{`${author.username} | ${title}`}</title>
       </Head>
 
-      <Article
-        title={title}
-        createdAt={createdAt}
-        updatedAt={updatedAt}
-        authorName={author.username}
-        authorImage={author.image}
-        pageType="publication"
-      >
-        {mdxLoading ? <p>LOADING</p> : <MDXOutput />}
-      </Article>
+      <article className="prose dark:prose-dark">
+        <div className="container">Cool</div>
+      </article>
     </>
   );
 }

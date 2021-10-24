@@ -1,4 +1,4 @@
-import { useState, useRef, useEffect } from 'react';
+import { useState, useRef } from 'react';
 import Head from 'next/head';
 import { signIn, useSession } from 'next-auth/react';
 import { useRouter } from 'next/router';
@@ -6,7 +6,7 @@ import toast, { Toaster } from 'react-hot-toast';
 import MDXEditor from '@components/editor/MDXEditor';
 import Header from '@components/layouts/Header';
 import { useBeforeunload } from 'react-beforeunload';
-import { useMdx } from '@lib/xdm';
+import { useXdm } from '@lib/xdm';
 
 export default function Editor() {
   const [collapsed, setCollapsed] = useState(false);
@@ -21,14 +21,9 @@ export default function Editor() {
     },
   });
 
-  const [state, setConfig] = useMdx({
-    gfm: true,
+  const [state, setConfig] = useXdm({
     value: '',
   });
-
-  useEffect(() => {
-    console.log(state);
-  }, [state]);
 
   const saveDraft = async () => {
     const content = state.value;

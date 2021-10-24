@@ -5,12 +5,10 @@ import { useState } from 'react';
 import MDXEditor from '@components/editor/MDXEditor';
 import Head from 'next/head';
 import Header from '@components/layouts/Header';
+import { useXdm } from '@lib/xdm';
 
-export default function Draft(props) {
-  const { title } = props;
+export default function Draft({ title, slug, content, createdAt, updatedAt }) {
   const [collapsed, setCollapsed] = useState(false);
-  const [content, setContent] = useState(props.content);
-  const { slug } = props;
   const router = useRouter();
   const { status } = useSession({
     required: true,
@@ -19,9 +17,13 @@ export default function Draft(props) {
     },
   });
 
+  const [state, setConfig] = useXdm({
+    value: content,
+  });
+
   const saveDraft = async () => {
     try {
-      const body = { content, slug };
+      const body = { content: state.value, slug };
       await fetch('/api/post/update', {
         method: 'PATCH',
         headers: { 'Content-Type': 'application/json' },
@@ -40,20 +42,16 @@ export default function Draft(props) {
       <Head>
         <title>[Draft] {title}</title>
       </Head>
+
       <Header
         pageType="editor"
         title={title}
         content={content}
-        setContent={setContent}
         saveDraft={saveDraft}
         collapsed={collapsed}
         setCollapsed={setCollapsed}
       />
-      <MDXEditor
-        content={content}
-        setContent={setContent}
-        collapsed={collapsed}
-      />
+      <MDXEditor state={state} setConfig={setConfig} collapsed={collapsed} />
     </>
   );
 }
