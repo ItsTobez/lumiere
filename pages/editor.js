@@ -1,4 +1,4 @@
-import { useState, useRef } from 'react';
+import { useState, useRef, useEffect } from 'react';
 import Head from 'next/head';
 import { signIn, useSession } from 'next-auth/react';
 import { useRouter } from 'next/router';
@@ -21,9 +21,17 @@ export default function Editor() {
     },
   });
 
-  const [content, setConfig] = useMdx();
+  const [state, setConfig] = useMdx({
+    gfm: true,
+    value: '',
+  });
+
+  useEffect(() => {
+    console.log(state);
+  }, [state]);
 
   const saveDraft = async () => {
+    const content = state.value;
     try {
       const body = { title, content, slug };
       await fetch('/api/post/create', {
@@ -43,7 +51,7 @@ export default function Editor() {
   };
 
   useBeforeunload((event) => {
-    if (title !== '' || content !== '') {
+    if (title !== '' || state.value !== '') {
       event.preventDefault();
     }
   });
@@ -67,7 +75,7 @@ export default function Editor() {
         collapsed={collapsed}
         setCollapsed={setCollapsed}
       />
-      <MDXEditor state={content} setConfig={setConfig} collapsed={collapsed} />
+      <MDXEditor state={state} setConfig={setConfig} collapsed={collapsed} />
       <Toaster position="bottom-left" />
     </>
   );
