@@ -8,6 +8,8 @@ import { keymap } from '@codemirror/view';
 import { indentWithTab } from '@codemirror/commands';
 import { ErrorBoundary } from 'react-error-boundary';
 import Split from 'react-split';
+import MDXComponents from '@components/editor/MDXComponents';
+import { statistics } from 'vfile-statistics';
 
 const ErrorFallback = ({ error, resetErrorBoundary }) => (
   <div role="alert">
@@ -41,9 +43,7 @@ export default function Editor({ state, setConfig, collapsed }) {
     () => [basicSetup, oneDark, keymap.of([indentWithTab]), langMarkdown()],
     []
   );
-
   const [editorView, setEditorView] = useState(null);
-
   const onUpdate = useCallback(
     (v) => {
       if (v.docChanged) {
@@ -52,6 +52,7 @@ export default function Editor({ state, setConfig, collapsed }) {
     },
     [state, setConfig]
   );
+  const stats = state.file ? statistics(state.file) : {};
 
   return (
     <Split
@@ -80,22 +81,16 @@ export default function Editor({ state, setConfig, collapsed }) {
 
       <section className="overflow-y-auto">
         {state.file && state.file.result ? (
-          <ErrorBoundary FallbackComponent={FallbackComponent}>
-            <article className="prose break-words bg-gray-100 dark:bg-gray-900 max-w-none dark:prose-dark">
-              <div className="container">{state.file.result()}</div>
-            </article>
-          </ErrorBoundary>
-        ) : null}
-        <button
-          type="button"
-          onClick={() =>
-            editorView.dispatch({
-              changes: { from: 0, insert: '\n<div>Nice</div>' },
-            })
-          }
-        >
-          Insert an element into editor
-        </button>
+          <article className="prose break-words bg-gray-100 dark:bg-gray-900 max-w-none dark:prose-dark">
+            <div className="container">
+              <ErrorBoundary FallbackComponent={FallbackComponent}>
+                <state.file.result components={MDXComponents} />
+              </ErrorBoundary>
+            </div>
+          </article>
+        ) : (
+          stats.fatal && <div>{state.file.messages[0].message}</div>
+        )}
       </section>
     </Split>
   );
