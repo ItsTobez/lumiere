@@ -72,7 +72,7 @@
     "eslint-config-airbnb-typescript": "^14.0.1",
     "eslint-config-next": "11.1.2",
     "eslint-config-prettier": "^8.3.0",
-    "eslint-config-wesbos": "^2.0.1",
+    "eslint-config-wesbos": "^2.1.0",
     "eslint-plugin-html": "^6.2.0",
     "eslint-plugin-import": "^2.25.2",
     "eslint-plugin-jsx-a11y": "^6.4.1",
