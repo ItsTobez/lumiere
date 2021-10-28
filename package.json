@@ -24,7 +24,7 @@
     "@uiw/react-codepen": "^1.0.2",
     "@uiw/react-codesandbox": "^1.1.0",
     "@uiw/react-stackblitz": "^1.0.4",
-    "ahooks": "^2.10.11",
+    "ahooks": "^2.10.12",
     "date-fns": "^2.25.0",
     "next": "^11.1.2",
     "next-auth": "^4.0.0-beta.2",
@@ -81,7 +81,7 @@
     "eslint-plugin-react-hooks": "^4.2.0",
     "postcss": "^8.3.11",
     "prettier": "^2.4.1",
-    "prisma": "^3.0.2",
+    "prisma": "^3.3.0",
     "tailwindcss": "^2.2.17",
     "typescript": "^4.4.4"
   }
