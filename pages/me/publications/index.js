@@ -21,18 +21,23 @@ export default function Publications({ publications }) {
       </Head>
       <main className="container">
         <h1 className="mb-5 heading-primary">Your Publications</h1>
-        {publications.length == 0 ?
+        {publications.length === 0 ? (
           <div className="flex flex-col items-center justify-center w-full h-full p-5 border border-gray-700 rounded-xl">
             <h2 className="text-xl font-bold">No publications were found.</h2>
-            <p>Go ahead and create a post! Publications can be found here after you publish a draft.</p>
+            <p>
+              Go ahead and create a post! Publications can be found here after
+              you publish a draft.
+            </p>
           </div>
-          : publications.map((publication) => (
+        ) : (
+          publications.map((publication) => (
             <Publication
               post={publication}
               key={publication.id}
               visibility="private"
             />
-        ))}
+          ))
+        )}
       </main>
     </>
   );

@@ -22,14 +22,17 @@ export default function Drafts({ drafts }) {
 
       <main className="container">
         <h1 className="mb-5 heading-primary">My Drafts</h1>
-        {drafts.length == 0 ?
-        <div className="flex flex-col items-center justify-center w-full h-full p-5 border border-gray-700 rounded-xl">
-          <h2 className="text-xl font-bold">No drafts were found.</h2>
-          <p>Go ahead and create a post! Saved drafts can be found here after you create a post.</p>
-        </div>
-        : drafts.map((draft) => (
-          <Draft post={draft} key={draft.id} />
-        ))}
+        {drafts.length === 0 ? (
+          <div className="flex flex-col items-center justify-center w-full h-full p-5 border border-gray-700 rounded-xl">
+            <h2 className="text-xl font-bold">No drafts were found.</h2>
+            <p>
+              Go ahead and create a post! Saved drafts can be found here after
+              you create a post.
+            </p>
+          </div>
+        ) : (
+          drafts.map((draft) => <Draft post={draft} key={draft.id} />)
+        )}
       </main>
     </>
   );
