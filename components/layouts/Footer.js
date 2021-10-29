@@ -296,7 +296,7 @@ export default function Footer() {
                   </li>
                   <li>
                     <Link href="/legal/terms">
-                      <a className="block mb-4 font-normal text-gray-500 hover:text-gray-400">
+                      <a className="block mb-2 font-normal text-gray-500 hover:text-gray-400">
                         Terms of Service
                       </a>
                     </Link>
@@ -333,18 +333,18 @@ export default function Footer() {
             <p className="text-xs lg:text-2xs">
               &copy; 2021 Project Lumiere 501(c)(3). All rights reserved.
             </p>
-            <div className="flex flex-row items-center space-x-2">
+            <div className="flex flex-row items-center -space-x-12">
               <a
                 href="https://vercel.com/?utm_source=lumiere&utm_campaign=oss"
                 target="_blank"
                 rel="noreferrer noopener"
-                className="flex justify-center"
+                className="flex justify-center scale-80"
               >
                 <Image
                   src="/images/powered-by-vercel.svg"
                   alt="Powered by Vercel"
-                  width="178"
-                  height="37"
+                  width="230"
+                  height="41"
                 />
               </a>
               <iframe
@@ -354,7 +354,7 @@ export default function Footer() {
                 height="41"
                 frameBorder="0"
                 scrolling="no"
-                className="scale-90 dark:rounded-lg"
+                className="scale-80 dark:rounded-lg"
               />
             </div>
             <div className="flex">
@@ -392,18 +392,18 @@ export default function Footer() {
             </figcaption>
           </figure>
 
-          <div className="flex flex-col items-center mt-12 space-y-2">
+          <div className="flex flex-col items-center mt-6">
             <a
               href="https://vercel.com/?utm_source=lumiere&utm_campaign=oss"
               target="_blank"
               rel="noreferrer noopener"
-              className="flex justify-center w-max h-max"
+              className="flex justify-center scale-75 w-max h-max"
             >
               <Image
                 src="/images/powered-by-vercel.svg"
                 alt="Powered by Vercel"
-                width="178"
-                height="37"
+                width="230"
+                height="50"
               />
             </a>
             <iframe
@@ -413,7 +413,7 @@ export default function Footer() {
               height="41"
               frameBorder="0"
               scrolling="no"
-              className="mx-auto mt-2 scale-75 dark:rounded-lg"
+              className="mx-auto scale-75 dark:rounded-lg"
             />
           </div>
 

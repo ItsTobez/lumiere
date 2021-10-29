@@ -72,6 +72,9 @@ module.exports = {
         5.5: '22px',
         18: '72px',
       },
+      scale: {
+        80: '.80',
+      },
       typography: (theme) => ({
         DEFAULT: {
           css: {
