@@ -20,7 +20,7 @@ export default function Drafts({ drafts }) {
         <title>My Drafts</title>
       </Head>
 
-      <main className="container">
+      <>
         <h1 className="mb-5 heading-primary">My Drafts</h1>
         {drafts.length === 0 ? (
           <div className="flex flex-col items-center justify-center w-full h-full p-5 border border-gray-700 rounded-xl">
@@ -33,7 +33,7 @@ export default function Drafts({ drafts }) {
         ) : (
           drafts.map((draft) => <Draft post={draft} key={draft.id} />)
         )}
-      </main>
+      </>
     </>
   );
 }

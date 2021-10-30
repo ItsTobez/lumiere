@@ -46,8 +46,7 @@ export default function Settings() {
       <Head>
         <title>Settings</title>
       </Head>
-      <main className="container">
-        <h1 className="heading-primary">Settings</h1>
+      <h1 className="heading-primary">Settings</h1>
         <div className="divide-y divide-gray-400">
           <section className="py-5">
             <h2 className="text-xl font-bold">Change your username</h2>
@@ -78,7 +77,6 @@ export default function Settings() {
             </button>
           </section>
         </div>
-      </main>
     </>
   );
 }

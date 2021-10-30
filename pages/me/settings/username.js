@@ -1,11 +1,8 @@
-import { useRouter } from 'next/router';
-import { useSession, signIn } from 'next-auth/react';
-import { useEffect, useState } from 'react';
+import UsernameForm from '@components/ui/UsernameForm';
+import projectLumiere from '@public/images/logos/ProjectLumiere.svg';
+import { signIn, useSession } from 'next-auth/react';
 import Head from 'next/head';
 import Image from 'next/image';
-import projectLumiere from '@public/images/logos/ProjectLumiere.svg';
-import { useLocalStorage } from 'react-use';
-import UsernameForm from '@components/ui/UsernameForm';
 
 export default function Username() {
   const { status } = useSession({
@@ -22,7 +19,7 @@ export default function Username() {
       <Head>
         <title>Username | Lumiere</title>
       </Head>
-      <div className="grid place-items-center h-screen text-center">
+      <div className="grid h-screen text-center place-items-center">
         <main>
           <figure className="flex justify-center">
             <Image

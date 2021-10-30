@@ -10,7 +10,7 @@ export default function Press({ publications }) {
         <title>Lumiere Press</title>
       </Head>
 
-      <main className="container">
+      <>
         <h1 className="mb-5 heading-primary">Lumiere Press</h1>
         <section className="flex flex-col space-y-5">
           {publications.map((publication) => (
@@ -21,7 +21,7 @@ export default function Press({ publications }) {
             />
           ))}
         </section>
-      </main>
+      </>
     </>
   );
 }
