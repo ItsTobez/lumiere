@@ -1,9 +1,6 @@
 import { useState } from 'react';
 import Link from 'next/link';
 import Confetti from 'react-confetti';
-import CodeSandboxButton from '@uiw/react-codesandbox';
-import CodepenButton from '@uiw/react-codepen';
-import StackBlitzButton from '@uiw/react-stackblitz';
 
 const a = (props) => {
   const { href, children } = props;
@@ -70,20 +67,10 @@ const ConfettiComponent = () => {
   );
 };
 
-const CodeSandboxEmbed = (props) => (
-  <div className="h-[800px]">
-    <CodeSandboxButton {...props} />
-  </div>
-);
-
 const MDXComponents = {
   a,
   img,
   ConfettiComponent,
-  CodeSandboxButton,
-  CodeSandboxEmbed,
-  CodepenButton,
-  StackBlitzButton,
 };
 
 export default MDXComponents;
