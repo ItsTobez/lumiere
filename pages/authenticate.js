@@ -32,7 +32,7 @@ export default function Authenticate({ providers }) {
         <title>Authenticate</title>
       </Head>
 
-      <main className="grid h-screen place-items-center">
+      <div className="grid h-screen place-items-center">
         <div className="absolute top-5 left-6">
           <Link href="/">
             <a>
@@ -70,7 +70,7 @@ export default function Authenticate({ providers }) {
             provider?
           </div>
         )}
-      </main>
+      </div>
     </>
   );
 }
